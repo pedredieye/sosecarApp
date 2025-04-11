@@ -1,0 +1,510 @@
+<!doctype html>
+<html class="no-js" lang="fr">
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<title>{% block page_title %}{% endblock %} </title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+				
+		<!-- Css Link -->
+        <link rel="stylesheet" href="{{domain_url}}/src/v4/css/bootstrap.min.css"> 
+        <link rel="stylesheet" href="{{domain_url}}/src/v4/css/animate.min.css"> 
+        <link rel="stylesheet" href="{{domain_url}}/src/v4/css/boxicons.min.css">  
+        <link rel="stylesheet" href="{{domain_url}}/src/v4/css/magnific-popup.css"> 
+        <link rel="stylesheet" href="{{domain_url}}/src/v4/css/fancybox.min.css"> 
+        <link rel="stylesheet" href="{{domain_url}}/src/v4/css/meanmenu.min.css"> 
+        <link rel="stylesheet" href="{{domain_url}}/src/v4/css/flaticon.css?v=0.007"> 
+        <link rel="stylesheet" href="{{domain_url}}/src/v4/css/odometer.min.css"> 
+        <link rel="stylesheet" href="{{domain_url}}/src/v4/css/owl.carousel.min.css"> 
+        <link rel="stylesheet" href="{{domain_url}}/src/v4/css/owl.theme.default.min.css"> 
+        <link rel="stylesheet" href="{{domain_url}}/src/v4/css/scrollCue.css"> 
+        <link rel="stylesheet" href="{{domain_url}}/src/v4/css/style.css?v=0.02">  
+        <link rel="stylesheet" href="{{domain_url}}/src/v4/css/responsive.css"> 
+        <link rel="stylesheet" href="{{domain_url}}/src/v4/css/dark.css"> 
+
+
+		<!-- Stylesheets -->
+
+		<link href="https://fonts.googleapis.com/css?family=Nunito:300,400,700" rel="stylesheet">
+		{#
+		<link rel="stylesheet" href="{{domain_url}}/src/fonts/icomoon/style.css">
+		#}
+		<link href="{{domain_url}}/src/vendors/select2/dist/css/select2.min.css" rel="stylesheet"/>
+		<link rel="stylesheet" href="{{domain_url}}/assets/css/nice-select.css">
+
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css">
+
+		<link rel="stylesheet" href="{{domain_url}}/src/v4/css/custom.css?v=0.32{{random(10,12000)}}000001">
+
+
+		<link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+		<link rel="icon" href="images/favicon.png" type="image/x-icon">
+		<link rel="apple-touch-icon" sizes="57x57" href="{{domain_url}}/src/fav/apple-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="{{domain_url}}/src/fav/apple-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="{{domain_url}}/src/fav/apple-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="{{domain_url}}/src/fav/apple-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="{{domain_url}}/src/fav/apple-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="{{domain_url}}/src/fav/apple-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="{{domain_url}}/src/fav/apple-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="{{domain_url}}/src/fav/apple-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="{{domain_url}}/src/fav/apple-icon-180x180.png">
+		<link rel="icon" type="image/png" sizes="192x192" href="{{domain_url}}/src/fav/android-icon-192x192.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="{{domain_url}}/src/fav/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="{{domain_url}}/src/fav/favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="{{domain_url}}/src/fav/favicon-16x16.png">
+		<link rel="manifest" href="{{domain_url}}/src/fav/manifest.json">
+		<meta name="msapplication-TileColor" content="#ffffff">
+		<meta name="msapplication-TileImage" content="{{domain_url}}/src/fav/ms-icon-144x144.png">
+		<meta name="theme-color" content="#ffffff">
+
+
+		<!-- Responsive -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+
+		<!-- OLD -->
+		
+
+		<!-- Place favicon.ico in the root directory -->
+		<link rel="stylesheet" href="{{domain_url}}/assets/css/mdi.min.css">
+
+		
+
+
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-N1QE2B93EF"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'G-N1QE2B93EF');
+		</script>
+	</head>
+
+	<body >
+
+		<div data-domain="{{ domain_url }}" data-resquest-uri="{{ request_uri }}" data-defined-domain="{{ defined_base_domain }}" id="domain" data-url-redirect="{{url_redirect}}"></div>
+
+		<!-- Preloader Area -->
+		<div class="preloader">
+			<div class="loader">
+				<div class="loader-outter"></div>
+				<div class="loader-inner"></div>
+				<span>S</span>
+			</div>
+		</div>
+		<!-- End Preloader Area --> 
+
+	<!-- Start Menubar Area --> 
+		<div class="navbar-area"> 
+			<!-- Start Menu For Mobile Device -->  
+			<div class="container"> 
+				<div class="mobile-nav">  
+					<div class="logo">
+						<a href="{{path_for('home')}}"> 
+							<img src="{{domain_url}}/src/v3/images/sosecar-1.svg" class="logo-light" alt="Sosecar">   
+							<img src="{{domain_url}}/src/v3/images/sosecar-1.svg" class="logo-dark" alt="Sosecar">   
+						</a> 
+					</div>
+				</div>  
+			</div> 
+			<!-- End Menu For Mobile Device --> 
+			
+			<div class="navbar bg-primary text-white py-2 px-3 d-flex justify-content-between align-items-center navbar-custom">
+				<!-- Texte à gauche -->
+				<div class="text-left">
+					<span>Télécharger le book provisoire de la 6 <sup>ème</sup> édition</span>
+				</div>
+				
+				<!-- Bouton CTA à droite -->
+				<div class="text-right">
+					<a href="/src/doc/Book _6EME_EDITION CARDIOTECH_SENEGAL.pdf" target="_blank" class="btn btn-light btn-cta  btn-sm">
+						Je télécharge
+					</a>
+				</div>
+			</div>
+			<div class="main-nav">         
+				<div class="container-fluid">    
+					<nav class="navbar navbar-expand-md navbar-light">   
+
+						<a href="{{path_for('home')}}">   
+							<img src="{{domain_url}}/src/v3/images/sosecar-1.svg" class="logo-light" alt="Sosecar">   
+							<img src="{{domain_url}}/src/v3/images/sosecar-1.svg" class="logo-dark" alt="Sosecar">   
+						</a>   
+
+						<div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent"> 
+							<ul class="navbar-nav m-auto">  
+								<li class="nav-item"> 
+									<a href="{{path_for('home')}}" class="nav-link">Accueil</a>      
+								</li> 
+								<li class="nav-item"> 
+									<a href="{{path_for('about')}}" class="nav-link">La SOSECAR</a>      
+								</li> 
+								{#
+								<li class="nav-item nav-item-five">  
+									<a href="{{path_for('about')}}" class="nav-link dropdown-toggle">
+										La SOSECAR
+									</a>
+									
+									<ul class="dropdown-menu"> 
+										<li class="nav-item">
+											<a href="{{path_for('home')}}#our-team-section" class="nav-link">Le bureau</a>       
+										</li>
+										<li class="nav-item">
+											<a href="{{path_for('home')}}#testimonials-section" class="nav-link bg-border-2">Le mot de président</a>     
+										</li>  
+									</ul>
+
+								</li> 
+								#}
+
+								{#
+
+								<li class="nav-item"> <a href="{{path_for('presentations')}}" class="nav-link">Les présentations</a> </li> 
+								<li class="nav-item"> <a href="{{path_for('documents')}}" class="nav-link">Les posters</a> </li> 
+								#}
+								<li class="nav-item"> <a href="{{path_for('infos')}}" class="nav-link">Informations utiles</a> </li> 
+								{#
+								<li class="nav-item"> <a href="{{path_for('documents')}}" class="nav-link">Les posters</a> </li> 
+								<li class="nav-item"> <a href="/docs/Plaquette-SOSECAR _2023_FINALE.pdf" target="_blank" class="nav-link">Book du congrès</a> </li> 
+								#}
+
+								{% if usr or 3==3 %} 
+									<li class="nav-item"> <a href="{{path_for('new_abstract')}}" class="nav-link">Soumettre un abstract</a> </li> 
+								{% endif %}
+								
+								
+								{#
+								<li class="dropdown with-ico">
+									<a href="#" class="top_link"> <i class="fi fi-rr-user"></i> {% if not(usr) %} Mon compte {% else %}{{usr['first_name']}} {{usr['last_name']}} {% endif %} <i class="fi fi-rr-angle-small-down"></i></a>
+									<ul>
+										{% if not(usr) %} 
+											<li><a href="{{path_for('tickets')}}">Inscription</a></li>
+											<li><a href="{{path_for('p_login')}}">Se connecter</a></li>
+										{% else %}
+											<li><a href="{{path_for('p_qr_code')}}">Mon code d'accès</a></li>
+											{% if 4==3 %}
+												<li><a href="{{path_for('p_get_certif')}}">Mon certificat de participation</a></li>
+											{% endif %}
+											{% if 4==3 %}
+												<li><a href="{{path_for('p_agenda')}}">Agenda</a></li>
+											{% endif %}
+											<li><a href="{{path_for('p_logout')}}">Se déconnecter</a></li>
+
+										{% endif %}
+									</ul>
+								</li>
+								#}
+
+
+								<li class="nav-item nav-item-five">  
+									{% if usr %}
+										{% set username = usr['first_name'] ~ usr['last_name'] %} {# Remplacez par le nom de l'utilisateur connecté #}
+										{% set initials = username|split(' ')|map(e => e|slice(0, 1))|join('') %}
+									{% endif %}
+
+									<a href="{{path_for('home')}}#about-section" class="nav-link dropdown-toggle active user-menu">
+										 {% if not(usr) %} Mon compte {% else %}
+										 <span class="user-icon">
+										 {{ initials }}
+										 </span>
+										 {% endif %} </i>
+									{#
+										<i class="fi fi-rr-user"></i> {% if not(usr) %} Mon compte {% else %}{{usr['first_name']}} {{usr['last_name']}} {% endif %} <i class="fi fi-rr-angle-small-down"></i>
+									#}
+									</a>
+									
+									<ul class="dropdown-menu"> 
+
+										{% if not(usr) %} 
+											<li class="nav-item">
+												<a href="{{path_for('tickets')}}" class="nav-link bg-border-top ">Inscription</a>        
+											</li> 
+											<li class="nav-item">
+												<a href="{{path_for('p_login')}}" class="nav-link bg-border-top ">Se connecter</a>        
+											</li> 
+										{% else %}
+											<li class="nav-item">
+												<a href="{{path_for('p_qr_code')}}" class="nav-link">Mon code d'accès</a>       
+											</li>
+											<li class="nav-item">
+												<a href="{{path_for('leprogramme')}}" class="nav-link">Agenda</a>       
+											</li>
+											{% if 4==3 %}
+												<li class="nav-item">
+													<a href="{{path_for('p_get_certif')}}" class="nav-link bg-border-2">Mon certificat de participation</a>     
+												</li>  
+											{% endif %}
+
+											<li class="nav-item">
+												<a href="{{path_for('p_logout')}}" class="nav-link">Se déconnecter</a>       
+											</li>
+										{% endif %}
+									</ul>
+
+								</li> 
+							</ul> 
+
+
+							<div class="others-option-vg d-flex align-items-center"> 
+								{#
+								<div class="option-item">
+									<form class="search-form">
+										<input class="search-input" placeholder="Search Here" type="text">
+			
+										<button type="submit" class="search-button">
+											<i class='bx bx-search' ></i>
+										</button>
+									</form>
+								</div>
+								#}
+
+								<div class="option-item">
+
+								{#
+									{% if not(usr) or (usr and usr.ticket_number_pc == null) %} 
+										<a href="{{path_for('ateliers-pre-congres')}}" class="default-btn btn-style-one">Ateliers Pré-congrès <i class='bx bx-plus' ></i></a> 
+									{% endif %}
+								#}
+									<a href="/src/doc/Book _6EME_EDITION CARDIOTECH_SENEGAL.pdf"  target="_blank" class="default-btn btn-abstract">Book Provisoire</a>
+
+									{% if not(usr) or (usr and usr.ticket_number == null) %} 
+										<a href="{{path_for('tickets')}}" class="default-btn">Inscrivez-vous <i class='bx bx-plus' ></i></a> 
+									{% endif %}
+
+									{% if usr and usr['payment_status'] != "completed" and usr['payment_status_pc'] == null %}
+										<a href="{{path_for('paiement_paytech_init', { 'service':'congres', 'ref': usr['ref'] } )}}" class="default-btn">Finaliser mon inscription <i class='bx bx-plus' ></i></a> 
+									{% elseif usr and usr['payment_status'] == null and usr['payment_status'] != "completed"  %}
+										<a href="{{path_for('paiement_paytech_init', { 'service':'precongres', 'ref': usr['ref'] } )}}" class="default-btn">Finaliser mon inscription <i class='bx bx-plus' ></i></a> 
+									{% endif %}
+								
+								</div>
+							</div>
+						</div>
+					</nav> 
+				</div>
+			</div> 
+
+			<div class="others-option-for-responsive"> 
+				<div class="container">
+				
+
+					<div class="dot-menu">
+						<div class="inner">
+							<div class="circle circle-one"></div>
+							<div class="circle circle-two"></div>
+							<div class="circle circle-three"></div>
+						</div>
+					</div>
+					
+					<div class="container">
+
+						<div class="option-inner">
+							<div class="others-option justify-content-center d-flex align-items-center">
+								<div class="option-item">
+
+									{% if not(usr) or (usr and usr.ticket_number_pc == null) %} 
+										<a href="{{path_for('ateliers-pre-congres')}}" class="default-btn btn-style-one">Ateliers Pré-congrès <i class='bx bx-plus' ></i></a> 
+									{% endif %}
+
+									{% if not(usr) or (usr and usr.ticket_number == null) %} 
+										<a href="{{path_for('tickets')}}" class="default-btn">Inscrivez-vous <i class='bx bx-plus' ></i></a> 
+									{% endif %}
+
+								
+									{% if usr and usr['payment_status'] != "completed" and usr['payment_status_pc'] == null %}
+										<a href="{{path_for('paiement_paytech_init', { 'service':'congres', 'ref': usr['ref'] } )}}" class="default-btn">Finaliser mon inscription <i class='bx bx-plus' ></i></a> 
+									{% elseif usr and usr['payment_status'] == null and usr['payment_status'] != "completed"  %}
+										<a href="{{path_for('paiement_paytech_init', { 'service':'precongres', 'ref': usr['ref'] } )}}" class="default-btn">Finaliser mon inscription <i class='bx bx-plus' ></i></a> 
+									{% endif %}
+								</div>
+								
+								<div class="option-item">
+								</div>
+
+							{#
+									<div class="option-item">
+										<form class="search-form">
+											<input class="search-input" placeholder="Search Here" type="text">
+				
+											<button type="submit" class="search-button">
+												<i class='bx bx-search' ></i>
+											</button>
+										</form>
+									</div>
+
+									<div class="option-item">
+										<a href="pricing.html" class="default-btn">Get Free Estimate <i class='bx bx-plus' ></i></a> 
+									</div>
+							#}
+								
+							</div>
+						</div> 
+
+					</div>
+				</div>
+			</div>   
+			 
+		</div>
+		<!-- End Menubar Area -->
+
+		
+
+		<!-- Start Page Banner Area -->
+		<div class="page-banner-area page-testimonials">
+			<div class="container-fluid">
+				<div class="single-page-banner-content">
+					<h1>{{data.page_title}}</h1>
+					<ul>
+						<li><a href="{{path_for('home')}}">Accueil</a></li>
+						<li>{{data.page_title}}</li>
+					</ul>
+				</div>
+			</div>
+			<div class="page-banner-shape-1">
+				<img src="{{domain_url}}/src/v4/images/banner/banner-one-shape-1.png" alt="images">
+			</div>
+			<div class="page-banner-shape-2">
+				<img src="{{domain_url}}/src/v4/images/banner/banner-one-shape-2.png" alt="images">
+			</div>
+			<div class="page-banner-shape-3">
+				<img src="{{domain_url}}/src/v4/images/banner/banner-one-shape-3.png" alt="images">
+			</div>
+		</div>
+		<!-- End Page Banner Area -->
+
+		<div class="page-wrapper" >
+		
+			
+		
+
+      		{% block content %}{% endblock %}
+      		{% block page_content %}{% endblock %}
+
+		
+				<!-- Start Footer Area -->
+			<div class="footer-area jarallax" data-jarallax='{"speed": 0.3}'>
+				<div class="container">
+					{#
+						<div class="auto-container">
+							<div class="inner-container clearfix">
+								<div class="copyright-text">
+									<p>Liste des posters <a href="{{path_for('documents')}}" target="_blank">ici</a> </p>
+								</div>
+							</div>
+						</div>
+					#}
+
+						<div class="auto-container">
+							<div class="inner-container clearfix">
+								<div class="copyright-text">
+									<a href="/src/doc/Book _6EME_EDITION CARDIOTECH_SENEGAL.pdf" download="BOOK SOSECAR EDITION 6" >Télécharger le book provisoire de la 6 <sup>ème</sup> édition</a>
+								</div>
+							</div>
+						</div>
+
+					<div class="copyright-content">
+						<p>© Copyright 2024 - <b>SOSECAR</b></p>
+					</div>
+				</div>
+			</div>
+			<!-- End Footer Area --> 
+
+		</div>
+		<!--End pagewrapper-->
+		<!-- Start Go Top Area -->
+        <div class="go-top">
+			<i class='bx bx-chevron-up' ></i>
+			<i class='bx bx-chevron-up' ></i>
+        </div>
+        <!-- End Go Top Area -->
+
+
+		<!--[if lte IE 9]>
+		            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+		        <![endif]-->
+
+		<!-- Add your site or application content here -->
+		
+		<!-- preloader end  -->
+		<!-- header-area start -->
+
+		
+
+				
+		<!--Scroll to top-->
+		<div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-double-up"></span></div>
+		<script src="{{domain_url}}/src/v3/js/jquery.js"></script>
+		<script src="{{domain_url}}/src/v3/js/popper.min.js"></script>
+		<script src="{{domain_url}}/src/v3/js/bootstrap.min.js"></script>
+		<script src="{{domain_url}}/src/v3/js/jquery-ui.js"></script>
+		<script src="{{domain_url}}/src/v3/js/jquery.fancybox.js"></script>
+		<script src="{{domain_url}}/src/v3/js/appear.js"></script>
+		<script src="{{domain_url}}/src/v3/js/owl.js"></script>
+		<script src="{{domain_url}}/src/v3/js/jquery.countdown.js"></script>
+		<script src="{{domain_url}}/src/v3/js/wow.js"></script>
+		<script src="{{domain_url}}/src/v3/js/script.js?v=0.02"></script>
+
+		<!-- Color Setting -->
+		<script src="{{domain_url}}/src/v3/js/color-settings.js"></script>
+
+
+
+		
+		<!-- JS here -->
+		<script src="{{domain_url}}/assets/js/vendor/modernizr-3.5.0.min.js"></script>
+		<script src="{{domain_url}}/assets/js/vendor/jquery-2.2.4.min.js"></script>
+		<script src="{{domain_url}}/assets/js/popper.min.js"></script>
+		<script src="{{domain_url}}/assets/js/bootstrap.min.js"></script>
+		<script src="{{domain_url}}/assets/js/owl.carousel.min.js"></script>
+		<script src="{{domain_url}}/assets/js/isotope.pkgd.min.js"></script>
+		<script src="{{domain_url}}/assets/js/slick.min.js"></script>
+		<script src="{{domain_url}}/assets/js/metisMenu.min.js"></script>
+		<script src="{{domain_url}}/assets/js/jquery.nice-select.js"></script>
+		<script src="{{domain_url}}/assets/js/ajax-form.js"></script>
+		<script src="{{domain_url}}/assets/js/wow.min.js"></script>
+		<script src="{{domain_url}}/assets/js/jquery.counterup.min.js"></script>
+		<script src="{{domain_url}}/assets/js/waypoints.min.js"></script>
+		<script src="{{domain_url}}/assets/js/jquery.scrollUp.min.js"></script>
+		<script src="{{domain_url}}/assets/js/imagesloaded.pkgd.min.js"></script>
+		<script src="{{domain_url}}/assets/js/jquery.magnific-popup.min.js"></script>
+		<script src="{{domain_url}}/assets/js/jquery.easypiechart.js"></script>
+		<script src="{{domain_url}}/assets/js/tilt.jquery.js"></script>
+		<script src="{{domain_url}}/assets/js/animate-headline.js"></script>
+		<script src="{{domain_url}}/assets/js/plugins.js"></script>
+		<script src="{{domain_url}}/assets/js/main.js"></script>
+
+		<script src="{{domain_url}}/src/vendors/jquery-validation/dist/jquery.validate.min.js" type="text/javascript"></script>
+		<script src="{{domain_url}}/src/vendors/select2/dist/js/select2.full.min.js" type="text/javascript"></script>
+
+
+		<script src="{{domain_url}}/src/js/jquery-ui.js"></script>
+		<script src="{{domain_url}}/src/js/popper.min.js"></script>
+		<script src="{{domain_url}}/src/js/bootstrap-datepicker.min.js"></script>
+		<script src="{{domain_url}}/src/js/jquery.easing.1.3.js"></script>
+		<script src="{{domain_url}}/src/js/aos.js"></script>
+		<script src="{{domain_url}}/src/js/jquery.fancybox.min.js"></script>
+		<script src="{{domain_url}}/src/js/jquery.sticky.js"></script>
+
+
+		<script src="{{domain_url}}/src/vendors/moment/min/moment.min.js" type="text/javascript"></script>
+		<script src="{{domain_url}}/src/vendors/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js" type="text/javascript"></script>
+		<script src="{{domain_url}}/src/vendors/bootstrap-timepicker/js/bootstrap-timepicker.min.js" type="text/javascript"></script>
+
+		<script src="{{domain_url}}/src/vendors/webticker.js"></script>
+
+
+
+		<script src="{{domain_url}}/src/js/app.js?v=4.{{random(10, 10000)}}097"></script>
+
+	
+	
+	</body>
+
+</html>

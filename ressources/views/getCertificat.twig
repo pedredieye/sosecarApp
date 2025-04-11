@@ -1,0 +1,58 @@
+{% extends 'templates/participantLayout.twig' %}
+{% block content %}
+
+
+
+
+    <div class="site-section bg-program" id="about-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-12 text-center">
+          </div>
+        </div>
+        <div class="row mb-5">
+          <div class="col-lg-12" data-aos="fade-right">
+            <h1 class="section-title text-white text-center title-prog" >Mon certificat de participation</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="site-section" id="le-programme-section">
+      <div class="container">
+
+      <div class="row site-section pt-0 pb-3">
+        <div class="col-md-8 col-xs-12 offset-md-2 aos-init aos-animate text-center" data-aos="fade-up">
+
+          <p style="font-size:18px">
+          La Société Sénégalaise de Cardiologie remercie tous les congressistes, orateurs et modérateurs.
+          Merci également à tous les partenaires, acteurs du médicament et du matériel médical.
+          Ce 5ème congrès couplé à la 2ème édition Cardiotech a été une grande réussite scientifique grâce à vous.
+          </p>
+          <p style="font-size:18px">
+          La SOSECAR vous donne rendez-vous très prochainement pour de nouvelles expériences scientifiques.
+
+          </p>
+
+        </div>
+      </div>
+
+
+
+      <div class="row site-section pt-0 pb-2">
+        <div class="col aos-init aos-animate text-center"  data-aos="fade-up">
+          <a href="#" class="btn btn-primary mr-2 mb-2" id="dwl-cr" data-id="{{participant.id}}" data-name="{{participant.first_name}} {{participant.last_name}}" >Mon certificat de participation</a>
+        </div>
+
+        <div class="col-md-12 text-center mt-3">
+          <div class="alert sa-alert-form alert-primary d-none" role="alert" id="gen-certif-notif">
+            ...
+          </div>
+        </div>
+
+      </div>
+
+
+      </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,102 @@
+.select2-container--default .select2-selection--single:focus{
+  outline: none !important;
+  border: 1px solid #4285f4;
+  border-color: #4285f4;
+  box-shadow: none !important;
+}
+
+#btn-register{
+  height: 43px;
+  display: flex;
+  align-items: center;
+
+  border-width: 2px;
+  background: #4285f4;
+  border-color: #4285f4;
+  color: #fff;
+  position: relative;
+  top: 0;
+  -webkit-transition: .3s all ease;
+  -o-transition: .3s all ease;
+  transition: .3s all ease;
+  /*-webkit-box-shadow: 0 4px 20px -5px rgba(66, 133, 244, 0.4);
+  box-shadow: 0 4px 20px -5px rgba(66, 133, 244, 0.4);*/
+}
+
+#btn-login{
+  height: 43px;
+  display: flex;
+  align-items: center;
+
+  border-width: 2px;
+  background: #ffffff;
+  border-color: #4285f4;
+  color: #4285f4;
+  position: relative;
+  top: 0;
+  -webkit-transition: .3s all ease;
+  -o-transition: .3s all ease;
+  transition: .3s all ease;
+  /*-webkit-box-shadow: 0 4px 20px -5px rgba(66, 133, 244, 0.4);
+  box-shadow: 0 4px 20px -5px rgba(66, 133, 244, 0.4);*/
+}
+
+#btn-register:hover{
+  top: -2px;
+  background: #4285f4;
+  border-color: #4285f4;
+  color: #fff;
+  /*-webkit-box-shadow: 0 5px 30px -5px rgba(66, 133, 244, 0.7) !important;
+  box-shadow: 0 5px 30px -5px rgba(66, 133, 244, 0.7) !important;*/
+}
+
+#btn-login:hover{
+  top: -2px;
+  background: #ffffff;
+  border-color: #4285f4;
+  color: #4285f4;
+  /*-webkit-box-shadow: 0 5px 30px -5px rgba(66, 133, 244, 0.7) !important;
+  box-shadow: 0 5px 30px -5px rgba(66, 133, 244, 0.7) !important;*/
+}
+.site-menu{
+  display: flex !important;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.has-error{
+
+}
+.has-error input, .has-error select{
+  border-color: red;
+}
+
+.help-block.error{
+  color: red;
+}
+
+.col-select2 .help-block.error{
+  position: absolute;
+  top: calc(100% + 15px);
+  left: 15px;
+}
+
+.rounded-lg{
+  border-radius: 15px !important;
+}
+
+.form-control, .btn{
+  border-radius: 5px !important;
+}
+
+.form-help{
+  font-size: .7rem;
+  display: block;
+  margin-bottom: 10px;
+}
+
+
+
+.document_list .document{
+  text-transform: capitalize !important;
+}

@@ -1,0 +1,186 @@
+{% extends 'templates/layout.twig' %}
+{% block page_title %}Modifier une inscription{% endblock %}
+{% block active_participant %}active{% endblock %}
+{% block collapse_in %}in{% endblock %}
+{% block page_title_breadcrumb %}Modifier un participant{% endblock %}
+{% block content %}
+
+    <section class="forms-validation">
+      <div class="page-header">
+        <h1>      <i class="md md-group"></i>      Modification     </h1>
+      </div>
+      <div class="row  m-b-40">
+        <div class="col-md-3 col-md-push-9 ">
+          <h5 class="d-none">Aide</h5>
+          <p class="d-none"> Push the submit button to check all the validations at once. Resetting will handle resetting the validation messages. </p>
+        </div>
+        <div class="col-md-8 col-md-pull-3">
+
+          <div class="bs-component" >
+            <div class="alert alert-dismissible alert-success d-none" id="alert-form">
+              <button type="button" class="close" data-dismiss="alert">×</button>
+              <h4>Success!</h4> <strong>Well done!</strong> You successfully read <a href="#" class="alert-link">this important alert message</a>.
+            </div>
+          </div>
+
+          <div class="well white" id="forms-validation-container">
+            <div>
+              <form class="form-floating" id="form-validation" name="sos-edit-participant">
+                <input type="hidden" id="idparticipant" name="idparticipant" value="{{data.participant.id}}">
+                <input type="hidden" id="password" name="password" value="{{data.participant.password}}">
+                <input type="hidden" id="validated_by" name="validated_by" value="{{data.participant.validated_by}}">
+                <input type="hidden" id="ticket_number" name="ticket_number" value="{{data.participant.ticket_number}}">
+                <input type="hidden" id="actual_status" name="actual_status" value="{{data.participant.status}}">
+                <fieldset>
+                  <legend>Modifer un participant</legend>
+
+                  <div class="form-group">
+                    <label class="control-label">Nom</label>
+                    <input type="text" id="fname" name="fname" value="{{data.participant.first_name}}" class="form-control" required="" data-error="Nom manquant">
+                    <div class="help-block with-errors"></div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="control-label">Prénom(s)</label>
+                    <input type="text" id="lname" name="lname" value="{{data.participant.last_name}}" class="form-control" required="" data-error="Prénom(s) manquants">
+                    <div class="help-block with-errors"></div>
+                  </div>
+
+                  {% if "obama" == "trump" %}
+                    <div class="form-group">
+                      <label class="control-label normal">Date de naissance</label>
+                      <input type="date" id="year_of_birth" name="year_of_birth" value="{{data.participant.year_of_birth}}"  class="form-control" required="" data-error="La date n'est pas valide.">
+                      <div class="help-block with-errors"></div>
+                    </div>
+                  {% endif %}
+
+                  <div class="form-group">
+                    <label class="control-label normal">Genre</label>
+                    <select class="form-control rounded-0 to-select2" name="gender" id="gender" required="" data-error="Information manquante.">
+                      <option value="male">Homme</option>
+                      <option value="female">Femme</option>
+                    </select>
+                    <div class="help-block with-errors"></div>
+                  </div>
+
+                  <div class="form-group">
+                      <label class="control-label" for="country">Pays</label>
+                      <select class="form-control rounded-0 to-select2" id="country" name="country" required="" data-error="Information manquante.">
+                        {% for country in data.countries %}
+                          <option value="{{country.id}}" data-phone-code="{{country.phonecode}}" {% if country.id == data.participant.country_id %}selected{% endif %}>{{country.emoji}} {{country.name}}</option>
+                        {% if country.id == data.participant.country_id %} {% set ind = country.phonecode %} {% endif %}
+                        {% endfor %}
+                      </select>
+                      <div class="help-block with-errors"></div>
+                  </div>
+
+                  <div class="form-group">
+                      <label class="control-label" for="state">Ville</label>
+                      <select class="form-control rounded-0 to-select2" id="state" name="state" required="" data-error="Information manquante.">
+                        {% for state in data.states %}
+                          <option value="{{state.id}}" {% if state.id == data.participant.state_id %}selected{% endif %}>{{state.name}}</option>
+                        {% endfor %}
+                      </select>
+                      <div class="help-block with-errors"></div>
+                  </div>
+
+                  <div class="form-group d-none">
+                    <label class="control-label">Email</label>
+                    <input type="email" class="form-control" required="" data-error="That email address is invalid">
+                    <div class="help-block with-errors"></div>
+                  </div>
+
+                  <div class="form-group">
+                      <label class="control-label" for="email">Email</label>
+                      <p class="lead d-none">The <a href="http://1000hz.github.io/bootstrap-validator/" target="_blank">Validator plugin</a> offers automatic form validation configurable via mostly HTML5 standard attributes. It also provides an unobtrusive user experience, because nobody likes a naggy form.</p>
+                      <input type="email" id="email" name="email" value="{{data.participant.email}}" class="form-control rounded-0" required="" data-error="Adresse email incorrecte.">
+                      <div class="help-block with-errors"></div>
+                  </div>
+
+                  <div class="form-group">
+                      <div class="row" style="margin-left:0">
+                        <div class="col-md-2">
+                              <label class="control-label" for="phone">Téléphone</label>
+                        </div>
+                        <div class="col-md-10">
+                          <div class="input-group"> <span class="input-group-addon" id="ind-addon">+{{ind}}</span>
+                            <div class="row">
+                            <p class="lead d-none">The <a href="http://1000hz.github.io/bootstrap-validator/" target="_blank">Validator plugin</a> offers automatic form validation configurable via mostly HTML5 standard attributes. It also provides an unobtrusive user experience, because nobody likes a naggy form.</p>
+                              <input type="phone" id="phone" name="phone" value="{{data.participant.phone}}" class="form-control rounded-0" required="" data-error="Numéro de téléphone manquant.">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="help-block with-errors"></div>
+                      </div>
+                  </div>
+
+                  <div class="form-group">
+                      <label class="control-label" for="job">Fonction</label>
+                      <select class="form-control rounded-0 to-select2" id="job" name="job" required="" data-error="Information manquante.">
+                        <option value=""></option>
+                        {% for job in data.jobs %}
+                      <option value="{{job.id}}" {% if job.id == data.participant.job_id %}selected{% endif %} >{{job.job_title}}</option>
+                        {% endfor %}
+                      </select>
+                      <div class="help-block with-errors"></div>
+                  </div>
+                  <div class="form-group">
+                      <label class="control-label" for="title">Titre</label>
+                      <select class="form-control rounded-0 to-select2" id="title" name="title" required="" data-error="Information manquante.">
+                        <option value=""></option>
+                        {% for title in data.titles %}
+                      <option value="{{title.id}}" {% if title.id == data.participant.title_id %}selected{% endif %}>{{title.title}}</option>
+                        {% endfor %}
+                      </select>
+                      <div class="help-block with-errors"></div>
+                  </div>
+
+                  {% if false %}
+                    <div class="form-group">
+                      <label class="control-label normal">Valider l'inscription après enregistrement ?</label>
+                      <div class="switch">
+                          <label class="filled"> Non
+                        <input type="checkbox"  id="validate_after_saved" name="validate_after_saved" {% if data.participant.status == 2 %}checked{% endif %}> <span class="lever"></span> Oui </label>
+                      </div>
+                    </div>
+
+                     <div class="form-group">
+                      <label class="control-label" for="email">N° du reçu</label>
+                      <p class="lead d-none">The <a href="http://1000hz.github.io/bootstrap-validator/" target="_blank">Validator plugin</a> offers automatic form validation configurable via mostly HTML5 standard attributes. It also provides an unobtrusive user experience, because nobody likes a naggy form.</p>
+                      <input type="text" id="recu" name="recu" value="{{data.participant.num_recu}}" class="form-control rounded-0">
+                      <div class="help-block with-errors"></div>
+                  </div>
+                  {% endif %}
+
+                  {% if data.participant.status != 2 %}{% endif %}
+
+
+                 
+
+                  <div class="form-group d-none">
+                    <select class="select2 form-control"></select>
+                  </div>
+
+                  <div class="form-group">
+                    <button type="submit" id="btn_submit" class="btn btn-primary">Valider</button>
+                    <button type="reset" class="btn btn-default">Réinitialiser</button>
+                  </div>
+                </fieldset>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+{% endblock %}
+
+{% block extendjsfooter %}
+
+    <script type="text/javascript">
+    console.log($("#state option:selected").val());
+    updateDataSelectLocationFromEdit($("#state option:selected").val());
+
+    </script>
+{% endblock %}

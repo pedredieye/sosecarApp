@@ -1,0 +1,106 @@
+{% extends 'templates/layout.twig' %}
+{% block page_title %}Liste des scans{% endblock %}
+{% block active_scans %}active{% endblock %}
+{% block all_scans_active %}active{% endblock %}
+{% block collapse_in_scans %}in{% endblock %}
+{% block page_title_breadcrumb %}Liste des scans effectués{% endblock %}
+{% block content %}
+
+    <section class="tables-data">
+      <div class="page-header">
+        <h1>      <i class="md md-list"></i> Liste de des scans   </h1>
+        <p class="lead">Cette liste affiche la liste des scans.</p>
+      </div>
+
+      <div class="">
+
+      </div>
+
+
+
+      <h5 class="grey-text"><i class="md md-view-module"></i> Scans</h5>
+      <div class="row gutter-14 kpi-dashboard">
+
+          <div class="col-md-12">
+            <div class="row">
+
+                <div class="col-md-12">
+                  <div class="card small">
+                    <div class="green lighten-1 p-10">
+                      <div class="pull-right d-none">
+                        <div> <i class="md md-trending-up  text-rgb-5"></i> 9% </div>
+                      </div>
+                      <h4 class="no-margin white-text w600">Scans uniques effectués</h4>
+                      <div class="f11 d-none" style="opacity:0.8"> <i class="md md-star-outline"></i> Dernier scan {{data.stats.last_scan | date('d/m/Y à H:i:s')}} </div>
+                      <div class="p-10 p-t-30">
+                      {{ data.scans | length }} personnes ont été scannées.
+                        <div id="chart-line-3-0"></div>
+                      </div>
+                    </div>
+                    <div class="card-content p-10">
+                      <div class="row">
+                        <div class="col-md-4 text-center" style="border-right: 1px #F0F0F0 solid;">
+                          <h3 class="no-margin w300">  {{ data.scans_01 | length }}</h3>
+                          <p class="grey-text w600">16/12/2024</p>
+                        </div>
+                        <div class="col-md-4 text-center" style="border-right: 1px #F0F0F0 solid;">
+                          <h3 class="no-margin w300">{{ data.scans_02 | length }}</h3>
+                          <p class="grey-text w600">17/12/2024</p>
+                        </div>
+                        <div class="col-md-4 text-center">
+                          <h3 class="no-margin w300">{{ data.scans_03 | length }} </h3>
+                          <p class="grey-text w600">18/12/2024</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+            </div>
+          </div>
+      </div>
+
+
+      <div class="card">
+        <div>
+        <!-- onclick="window.location.href=('{{path_for('one_user', { 'id':user.id })}}')"  -->
+          <div class="datatables">
+            <table id="example" class="table table-full table-full-small" cellspacing="0" width="100%">
+              <thead>
+                <tr>
+                  <th>Participant</th>
+                  <th>Scans effectués</th>
+                  <th></th>
+                </tr>
+              </thead>
+
+              <tfoot>
+                <tr>
+                  <th>Participant</th>
+                  <th>Scans effectués</th>
+                  <th></th>
+                </tr>
+              </tfoot>
+
+              <tbody>
+              {% for scan in data.scans %}
+                <tr>
+                  <td>
+                    {{scan.participant.first_name}} {{scan.participant.last_name}}<br>
+                    {{scan.participant.phone}}
+                  </td>
+
+                  <td >{{scan.nb}}</td>
+                  <td></td>
+                </tr>
+              {% endfor %}
+              </tbody>
+
+            </table>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+{% endblock %}

@@ -1,0 +1,151 @@
+{% extends 'templates/layout.twig' %}
+{% block page_title %}Liste des présentations
+{% endblock %}
+{% block active_presentation %}active
+{% endblock %}
+{% block all_presentation_active %}active
+{% endblock %}
+{% block collapse_in_presentation %}in
+{% endblock %}
+{% block page_title_breadcrumb %}Liste des présentations
+{% endblock %}
+{% block content %}
+
+	<section class="tables-data">
+		<div class="page-header">
+			<h1>
+				<i class="md md-list"></i>
+				Liste de des présentations
+			</h1>
+			<p class="lead">Cette liste affiche la liste des présentations.</p>
+		</div>
+
+		<div class=""></div>
+
+
+		<h5 class="grey-text">
+			<i class="md md-view-module"></i>
+			Présentations</h5>
+		<div class="row gutter-14 kpi-dashboard d-none">
+
+			<div class="col-md-12">
+				<div class="row">
+
+					<div class="col-md-12">
+						<div class="card small">
+							<div class="green lighten-1 p-10">
+								<div class="pull-right d-none">
+									<div>
+										<i class="md md-trending-up  text-rgb-5"></i>
+										9%
+									</div>
+								</div>
+								<h4 class="no-margin white-text w600">Scans uniques effectués</h4>
+								<div class="f11 d-none" style="opacity:0.8">
+									<i class="md md-star-outline"></i>
+									Dernier scan
+									{{data.stats.last_scan | date('d/m/Y à H:i:s')}}
+								</div>
+								<div class="p-10 p-t-30">
+									{{ data.scans | length }}
+									personnes ont été scannées.
+									<div id="chart-line-3-0"></div>
+								</div>
+							</div>
+							<div class="card-content p-10">
+								<div class="row">
+									<div class="col-md-4 text-center" style="border-right: 1px #F0F0F0 solid;">
+										<h3 class="no-margin w300">
+											{{ data.scans_01 | length }}</h3>
+										<p class="grey-text w600">09/12/2021</p>
+									</div>
+									<div class="col-md-4 text-center" style="border-right: 1px #F0F0F0 solid;">
+										<h3 class="no-margin w300">{{ data.scans_02 | length }}</h3>
+										<p class="grey-text w600">10/12/2021</p>
+									</div>
+									<div class="col-md-4 text-center">
+										<h3 class="no-margin w300">{{ data.scans_03 | length }}
+										</h3>
+										<p class="grey-text w600">11/12/2021</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+
+		<div class="card">
+			<div>
+				<!-- onclick="window.location.href=('{{path_for('one_user', { 'id':user.id })}}')"  -->
+				<div class="datatables">
+					<table id="example" class="table table-full table-full-small" cellspacing="0" width="100%">
+						<thead>
+							<tr>
+								<th>Nom</th>
+								<th>Titre</th>
+								<th>Sujet</th>
+								<th>Fichier</th>
+								<th></th>
+							</tr>
+						</thead>
+
+						<tfoot>
+							<tr>
+								<th>Nom</th>
+								<th>Titre</th>
+								<th>Sujet</th>
+								<th>Fichier</th>
+								<th></th>
+							</tr>
+						</tfoot>
+
+						<tbody>
+							{% for presentation in data.presentations %}
+								<tr>
+									<td>
+										{{presentation.name}}
+									</td>
+
+									<td>{{presentation.title}}</td>
+									<td>{{presentation.subject}}</td>
+									<td> 
+                                    <a target="_blank" href="https://sosecar.com/uploads/presentations/{{presentation.file}}">afficher</a>
+                                    </td>
+									<td>    
+                                        <div class="switch">
+                                            <label class="filled">
+                                                Actif
+                                                <input type="checkbox" 
+                                                id="activer_{{presentation.id}}" 
+                                                name="activer_{{presentation.id}}"
+                                                class="js_status_pres"
+                                                data-presentation-id = "{{presentation.id}}"
+                                                data-presentation-status = "{{presentation.status}}"
+                                                {% if presentation.status == 1 %}
+                                                checked 
+                                                {% else %}
+                                                {% endif %}
+                                                
+                                                >
+                                                <span class="lever"></span>
+                                            </label>
+                                        </div>
+                                    
+                                    </td>
+								</tr>
+							{% endfor %}
+						</tbody>
+
+					</table>
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+{% endblock %}
+

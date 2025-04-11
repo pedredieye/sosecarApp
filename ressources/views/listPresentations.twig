@@ -1,0 +1,52 @@
+{% extends 'templates/participantLayout.twig' %}
+
+{% block page_title %}Liste des présentations | SOSECAR
+{% endblock %}
+{% block main_page_title %}Liste des présentations <br> <span style="font-size:22px; font-weight:500; line-height:24px">3ème édition du congrès Cardiotech Sénégal <br> 2ème congrès de l'ASCAOC </span>
+{% endblock %}
+{% block page_content %}
+
+
+	<div class="site-section bg-program pl-lg-90" id="about-section">
+		<div class="container">
+			<div class="row justify-content-center">
+                <ul class="document_list">
+                    {% for presentation in data.presentations %}
+                        
+                        <li class="document mb-3"> 
+                            <a href="{{domain_url}}/uploads/presentations/{{presentation.file}}" target="_blank" class="one-pres">
+                            <span class="pres-title">{{presentation.title}}</span>
+                            <span class="pres-name"> {{presentation.subject}}, {{presentation.name}} </span>
+                            
+                            </a> 
+                        </li>
+                    {% endfor %}
+
+                    {% if data.presentations | length < 1 %} 
+                    <div class="fh">
+                        <!-- Start error page -->
+                        <div class="error-area pt-100 pb-50">
+                            <div class="container">
+                                <div class="error-content">  
+                                    <h1>4 <span>0</span> 4</h1>
+                                    <h2>Aucune présentation disponible !</h2>
+                                    <a href="{{path_for('home')}}" class="default-btn">Accueil</a>   
+                                </div> 
+                            </div>
+                        </div>
+                        <!-- End error page -->
+                    
+                    </div>
+                    {% endif %}
+                    
+
+                </ul>
+			</div>
+		</div>
+
+		
+	</div>
+
+	
+{% endblock %}
+

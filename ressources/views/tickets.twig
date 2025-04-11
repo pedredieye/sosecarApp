@@ -1,0 +1,231 @@
+{% extends 'templates/layoutpage.twig' %}
+{% block page_title %}Inscription | SOSECAR{% endblock %}
+{% block main_page_title %}Inscrivez-vous{% endblock %}
+
+{% block page_content %}
+{% if (  true ) %}
+     <!-- Start Coming Soon -->
+        <div class="coming-soon-area ptb-100">
+            <div class="container">
+                <div class="coming-soon-content">
+                    <div class="inoc-notif {{data.class}}"><span>{{data.icon | raw}}</span> </div>
+                   
+                    <h2>Inscriptions clôturées </h2>
+                    <p>Nous vous donnons rendez-vous à la prochaine édition.</p> 
+
+                    <div class="box-button">
+                        <a href="{{path_for('home')}}" class="default-btn btn-style-one">Retourner à l'accueil<i class="bx bx-plus"></i></a>
+                        <a href="{{path_for('new_abstract')}}" class="default-btn btn-style-one">Soumettre un abstract<i class="bx bx-plus"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    <!-- End Coming Soon -->
+    {% else %}
+
+ <!-- Start Login Area -->
+        <div class="my-account-area pt-100 pb-100">
+            <div class="container">
+
+                <form class="my-account-content register-form" action="#" id="sos-register" name="sos-register">
+                    <h2>Inscrivez-vous et payez en ligne</h2>
+                    <div class="row">
+                        <div class="col-lg-5">
+                            <div class="form-group">
+                                <label class="input-title" for="fname">Prénom(s)</label>
+                                <input type="text" id="fname" name="fname" class="form-control" placeholder="Prénom(s)">
+                            </div>
+                        </div>
+                        <div class="col-lg-5">
+                            <div class="form-group">
+                                <label class="input-title" for="lname">Nom</label>
+                                <input type="text" id="lname" name="lname" class="form-control" placeholder="Nom">
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="form-group">
+                                <label class="input-title" for="gender">Genre</label>
+                                <select class="select-product nselect" name="gender" id="gender">
+                                    <option value="male">Homme</option>
+                                    <option value="female">Femme</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label class="input-title" for="country">Pays</label>
+                                <select class="select-product to-select2" name="country" id="country">
+                                    {% for country in data.countries %}
+                                        <option value="{{country.id}}" data-phone-code="{{country.phonecode}}" {% if country.iso2 == "SN" %}selected{% endif %}>{{country.emoji}}&nbsp;{{country.name}}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label class="input-title" for="country">Ville</label>
+                                <select class="select-product to-select2" name="state" id="state">
+                                    {% for state in data.states %}
+                                        <option value="{{state.id}}" >{{state.name}}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label class="input-title" for="email">Email</label>
+                                <input type="email" class="form-control" id="email" name="email"  placeholder="Addresse email">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label class="input-title" for="phone">Téléphone</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                    <span class="input-group-text" id="ind-addon">+221</span>
+                                    </div>
+                                    <input type="phone" id="phone" name="phone" aria-label="phone" aria-describedby="ind-addon" placeholder="Téléphone">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group with-s">
+                                <label class="input-title" for="job">Fonction</label>
+                                <select class="select-product to-select2" name="job" id="job">
+                                    <option value="">Choisir une fonction</option>
+                                    {% for job in data.jobs %}
+                                        <option value="{{job.id}}">{{job.job_title}}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="form-group with-s">
+                                <label class="input-title" for="title">Titre</label>
+                                <select class="select-product to-select2" name="title" id="title">
+                                    <option value="">Choisir un titre</option>
+                                    {% for title in data.titles %}
+                                        <option value="{{title.id}}">{{title.title}}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label class="input-title" for="specialite">Spécialité</label>
+                                <input type="text" id="specialite" name="specialite" class="form-control" placeholder="Spécialité">
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label class="input-title" for="structure">Structure</label>
+                                <input type="text" id="structure" name="structure" class="form-control" placeholder="Structure">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <div class="radio-box radio-with-price">
+                                    <label class="input-title d-block" for="formule">Votre formule</label>
+                                    <div class="pretty p-default p-curve">
+                                        <input type="radio" name="formule" value="1" {% if data.formule == 1 %}checked{% endif %} />
+                                        <div class="state p-primary-o">
+                                            <label><div class="radio-box-with-price">Spécialistes <span class="radio-price">150 000 FCFA</span></div> </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="pretty p-default p-curve">
+                                        <input type="radio" name="formule" value="2" {% if data.formule == 2 %}checked{% endif %}/>
+                                        <div class="state p-primary-o">
+                                            <label><div class="radio-box-with-price">Généralistes, DES et internes <span class="radio-price">75 000 FCFA</span></div> </label>
+                                        </div>
+                                    </div>
+
+                                        <div class="pretty p-default p-curve">
+                                        <input type="radio" name="formule" value="3" {% if data.formule == 3 %}checked{% endif %} />
+                                        <div class="state p-primary-o">
+                                            <label><div class="radio-box-with-price">Paramédicaux <span class="radio-price">50 000 FCFA</span></div> </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <div class="radio-box radio-with-price">
+                                    <label class="input-title d-block" for="">Êtes-vous membre de la SOSECAR ?</label>
+                                    <div class="pretty p-default p-curve">
+                                        <input type="radio" name="member_or_not" value="1" />
+                                        <div class="state p-primary-o">
+                                            <label>Oui</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="pretty p-default p-curve">
+                                        <input type="radio" name="member_or_not" value="0" checked />
+                                        <div class="state p-primary-o">
+                                            <label>Non</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {#
+                    <div class="image-payment">
+                        <img src="/src/img/payments.png" alt="">
+                    </div>
+
+
+                    #}
+                    <div class="col-lg-12">
+                        <button type="submit" class="default-btn btn-style-fore">Passer à l'étape suivante</button>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12 text-center mt-3">
+                            <div class="alert sa-alert-form alert-primary d-none" role="alert" id="alert-register">
+                                ...
+                            </div>
+                        </div>
+                    </div>
+                    <p>Vous avez déjà un compte ? <a href="{{path_for('p_login')}}">Connectez-vous</a></p>
+
+                    </div>
+
+                </form>
+
+               
+
+            </div>
+        </div>
+        <!-- End Login Area -->
+
+    {% endif %}
+
+       
+
+
+
+{% endblock %}

@@ -1,0 +1,177 @@
+{% extends 'templates/layout.twig' %}
+{% block page_title %}Liste des participants{% endblock %}
+{% block active_participant %}active{% endblock %}
+{% block all_participant_active %}active{% endblock %}
+{% block collapse_in %}in{% endblock %}
+{% block page_title_breadcrumb %}Liste des participants{% endblock %}
+{% block content %}
+
+
+    <section class="tables-data">
+      <div class="page-header">
+        <h1>      <i class="md md-list"></i> Liste de tous les participants   </h1>
+        <p class="lead">Cette liste affiche la liste des inscriptions que vous avez ajoutées.</p>
+      </div>
+      <div class="card">
+        <div>
+        <!-- onclick="window.location.href=('{{path_for('one_participant', { 'id':participant.id , 'ticketNumber':participant.ticket_number})}}')"  -->
+          <div class="datatables">
+            <table id="example" class="table table-full table-full-small" cellspacing="0" width="100%">
+              <thead>
+                <tr>
+                  <th width="">ID</th>
+                  <th width="14%">Participant</th>
+                  <th width="13%">Contact</th>
+                  <th width="10%">Pays</th>
+                  {#
+                  <th width="23%" class="pc-column">Pré-congrès</th>
+                  #}
+                  <th width="23%" class="c-column">Congrès</th>
+                  {#
+                  <th width="">Reçu</th>
+                  #}
+                  <th width="5%">Type d'accès</th>
+                  {% if usr.role_id <= 2 %}  <th width="13%">Ajouté par</th>{% endif %}
+                  <th width="18%">Statut du&nbsp;compte</th>
+                  <th width="10%">Paiements</th>
+                  <th width="7%" class="o-column">Options</th>
+                </tr>
+              </thead>
+              <tfoot>
+                <tr>
+                  <th>ID</th>
+                  <th>Participant</th>
+                  <th>Contact</th>
+                  <th>Pays</th>
+                  {#
+                  <th>Pays</th>
+                  <th class="pc-column">Pré-congrès</th>
+                  #}
+                  <th class="c-column">Congrès</th>
+                  {#
+                  <th width="">Reçu</th>
+                  #}
+                  <th>Type d'accès</th>
+                  {% if usr.role_id <= 2 %}  <th>Ajouté par</th>{% endif %}
+                  <th>Statut</th>
+                  <th class="o-column">Options</th>
+                </tr>
+              </tfoot>
+              <tbody>
+              {% for participant in data.participants %}
+
+                {% if participant.payment_method == "free" %}
+                    {% set tag_tp_name = "Invitation" %} 
+                    {% set class_tag = "spa_inv" %} 
+                {% else %}
+                    {% set tag_tp_name = "Payant" %} 
+                    {% set class_tag = "spa_payed" %} 
+                {% endif %}
+
+                {% if participant.payment_status == "" %}
+                {% else %}
+                {% endif %}
+
+                <tr>
+                  <td class="ml-2" >{{participant.id}}</td>
+                  <td class="ml-2 blur" >{{participant.first_name}} {{participant.last_name}}</td>
+                  <td class=" blur">{{participant.email}} <br>{{participant.phone}} </td>
+                  <td class=" blur">{{participant.country.name}} </td>
+                  {#<td >{{participant.country.name}}</td>
+                  <td data-sort="{{data.forumulespc[participant.formule_pc]}}" class="pc-column blur">
+                    <span class="cl-status cl-{{participant.payment_status_pc}}">{{payment_status[participant.payment_status_pc]}}</span>
+                    {% if participant.formule_pc %}
+                     <span class="cl-amount  blur"> {{data.forumulespc[participant.formule_pc] | number_format(0, '.', ' ')}} FCFA</span>
+                    {% endif %}
+
+                    {% if get.e == "e" or 3==3 %}
+                      <div class="action-box">
+                        {% if participant.ticket_number_pc != Null %}
+                          {% if participant.payment_status_pc != "completed" %}
+                              <a href="{{path_for('init_pre_congres_validation_participant',{'id':participant.id})}}" class="bo-btn-action primary" data-toggle="tooltip" data-placement="left" data-original-title="Valider la réservation"> <i class='bx bx-check' > </i>Valider</a>
+                          {% endif %}
+                          {% if participant.payment_status_pc != "completed" and 3==4 %}
+                            <a href="{{path_for('init_cancel_pre_congres_participant',{'id':participant.id})}}" class="bo-btn-action secondary" data-toggle="tooltip" data-placement="left" data-original-title="Annuler la réservation"> <i class='bx bx-x' ></i>Annuler</a>
+                          {% endif %}
+                        {% endif %}
+                      </div>
+                    {% endif %}
+
+
+                  </td>
+                  #}
+                  <td class="c-column" data-sort="{{data.formules[participant.formule]}}">
+                    <span class="cl-status cl-{{participant.payment_status}}">{{payment_status[participant.payment_status]}}</span>
+                    {% if participant.formule %}
+                    <span class="cl-amount  blur">
+                    {{data.formules[participant.formule] | number_format(0, '.', ' ')}} FCFA
+                    </span>
+                    {% endif %}
+
+                     {% if get.e == "e" or 3==3 %}
+                      <div class="action-box">
+                      {% if participant.ticket_number != Null %}
+                          {% if participant.payment_status != "completed" %}
+                              <a href="{{path_for('init_validation_participant',{'id':participant.id})}}" class="bo-btn-action primary" data-toggle="tooltip" data-placement="left" data-original-title="Valider la réservation"> <i class='bx bx-check' > </i>Valider</a>
+                          {% endif %}
+
+                          {% if participant.payment_status != "completed" and 3==4  %}
+                            <a href="{{path_for('init_cancel_participant',{'id':participant.id})}}" class="bo-btn-action secondary" data-toggle="tooltip" data-placement="left" data-original-title="Annuler la réservation"> <i class='bx bx-x' ></i>Annuler</a>
+                          {% endif %}
+                        {% endif %}
+                      </div>
+                    {% endif %}
+
+                  </td>
+                  {#
+                  <td>{{participant.num_recu}}</td>
+                  #}
+                  <td class="" data-sort="{{data.formules[participant.formule]}}">
+                   <span class="spa_tag {{class_tag}}">{{tag_tp_name}}</span>
+                  </td>
+                  {% if usr.role_id <= 2 %}
+                    <td>
+                      {% if participant.addedby | length == 1 %}
+                        Depuis le site
+                      {% else %}
+                        {{participant.addedby.first_name}} {{participant.addedby.last_name}}
+                      {% endif %}
+                    </td>
+                    {% endif %}
+                  <td> 
+                    <span class="spa_status  {% if participant.etat.id == 2 %} spa_status_payed{% endif %}  {% if participant.etat.id == 1 %} spa_status_waiting{% endif %} "> 
+                    {{participant.etat.status | raw}}
+                    </span>
+                  </td>
+
+                  <td>
+                      {% if participant.etat.id != 2 %} - {% endif %}  
+                      {% if participant.etat.id == 2 and participant.payment_method == "offline" %}<span class="payed-by-secretaire"> Par&nbsp;le&nbsp;secretariat</span> {% endif %}  
+                      {% if participant.etat.id == 2 and participant.payment_method == "paydunya_by_participant" %} <span class="payed-by-participant">Par&nbsp;le&nbsp;participant </span> {% endif %}  
+                  </td>
+
+                  <td style="text-align:center; "  class="o-column">
+                    <div class="action-box-row">
+                      {% if participant.status == 1 and 3==2%}
+                          <a href="{{path_for('init_validation_participant',{'id':participant.id})}}"> <button type="button"   class="btn- btn-link- bo-btn-action" data-toggle="tooltip" data-placement="top" data-original-title="Valider"><i class="md md-done"></i> Valider</button></a>
+                      {% endif %}
+
+                      {% if usr.role_id <= 2 %}
+                        <button type="button" onclick="window.location.href='{{path_for('edit_participant', {'id':participant.id})}}'" class="btn- btn-link- bo-btn-action default" data-toggle="tooltip" data-placement="top" data-original-title="Modifier les informations du compte"><i class='bx bxs-edit-alt' ></i>Modifier</button>
+                        {% if participant.status == 1 %}
+                          <button type="button" onclick="window.location.href='{{path_for('del_participant', {'id':participant.id})}}'" class="btn- btn-link- bo-btn-action secondary" data-toggle="tooltip" data-placement="top" data-original-title="Supprimer le compte"><i class='bx bx-trash' ></i> Supprimer</button>
+                        {% endif %}
+                      {% endif %}
+                      </div>
+
+                  </td>
+                </tr>
+              {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+{% endblock %}

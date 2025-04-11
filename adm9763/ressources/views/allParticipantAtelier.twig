@@ -1,0 +1,102 @@
+{% extends 'templates/layout.twig' %}
+{% block page_title %}Liste des participants{% endblock %}
+{% block active_participant %}active{% endblock %}
+{% block all_participant_active %}active{% endblock %}
+{% block collapse_in %}in{% endblock %}
+{% block page_title_breadcrumb %}Liste des participants{% endblock %}
+{% block content %}
+
+
+    <section class="tables-data">
+      <div class="page-header">
+        <h1>      <i class="md md-list"></i> Liste de tous les participants   </h1>
+        <p class="lead">Cette liste affiche la liste des inscriptions que vous avez ajoutées.</p>
+      </div>
+      <div class="card">
+        <div>
+        <!-- onclick="window.location.href=('{{path_for('one_participant', { 'id':participant.id , 'ticketNumber':participant.ticket_number})}}')"  -->
+          <div class="datatables">
+            <table id="example" class="table table-full table-full-small" cellspacing="0" width="100%">
+              <thead>
+                <tr>
+                  <th width="1%">ID</th>
+                  <th width="15%">Participant</th>
+                  <th width="10%">Contact</th>
+                  <th width="64%">Activités</th>
+                  {#
+                  <th width="10%" class="c-column">Statut</th>
+                  <th width="10%" class="o-column">Options</th>
+                  #}
+                </tr>
+              </thead>
+              <tfoot>
+                <tr>
+                  <th>ID</th>
+                  <th>Participant</th>
+                  <th>Contact</th>
+                  <th>Activités</th>
+                  {#
+                  <th class="c-column">Statut</th>
+                  <th class="o-column">Options</th>
+                  #}
+                </tr>
+              </tfoot>
+              <tbody>
+              {% for participant in data.participants %}
+
+                <tr>
+                  <td class="ml-2" >{{participant.id}}</td>
+                  <td class="ml-2 blur" >{{participant.first_name}} {{participant.last_name}}</td>
+                  <td class=" blur">{{participant.email}} </td>
+                  {#<td >{{participant.country.name}}</td>#}
+
+                  <td data-sort="null" class="pc-column blur">
+
+                    {% if participant.activity_1_status and participant.activity_1_status == 1 %}
+                     <span class="activity-badge activity-1"> {{data.activities[1]}} </span>
+                    {% endif %}
+
+                    {% if participant.activity_2_status and participant.activity_2_status == 1 %}
+                     <span class="activity-badge activity-2"> {{data.activities[2]}} </span>
+                    {% endif %}
+
+                    {% if participant.activity_3_status and participant.activity_3_status == 1 %}
+                     <span class="activity-badge activity-3"> {{data.activities[3]}} </span>
+                    {% endif %}
+
+                    {% if participant.activity_4_status and participant.activity_4_status == 1 %}
+                     <span class="activity-badge activity-4"> {{data.activities[4]}} </span>
+                    {% endif %}
+
+                    {% if participant.activity_5_status and participant.activity_5_status == 1 %}
+                     <span class="activity-badge activity-2"> {{data.activities[5]}} </span>
+                    {% endif %}
+                   
+                  </td>
+                  {#
+                  <td> 
+                    <span class="spa_status  {% if participant.etat.id == 2 %} spa_status_payed{% endif %}  {% if participant.etat.id == 1 %} spa_status_waiting{% endif %} "> 
+                    {{participant.etat.status | raw}}
+                    </span>
+                  </td>
+
+
+                  <td style="text-align:center; "  class="o-column">
+                    <div class="action-box-row">
+                      {% if participant.status == NULL %}
+                          <a href="{{path_for('init_validation_participant',{'id':participant.id})}}"> <button type="button"   class="btn- btn-link- bo-btn-action" data-toggle="tooltip" data-placement="top" data-original-title="Valider"><i class="md md-done"></i> Valider</button></a>
+                      {% endif %}
+                    </div>
+                  </td>
+                  #}
+
+                </tr>
+              {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+{% endblock %}

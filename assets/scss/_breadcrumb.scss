@@ -1,0 +1,446 @@
+//page-title-area
+.page-title-area {
+	position: relative;
+	z-index: 1;
+	
+}
+.page-t-height {
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 100%;
+
+	@media #{$laptop} {
+		height: 1000px;
+	}
+
+	@media #{$lg} {
+		height: 800px;
+	}
+
+	@media #{$md} {
+		height: 800px;
+	}
+
+	@media #{$xs} {
+		height: 650px;
+	}
+
+	@media #{$sm} {
+		height: 550px;
+	}
+
+	&::before {
+		content: '';
+		position: absolute;
+		background-color: $white;
+		height: 100%;
+		width: 100%;
+		left: 0;
+		top: 0;
+		z-index: 1;
+
+		@media #{$laptop} {
+			background-color: rgba(0, 0, 0, 0.8);
+		}
+
+		@media #{$lg} {
+			background-color: rgba(0, 0, 0, 0.8);
+		}
+
+		@media #{$md} {
+			background-color: rgba(0, 0, 0, 0.8);
+		}
+
+		@media #{$xs} {
+			background-color: rgba(0, 0, 0, 0.8);
+		}
+	}
+}
+
+//style-text
+.page-style-text {
+	color: white;
+	font-size: 120px;
+	font-family: "Beginning of Summer";
+	font-weight: 100;
+	position: absolute;
+	left: auto;
+	right: 12.8%;
+	top: 57%;
+	transform: translateY(-50%);
+	z-index: 3;
+	@media #{$laptop} {
+		font-size: 100px;
+		left: 60%;
+		right: 0;
+		display: inline-block !important;
+	}
+
+	@media #{$lg} {
+		left: 65%;
+		display: inline-block;
+	}
+}
+.page-title-wrapper {
+	position: relative;
+	z-index: 2;
+
+	& .page-title {
+		color: $black;
+		font-size: 90px;
+		font-weight: 400;
+		display: inline-block;
+		line-height: 1;
+		position: relative;
+		z-index: 1;
+		@media #{$lg} {
+			font-size: 80px;
+		}
+		@media #{$md} {
+			font-size: 70px;
+		}
+
+		@media #{$xs} {
+			font-size: 35px;
+		}
+		@media #{$sm} {
+			font-size: 45px;
+		}
+		& .round-line {
+			position: relative;
+			display: inline-block;
+			&::before {
+				position: absolute;
+				content: '';
+				left: -26px;
+				top: -22px;
+				background: url(../img/shape/cr1a.svg) no-repeat;
+				width: 201px;
+				height: 137px;
+				z-index: -1;
+				@media #{$lg} {
+					display: none;
+				}
+				@media #{$md} {
+					display: none;
+				}
+				@media #{$xs} {
+					display: none;
+				}
+			}
+		}
+	}
+	& .sub-title {
+		color: rgba(6, 6, 6, 0.8);
+	}
+	& h5 {
+		font-family: $circular;
+		font-weight: 500;
+		color: $black;
+		position: relative;
+		z-index: 1;
+		padding-left: 40px;
+		
+		&::before {
+			content: '';
+			position: absolute;
+			background: #233D63;
+			width: 20px;
+			height: 2px;
+			left: 0;
+			top: 10px;
+			z-index: 1;
+			@media #{$laptop} {
+				background: $white;
+			}
+
+			@media #{$lg} {
+				background: $white;
+			}
+
+			@media #{$md} {
+				background: $white;
+			}
+
+			@media #{$xs} {
+				background: $white;
+			}
+		}
+		& span {
+			color: #939393;
+			font-family: $circularbook;
+			font-weight: 400;
+			@media #{$laptop} {
+				color: $white;
+			}
+			@media #{$lg} {
+				color: $white;
+			}
+			@media #{$md} {
+				color: $white;
+			}
+			@media #{$xs} {
+				color: $white;
+			}
+		}
+	}
+}
+
+//page-wrapper-white
+
+.page-wrapper-white {
+	& .page-title {
+		@media #{$laptop} {
+			color: $white;
+		}
+
+		@media #{$lg} {
+			color: $white;
+		}
+
+		@media #{$md} {
+			color: $white;
+		}
+
+		@media #{$xs} {
+			color: $white;
+		}
+	}
+	& .sub-title {
+		@media #{$laptop} {
+			color: $white;
+		}
+
+		@media #{$lg} {
+			color: $white;
+		}
+
+		@media #{$md} {
+			color: $white;
+		}
+
+		@media #{$xs} {
+			color: $white;
+			line-height: 1.3;
+		}
+	}
+	& h5 {
+		@media #{$laptop} {
+			color: $white;
+		}
+
+		@media #{$lg} {
+			color: $white;
+		}
+
+		@media #{$md} {
+			color: $white;
+		}
+
+		@media #{$xs} {
+			color: $white;
+		}
+	}
+}
+.page-title-img {
+	background-size: cover;
+	background-repeat: no-repeat;
+	position: absolute;
+	width: 900px;
+	min-height: 901px;
+	right: 0;
+	top: 0;
+	z-index: 1;
+	@media #{$laptop} {
+		width: 100%;
+		display: none;
+	}
+	@media #{$lg} {
+		width: 100%;
+		display: none;
+	}
+	@media #{$md} {
+		width: 100%;
+		min-height: 820px;
+		display: none;
+	}
+	@media #{$xs} {
+		width: 100%;
+		min-height: 650px;
+		display: none;
+	}
+	@media #{$sm} {
+		width: 100%;
+		min-height: 700px;
+		display: none;
+	}
+	&::before {
+		content: '';
+		position: absolute;
+		background: url(../img/page-title/page-shape.png) no-repeat;
+		width: 100%;
+		height: 100%;
+		left: 0;
+		top: 0;
+		z-index: 1;
+		@media #{$laptop} {
+			display: none;
+		}
+		@media #{$lg} {
+			display: none;
+		}
+		@media #{$md} {
+			display: none;
+		}
+		@media #{$xs} {
+			display: none;
+		}
+	}
+	&::after {
+		content: '';
+		position: absolute;
+		background: rgba(0, 0, 0, 0.2);
+		height: 100%;
+		width: 100%;
+		left: 0;
+		top: 0;
+		z-index: -1;
+	}
+	& .title-text {
+		left: 27%;
+		top: 56%;
+		@media #{$laptop} {
+			left: 60%;
+		}
+		@media #{$lg} {
+			left: 65%;
+		}
+	}
+}
+
+.page-title-car {
+	@media #{$lg} {
+		min-height: 850px !important;
+	}
+	@media #{$md} {
+		min-height: 650px !important;
+	}
+	@media #{$xs} {
+		min-height: 500px !important;
+	}
+	@media #{$sm} {
+		min-height: 500px !important;
+	}
+}
+
+
+//page-title-2
+.page-title-2 {
+	& h1 {
+		@media #{$lg} {
+			font-size: 85px !important;
+		}
+		& .round-line {
+			&::before {
+				left: -24px;
+				top: -55px;
+				background: url(../img/shape/cr5.svg) no-repeat;
+				width: 251px;
+				height: 159px;
+			}
+		}
+	}
+}
+
+.page-area-two {
+	& .page-title-img {
+		min-height: 827px;
+		&::before {
+			background: url(../img/page-title/page-shape2.png) no-repeat;
+		}
+	}
+	@media #{$lg} {
+		height: 690px;
+	}
+	@media #{$md} {
+		height: 600px;
+	}
+	@media #{$xs} {
+		height: 650px;
+	}
+	@media #{$sm} {
+		height: 500px;
+	}
+}
+
+.page-wrapper-team {
+	& .page-title {
+		& .round-line {
+			&::before {
+				position: absolute;
+				content: '';
+				z-index: -1;
+				left: -26px;
+				top: -37px;
+				background: url(../img/shape/cr7.svg) no-repeat;
+				width: 277px;
+				height: 144px;
+				@media #{$laptop} {
+					display: none;
+				}
+				@media #{$lg} {
+					display: none;
+				}
+				@media #{$md} {
+					display: none;
+				}
+			}
+		}
+	}
+} 
+
+.page-title-blog {
+	& .page-title {
+		@media #{$lg} {
+			font-size: 80px;
+		}
+		& .round-line {
+			&::before {
+				left: -36px;
+				top: -42px;
+				background: url(../img/shape/cr6.svg) no-repeat;
+				width: 278px;
+				height: 158px;
+			}
+		}
+	}
+} 
+
+//page-insuracne
+.page-insuracne {
+	&.page-style-text {
+		@media #{$laptop} {
+			font-size: 90px;
+		}
+	}
+	@media #{$lg} {
+		height: 624px;
+	}
+	@media #{$md} {
+		height: 624px;
+	}
+	@media #{$xs} {
+		height: 550px;
+	}
+	@media #{$sm} {
+		height: 500px;
+	}
+}
+
+
+.before-overlay {
+	&::before {
+		display: none;
+	}
+}

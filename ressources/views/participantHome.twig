@@ -1,0 +1,233 @@
+{% extends 'templates/participantLayout.twig' %}
+
+{% block page_title %}Mon tableau de bord | SOSECAR{% endblock %}
+{% block main_page_title %}Mon code d'accès{% endblock %}
+{% block page_content %}
+
+
+
+
+    <div class="site-section bg-program pl-lg-90" id="about-section" >
+        {% if 4==3  %}
+
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-4 col-sm-12 d-flex justify-content-center">
+              <a href="https://medicallearninghub.zoom.us/j/99221912895" target="_blank" data-salle-id="1" class="link-live">Accéder au live de la salle plénière <i class="mdi mdi-open-in-new"></i> </a>
+            </div>
+
+            <div class="col-lg-4 col-sm-12 d-flex justify-content-center">
+              <a href="https://medicallearninghub.zoom.us/j/96590588508" target="_blank" data-salle-id="2" class="link-live">Accéder au live de la salle 01 <i class="mdi mdi-open-in-new"></i>  </a>
+            </div>
+
+            <div class="col-lg-4 col-sm-12 d-flex justify-content-center">
+              <a href="https://medicallearninghub.zoom.us/j/92721211229" target="_blank" data-salle-id="5" class="link-live">Accéder au live de la salle 02 <i class="mdi mdi-open-in-new"></i>  </a>
+            </div>
+          </div>
+        </div>
+        {% endif %}
+
+      <div class="container">
+        <div class="row mb-1">
+          <div class="col-12 text-center">
+          </div>
+        </div>
+        <div class="row mb-1">
+          <div class="col-lg-12" data-aos="fade-right">
+            <h1 class="section-title text-white text-center title-prog" >Mon code d'accès</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="site-section" id="le-programme-section" style="min-height:calc(100vh - 460px); ">
+
+
+
+      <div class="container">
+
+        {% if usr['payment_status_pc'] == "started" %}
+          <div class="cta-pay">
+              <div class="container">
+                  <div class="row cta-row">
+                      <div class="col-lg-9 col-md-9">
+                          <h2> Vous n'avez pas encore finalisé votre inscription pour participer aux ateliers du pré-congrès. </h2>
+                        <p> Cette étape est nécesaire pour accéder aux ateliers prévus du 07 au 10 décembre 2023.</p> 
+                      </div>
+
+                      <div class="col-lg-3 col-md-3">
+                        <div class="box-button">
+                            <a href="{{domain_url}}/pay/init/precongres/{{participant.ref}}" class="default-btn ">Procéder au paiement <i class="bx bx-plus"></i></a>
+                        </div>
+                      </div>
+                      
+                  </div>
+              </div>
+          </div> 
+        {% endif %}
+        {% if usr['payment_status'] == "started" %}
+          <div class="cta-pay">
+              <div class="container">
+                  <div class="row cta-row">
+                      <div class="col-lg-9 col-md-9">
+                          <h2> Vous n'avez pas encore finalisé votre inscription pour participer aux activités du congrès. </h2>
+                        <p> Cette étape est nécesaire pour accéder aux activités prévues du 16 au 18 décembre 2024.</p> 
+                      </div>
+
+                      <div class="col-lg-3 col-md-3">
+                        <div class="box-button">
+                            <a href="{{domain_url}}/pay/init/congres/{{participant.ref}}" class="default-btn ">Procéder au paiement <i class="bx bx-plus"></i></a>
+                        </div>
+                      </div>
+                      
+                  </div>
+              </div>
+          </div> 
+        {% endif %}
+
+        {% if usr['payment_status'] != "completed" and usr['payment_status_pc'] != "completed"  %}
+          <div class="coming-soon-area ptb-100">
+              <div class="container">
+                  <div class="coming-soon-content">
+                      <div class="inoc-notif {{data.class}}"><span>{{data.icon | raw}}</span> </div>
+                    
+                      <h2>Vous n'avez pas encore finalisé votre inscription pour participer aux activités du congrès. </h2>
+                      <p> Cette étape est nécesaire pour accéder à votre Code QR.</p> 
+                    {#
+                      <div class="box-button">
+                          <a href="{{domain_url}}/pay/init/congres/{{participant.ref}}" class="default-btn ">Finaliser mon inscription <i class="bx bx-plus"></i></a>
+                      </div>
+                      #}
+                  </div>
+              </div>
+          </div> 
+
+        {% elseif usr['payment_status_pc'] != "completed" and usr['payment_status'] == null %}
+
+         <div class="coming-soon-area ptb-100">
+              <div class="container">
+                  <div class="coming-soon-content">
+                      <div class="inoc-notif {{data.class}}"><span>{{data.icon | raw}}</span> </div>
+                    
+                      <h2> Vous n'avez pas encore finalisé votre inscription pour participer aux ateliers du pré-congrès. </h2>
+                      <p> Cette étape est nécesaire pour accéder à votre Code QR.</p> 
+
+                    {#
+                      <div class="box-button">
+                          <a href="{{domain_url}}/pay/init/precongres/{{participant.ref}}" class="default-btn ">Finaliser mon inscription <i class="bx bx-plus"></i></a>
+                      </div>
+                      #}
+                  </div>
+              </div>
+          </div> 
+        
+        {% else %}
+          
+          {% if paticipant.flag_gen_badge or 3 == 3 %}
+
+            <div class="row site-section pt-0 pb-2">
+
+              <div class="col aos-init aos-animate text-center"  data-aos="fade-up">
+              </div>
+
+              <div class="col-md-12 text-center mt-3">
+                <div class="alert sa-alert-form alert-primary d-none" role="alert" id="gen-badge-notif">
+                  ...
+                </div>
+              </div>
+
+            </div>
+
+          {% endif %}
+      
+      
+
+
+
+        <div class="events-details-area participant-details pt-100 pb-70">
+            <div class="container">
+                <div class="row">
+                      <div class="col-lg-6">
+                        <div class="event-details-right-content">
+                            <div class="event-information-card">
+                                <h2>Mes informations</h2>
+                                <ul>
+                                   
+                                    <li>
+                                        Nom :<span>{{usr.first_name}} {{usr.last_name}}</span>
+                                    </li>
+                                    <li>
+                                        Téléphone :<span>{{usr.phone}}</span> 
+                                    </li>
+                                    <li>
+                                        Email :<span>{{usr.email}}</span> 
+                                    </li>
+                                    <li>
+                                        Provenance :<span>{{usr.country.name}}</span> 
+                                    </li>
+                                    <li>
+                                        Billets achetés :<span> {% if usr.payment_status == 'completed' %}{{usr.ticket_number}}{% endif %}{% if usr.payment_status_pc == 'completed' %}{{usr.ticket_number_pc}}{% endif %}  </span> 
+                                    </li>
+                                </ul>
+                            </div>
+                                <a href="#" class="default-btn btn-style-one mr-2 mb-2" id="dwl-bd" data-id="{{participant.id}}" data-name="{{participant.first_name}} {{participant.last_name}}" >Télécharger mon bagde</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="event-details-right-content">
+                            <div class="event-information-card">
+                                <h2>Mon Code QR</h2>
+                                
+                                <div class="col aos-init aos-animate text-center" data-aos="fade-up">
+                                  <img src="{{domain_url}}/ressources/qrcodes/{{participant.qrcode[0].qr_code_link}}" alt="qr_code" class="img-fluid">
+                                </div>
+                            </div>
+                                <a href="{{domain_url}}/ressources/qrcodes/{{participant.qrcode[0].qr_code_link}}" class="default-btn btn-style-one mr-2 mb-2" id="dwl-qrd" download="QR Code {{participant.first_name}} {{participant.last_name}}" >Télécharger mon QR Code</a>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+          {% if true %}
+            <div class="row site-section pt-0 pb-2">
+
+              <div class="col aos-init aos-animate text-center"  data-aos="fade-up">
+                <a href="{{path_for('attestation')}}" class="btn btn-primary mr-2 mb-2" data-id="{{participant.id}}" data-name="{{participant.first_name}} {{participant.last_name}}" >Mon certificat de participation</a>
+              </div>
+
+              <div class="col-md-12 text-center mt-3">
+                <div class="alert sa-alert-form alert-primary d-none" role="alert" id="gen-certif-notif">
+                  ...
+                </div>
+              </div>
+
+            </div>
+          {% endif %}
+          {% if false %}
+           <div class="row site-section pt-0 pb-2">
+
+              <div class="col aos-init aos-animate text-center"  data-aos="fade-up">
+                <a href="#" class="btn btn-primary mr-2 mb-2" id="dwl-cr" data-id="{{participant.id}}" data-name="{{participant.first_name}} {{participant.last_name}}" >Mon certificat de participation</a>
+              </div>
+
+              <div class="col-md-12 text-center mt-3">
+                <div class="alert sa-alert-form alert-primary d-none" role="alert" id="gen-certif-notif">
+                  ...
+                </div>
+              </div>
+
+            </div>
+          {% endif %}
+        {% endif %}
+
+        
+
+
+      </div>
+
+
+    </div>
+{% endblock %}

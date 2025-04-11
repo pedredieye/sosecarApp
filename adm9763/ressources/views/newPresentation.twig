@@ -1,0 +1,92 @@
+{% extends 'templates/layout.twig' %}
+{% block page_title %}Ajouter une présentation
+{% endblock %}
+{% block active_presentation %}active
+{% endblock %}
+{% block presentation_new %}active
+{% endblock %}
+{% block collapse_in_presentation %}in
+{% endblock %}
+{% block page_title_breadcrumb %}Nouvelle présentation
+{% endblock %}
+{% block content %}
+
+	<section class="forms-validation">
+		<div class="page-header">
+			<h1>
+				<i class="md md-group"></i>
+				Nouveau participant
+			</h1>
+			<p class="lead d-none">The
+				<a href="http://1000hz.github.io/bootstrap-validator/" target="_blank">Validator plugin</a>
+				offers automatic form validation configurable via mostly HTML5 standard attributes. It also provides an unobtrusive user experience, because nobody likes a naggy form.</p>
+		</div>
+		<div class="row  m-b-40">
+			<div class="col-md-3 col-md-push-9 ">
+				<h5 class="d-none">Aide</h5>
+				<p class="d-none">
+					Push the submit button to check all the validations at once. Resetting will handle resetting the validation messages.
+				</p>
+			</div>
+			<div class="col-md-8 col-md-pull-3">
+
+				<div class="bs-component">
+					<div class="alert alert-dismissible alert-success d-none" id="alert-form">
+						<button type="button" class="close" data-dismiss="alert">×</button>
+						<h4>Success!</h4>
+						<strong>Well done!</strong>
+						You successfully read
+						<a href="#" class="alert-link">this important alert message</a>.
+					</div>
+				</div>
+
+				<div class="well white" id="forms-validation-container">
+					<div>
+						<form class="form-floating" id="form-validation" name="sos-new-presentation" enctype="multipart/form-data">
+							<fieldset>
+								<legend>Ajouter une nouvelle présentation</legend>
+								<div class="form-group">
+									<label class="control-label">Titre de l'intervantion</label>
+									<input type="text" id="title" name="title" class="form-control" required="" data-error="Titre manquant">
+									<div class="help-block with-errors"></div>
+								</div>
+
+								<div class="form-group">
+									<label class="control-label">Nom complet</label>
+									<input type="text" id="name" name="name" class="form-control" required="" data-error="Nom manquant">
+									<div class="help-block with-errors"></div>
+								</div>
+
+								<div class="form-group">
+									<label class="control-label">Sujet</label>
+									<input type="text" id="subject" name="subject" class="form-control" required="" data-error="Sujet manquant">
+									<div class="help-block with-errors"></div>
+								</div>
+
+
+								<div class="form-group">
+									<label class="control-label" style="top:-20px;">Document (en pdf)</label>
+									<input type="file" id="pj" name="pj" class="form-control" required="" data-error="Fichier manquant" accept=".pdf">
+									<div class="help-block with-errors"></div>
+								</div>
+
+								
+
+								<div class="form-group">
+									<button type="submit" id="btn_submit" class="btn btn-primary">Valider</button>
+									<button type="reset" class="btn btn-default">Réinitialiser</button>
+								</div>
+							</fieldset>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+{% endblock %}
+
+{% block extendjsfooter %}
+
+{% endblock %}
+

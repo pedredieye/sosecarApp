@@ -1,0 +1,730 @@
+/*==================================
+    Dark Theme  CSS
+====================================*/
+.switch-theme-mode {
+    position: fixed;
+    top: 265px;
+    left: 15px;
+    z-index: 999;
+}
+
+/*================================================
+Default CSS
+=================================================*/
+:root {
+    --mainColor: #FB3567;
+    --optionalColor: #2A07F9;
+    --backgroundColor: #111111;
+    --whiteColor: #ffffff;
+    --blackColor: #000000;
+    --transition: all ease 0.7s;  
+}
+
+  
+/*=================================================
+The switch - the box around the slider 
+====================================================*/
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+}
+  
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+}
+  
+.slider.round {
+    border-radius: 50%;
+}
+  
+.slider.round:before {
+    border-radius: 50%;
+}
+  
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 35px;
+    width: 35px;
+    left: 0px;
+    bottom: 4px;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    box-shadow: 0 0px 15px #2020203d;
+    background: white url('../../assets/images/night.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #041c22;
+    background-size: 17px;
+}
+  
+input:checked + .slider {
+    background-color: transparent;
+}
+  
+input:focus + .slider {
+    box-shadow: 0 0 1px  transparent;
+}
+  
+input:checked + .slider:before {
+    transform: translateX(0);
+    background: white url('../../assets/images/sunny.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 18px;
+}
+
+/*===========================================
+Color CSS For Elements 
+=============================================*/
+.theme-dark {
+    body {
+        background-color: var(--backgroundColor);
+        color: #ffffff;
+    }
+    p {
+        color: #ffffff;
+        
+        a {
+            color: #ffffff !important;
+
+            &:hover {
+                color: var(--mainColor) !important;
+            }
+        }
+    }
+    .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+        color: var(--whiteColor) !important;
+
+        a {
+            color: var(--whiteColor) !important;
+
+            &:hover {
+                color: var(--mainColor) !important;
+            }
+        }
+    }
+    ul {
+        li {
+            color: var(--whiteColor) !important;
+            p {
+                color: var(--whiteColor) !important;
+            }
+            a {
+                color: var(--whiteColor) !important;
+            }
+            span {
+                color: var(--whiteColor) !important;
+            }
+        }
+    }
+    span {
+        color: var(--whiteColor) !important;
+    }
+    .navbar-area {
+
+        &.is-sticky {
+            background-color: #041c22;
+        }
+        .main-nav {
+            &.main-style-two  {
+                background-color: #041c22;
+                nav {
+                    border-bottom: none;
+                }
+            }
+        }
+    }
+    .main-nav {
+        background-color: var(--backgroundColor);
+        .logo-light {
+            display: none;
+        }
+        .logo-dark {
+            display: block;
+        } 
+        nav {
+            .navbar-nav {
+                .nav-item {
+                    .nav-link {
+                        i {
+                            color: var(--whiteColor);
+                        }
+                        &:hover {
+                            color: var(--mainColor) !important;
+                            i {
+                                color: var(--mainColor) !important;
+                            }
+                        }
+                        &.active {
+                            color: var(--mainColor) !important;
+                            i {
+                                color: var(--mainColor) !important;
+                            }
+                        }
+                    }
+                    .dropdown-menu {
+                        background-color: var(--blackColor);
+                        .nav-item {
+                            .nav-link {
+                                color: var(--whiteColor) !important;
+                                &:hover {
+                                    color: var(--mainColor) !important;
+                                }
+                                &.active {
+                                    color: var(--mainColor) !important;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .others-option-vg {
+            .option-item { 
+                button {
+                    i {
+                        color: var(--whiteColor);
+                    }
+                }
+                .search-form {
+                    .search-input {
+                        background: var(--blackColor);
+                        color: var(--whiteColor);
+
+                        &::placeholder {
+                            color: var(--whiteColor);
+                        }
+                    }
+                }
+            } 
+        }
+    }
+    .submenu-area {
+        background: #000000;
+    }
+
+    .single-conference-content {
+        .conference-item {
+            .conference-icon {
+                background: var(--blackColor);
+                color: var(--whiteColor);
+            }
+            &:hover {
+                .conference-icon {
+                    background-color: var(--optionalColor);
+                    color: var(--whiteColor);
+                }
+            }
+        }
+    }
+    .single-conference-img {
+        .conference-img-3 {
+            border: 12px solid #FFFFFF;
+            border-bottom: 12px solid #FFFFFF;
+        }
+    }
+    .single-conference-img {
+        .conference-experience {
+            &::before {
+                background: #000000;
+            }
+        }
+    }
+    .banner-three-area {
+        &::before {
+            content: '';
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            top: 0;
+            background: #000;
+            z-index: -1;
+        }
+    }
+    .single-banner-three-content  {
+        p {
+            color: rgba(255, 255, 255, .80) !important;
+        }
+    }
+    .single-conference-card {
+        background: var(--blackColor);
+        .planning-icon {
+            background: #041c22;
+        }
+        &:hover {
+            box-shadow: none;
+            background-color: var(--mainColor);
+            .planning-icon {
+                background-color: var(--optionalColor);
+                color: var(--whiteColor);
+            }
+        }
+    }
+    .conference-schedules-area {
+        background-color: var(--blackColor);
+    }
+    .conference-schedules-tab {
+        .nav {
+            &.nav-tabs {
+                .nav-item {
+                    .nav-link {
+                        color: var(--whiteColor);
+                    }
+                }
+            }
+        }
+    }
+    .conference-schedules-content {
+        &:hover {
+            background: #111111;
+            border-bottom: 1px solid #111111;
+        }
+    }
+    .team-card {
+        .team-list {
+            li {
+                a {
+                    background-color: var(--mainColor);
+                    color: var(--optionalColor);
+                    &:hover {
+                        background-color: var(--optionalColor);
+                        color: var(--whiteColor);
+                    }
+                }
+            }
+        }
+    }
+
+    .testimonials-card {
+        background: var(--blackColor);
+        box-shadow: none;
+        &:hover {
+            background-color: var(--mainColor);
+            .testimonials-icon {
+                img {
+                    filter: invert(100%) sepia(137%) saturate(26%) hue-rotate(297deg) brightness(227%) contrast(109%);
+                }
+            }
+        }
+    }
+    .blog-area {
+        background-color: var(--blackColor);
+    }
+    .blog-hover-content {
+        ul {
+            li {
+                .single-hover-content {
+                    background: var(--backgroundColor);
+                    ul {
+                        li {
+                            img {
+                                transition: var(--transition);
+                            }
+                        }
+                    }
+                    .read-more {
+                        i {
+                            transition: var(--transition);
+                        }
+                    }
+                    &:hover {
+                        background-color: var(--mainColor);
+                        ul {
+                            li {
+                                img {
+                                    filter: invert(100%) sepia(137%) saturate(26%) hue-rotate(297deg) brightness(227%) contrast(109%);
+                                }
+                            }
+                        }
+                        .read-more {
+                            i {
+                                color: var(--whiteColor);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .location-conference-form {
+        background: var(--blackColor);
+        .form-group {
+            .form-control {
+                background-color: var(--backgroundColor);
+                color: var(--whiteColor);
+                &::placeholder {
+                    color: var(--whiteColor);
+                }
+            }
+            .form-select {
+                background-color: var(--backgroundColor);
+                color: var(--whiteColor);
+            }
+        } 
+    }
+    .single-planning-content {
+        background: var(--blackColor);
+        box-shadow: none;
+    }
+    .join-conference-image {
+        .conference-experience {
+            &::before {
+                background: #000;
+            }
+        }
+    }
+    .join-conference-content {
+        .join-conference-card {
+            .join-sponsor-icon {
+                background: var(--blackColor);
+                color: var(--whiteColor);
+            }
+            &:hover {
+                .join-sponsor-icon {
+                    background: var(--mainColor);
+                    color: var(--whiteColor);
+                }
+            }
+        }
+    }
+    .schedules-style-two-area {
+        background: var(--blackColor);
+    }
+    .schedules-style-two-tabs {
+        .nav {
+            &.nav-pills {
+                .nav-item {
+                    .nav-link {
+                        color: var(--whiteColor);
+                    }
+                }
+            }
+        }
+    }
+    .schedules-style-two-content {
+        background: var(--backgroundColor);
+        .digital-schedules-item {
+            .client-speakers {
+                .client-text {
+                    p {
+                        color: var(--whiteColor);
+                    }
+                }
+            }
+        }
+    }
+    .plans-switcher {
+        .toggler {
+            color: var(--whiteColor);
+            &.toggler--is-active {
+                color: var(--mainColor);
+            } 
+        }
+    }
+    .single-plans-table {
+        background-color: var(--blackColor);
+        .plans-header {
+            .price {
+                color: var(--whiteColor);
+            }
+        }
+        &:hover {
+            background-color: var(--optionalColor);
+            box-shadow: none;
+        }
+    }
+    .why-the-conference-content {
+        &.conference-style-two-content {
+            background: var(--blackColor);
+            box-shadow: none;
+        }
+    }
+    .single-blog-style-two-card {
+        .blog-style-two-content {
+            .date {
+                background: var(--blackColor);
+                p {
+                    color: var(--whiteColor);
+                }
+            }
+        }
+    }
+    .single-category-card {
+        background-color: var(--blackColor);
+        border: 1px solid var(--blackColor);
+        &:hover {
+            background: var(--mainColor);
+            border: 1px solid var(--mainColor);
+        }
+    }
+    .event-photo-slider {
+        &.owl-theme {
+            .owl-nav {
+                [class*=owl-] {
+                    background: var(--blackColor);
+                    color: var(--whiteColor);
+                    &:hover {
+                        background-color: var(--optionalColor);
+                        color: var(--whiteColor);
+                    }
+                }
+            }
+        }
+    }
+    .faqs-area {
+        background: var(--blackColor);
+    }
+    .single-faqs-content {
+        .accordion {
+            .accordion-item {
+                .accordion-header {
+                    .accordion-button {
+                        color: var(--whiteColor);
+                        background: var(--backgroundColor);
+                        border: 1px solid var(--backgroundColor);
+                    }
+                }
+            }
+        }
+    }
+    .single-blog-style-three-card {
+        .blog-style-two-content {
+            background: var(--blackColor);
+        }
+    }
+    .blog-style-three-slider {
+        &.owl-theme {
+            .owl-nav {
+                [class*=owl-] {
+                    color: var(--whiteColor);
+                    background-color: var(--blackColor);
+                    &:hover {
+                        background-color: var(--mainColor);
+                    }
+                }
+            }
+        }
+    }
+    .single-events-item {
+        background: var(--blackColor);
+        box-shadow: none;
+        .events-content {
+            ul {
+                .events-list-cart {
+                    background: var(--backgroundColor);
+                }
+            }
+        }
+        &:hover {
+            background-color: var(--mainColor);
+            .events-content {
+                ul {
+                    li {
+                        img {
+                            filter: invert(100%) sepia(137%) saturate(26%) hue-rotate(297deg) brightness(227%) contrast(109%);
+                        }
+                    }
+                    .events-list-cart {
+                        background: var(--optionalColor);
+                    }
+                }
+            }
+        }
+    }
+    .event-information-card {
+        background-color: var(--blackColor);
+        ul {
+            li {
+                border-bottom: 1px solid rgba(221, 221, 221, 0.1);
+                p {
+                    del {
+                        color: var(--whiteColor);
+                    }
+                }
+            }
+        }
+    }
+    .some-faqs-area {
+        .single-faqs-content {
+            .accordion {
+                .accordion-item {
+                    .accordion-header {
+                        .accordion-button {
+                            color: var(--whiteColor);
+                            background: var(--blackColor);
+                            border: 1px solid var(--blackColor);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .sponsors-countdown {
+        .upcoming-list {
+            .live-auctions-countdown {
+                .countdown-content-10 {
+                    p {
+                        color: var(--whiteColor);
+                    }
+                }
+            }
+        }
+    }
+    .my-account-content {
+        .form-control {
+            background-color: var(--backgroundColor);
+            border: 1px solid var(--backgroundColor);
+            color: var(--whiteColor);
+            
+            &::placeholder {
+                color: var(--whiteColor);
+            }
+        }
+        .form-check {
+            .form-check-input {
+                background-color: transparent;
+                border: 1px solid var(--mainColor);
+            }
+            .form-check-label {
+                color: var(--whiteColor);
+            }
+        }
+    }
+    .coming-soon-img {
+        display: block !important;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .coming-img {
+        display: none;
+    }
+    .blog-post-card {
+        background: var(--blackColor);
+        box-shadow: none;
+        .blog-post-text {
+            ul {
+                li {
+                    span {
+                        background: var(--backgroundColor);
+                    }
+                }
+            }
+        }
+    }
+    .blog-post-search {
+        .search-form {
+            .form-control {
+                color: var(--whiteColor);
+
+                &::placeholder {
+                    color: var(--whiteColor);
+                }
+            }
+        }
+    }
+    .recent-posts-card {
+        .recent-posts-item {
+            .recent-text {
+                p {
+                    color: var(--whiteColor);
+                }
+            }
+        }
+    }
+    .single-blog-details-content {
+        .blog-details-comment {
+            background: var(--blackColor);
+            border: 1px solid var(--backgroundColor);
+            &:hover {
+                background-color: var(--optionalColor);
+                border: 1px solid var(--optionalColor);
+            }
+        }
+    }
+    .single-blog-details-content {
+        .leave-comment {
+            .form-group {
+                .form-control {
+                    background: var(--blackColor);
+                    color: var(--whiteColor);
+
+                    &::placeholder {
+                        color: var(--whiteColor);
+                    }
+                }
+            }
+        }
+    }
+    .contact-form-content {
+        .form-group {
+            .form-control {
+                background: var(--blackColor);
+                color: var(--whiteColor);
+
+                &::placeholder {
+                    color: var(--whiteColor);
+                }
+            }
+        }
+    }
+    .contact-form-content {
+        .form-group {
+            .form-check {
+                .form-check-label {
+                    color: var(--whiteColor);
+                    a {
+                        color: var(--whiteColor);
+                    }
+                }
+                .form-check-input {
+                    background-color: transparent;
+                    border: 1px solid var(--mainColor);
+                }
+            }
+        }
+    }
+    .single-contact-card {
+        background: var(--blackColor);
+        box-shadow: none;
+    }
+
+
+   // Responsive CSS
+
+    @media only screen and (max-width: 767px) {
+    
+    }
+
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
+ 
+    }
+        
+    @media only screen and (min-width: 992px) and (max-width: 1199px) {
+        
+    }
+
+    @media only screen and (min-width: 1200px) and (max-width: 1399px) {
+        
+    }
+
+}

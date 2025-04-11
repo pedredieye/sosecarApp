@@ -1,0 +1,73 @@
+{% extends 'templates/layout.twig' %}
+{% block page_title %}Liste des secrétaires{% endblock %}
+{% block active_user %}active{% endblock %}
+{% block all_user_active %}active{% endblock %}
+{% block collapse_in_user %}in{% endblock %}
+{% block page_title_breadcrumb %}Liste des secrétaires{% endblock %}
+{% block content %}
+
+
+    <section class="tables-data">
+      <div class="page-header">
+        <h1>      <i class="md md-list"></i> Liste de des secrétaires   </h1>
+        <p class="lead">Cette liste affiche la liste des secrétaires.</p>
+      </div>
+      <div class="card">
+        <div>
+        <!-- onclick="window.location.href=('{{path_for('one_user', { 'id':user.id })}}')"  -->
+          <div class="datatables">
+            <table id="example" class="table table-full table-full-small" cellspacing="0" width="100%">
+              <thead>
+                <tr>
+                  <th>Prénom(s) et nom</th>
+                  <th>Email</th>
+                  <th>Téléphone</th>
+                  <th>Inscriptions</th>
+                  <th>Validations</th>
+                  <th>Email de confirmation</th>
+                </tr>
+              </thead>
+              <tfoot>
+                <tr>
+                  <th>Prénom(s) et nom</th>
+                  <th>Email</th>
+                  <th>Téléphone</th>
+                  <th>Inscriptions</th>
+                  <th>Validations</th>
+                  <th>Email de confirmation</th>
+                </tr>
+              </tfoot>
+              <tbody>
+              {% for user in data.users %}
+                <tr>
+                  <td class="ml-2" >{{user.first_name}} <br> {{user.last_name}} </td>
+                  <td >{{user.email}}</td>
+                  <td >{{user.phone}}</td>
+                  <td >0</td>
+                  <td >0</td>
+                  <td>
+                    {% if user.flag_email_after_creation == 1 %}
+                      <div class="green darken-4 p-1 text-center">Mail envoyé</div>
+                    {% else %}
+                      <div class="red darken-4 p-1 text-center">Echec de l'envoi  </div>
+                      <button type="button" class="btn btn-link btn-resend-emai" data-participant-id="{{user.id}}" data-toggle="tooltip" data-placement="top" data-original-title="Renvoyer le mail" style="display:flex; align-items:center; justify-content:space-around; padding:3px 5px; width:100%">
+                        Renvoyer <i class="md md-send" style="font-size: 18px;"></i>
+                      </button>
+                    {% endif %}
+
+                    {% if usr.role_id <= 2 and 3 == 7 %}
+                    <button type="button" class="btn btn-link btn-round" data-toggle="tooltip" data-placement="top" data-original-title="Valider"><i class="md md-done"></i></button>
+                      <button type="button" class="btn btn-link btn-round" data-toggle="tooltip" data-placement="top" data-original-title="Edit row"><i class="md md-mode-edit"></i></button>
+                      <button type="button" class="btn btn-link btn-round" data-toggle="tooltip" data-placement="top" data-original-title="Delete row"><i class="md md-delete"></i></button>
+                    {% endif %}
+                  </td>
+                </tr>
+              {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+{% endblock %}

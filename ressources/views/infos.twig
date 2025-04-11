@@ -1,0 +1,112 @@
+{% extends 'templates/layoutpage.twig' %}
+{% block page_title %}Informations utiles{% endblock %}
+{% block main_page_title %}Informations utiles{% endblock %}
+{% block page_content %}
+
+   <!-- Start Our Conference Location Area -->
+        <div class="location-conference-area pt-100 pb-100">
+            <div class="container">
+                <div class="section-title"> 
+                    <span class="top-title">6<sup>ème</sup> CARDIOTECH SÉNÉGAL</span>
+                    <h2>Les informations utiles</h2>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-5 col-md-6" data-cue="fadeIn" data-duration="2000">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d18291.524129086505!2d-17.473685!3d14.69502!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xec1729ca1bf2a41%3A0x7c056ce772b26119!2sRadisson%20Blu%20Hotel%2C%20Dakar%20Sea%20Plaza!5e1!3m2!1sfr!2ssn!4v1729370915780!5m2!1sfr!2ssn" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    
+                    <div class="col-lg-7 col-md-6" data-cue="fadeIn" data-duration="2000">
+                        <div class="location-branch-card">
+                            <h3>Radisson Blu Hôtel</h3>
+                            <div class="location-text">
+                                <h4>Horaires</h4>
+                                <p>16 au 18 Décembre 2024</p>
+                                <p>08:00 - 18:00 </p>
+                            </div>
+                            <div class="location-text">
+                                <h4>Emplacement</h4>
+                                <p>L'Hotel Radisson Blu de Dakar se situe sur la route de la corniche ouest. Le transfert aéroport est à partir de 30 000F CFA soit 45 €. </p>
+                            </div>
+                            <div class="location-text">
+                                <h4>Se déplacer dans Dakar</h4>
+                                <p>Il y a plusieurs options pour se déplacer dans la ville durant votre séjour pour le Congrès international de la santé. Les options incluent :</p>
+                                <ul>
+                                    <li> 
+                                        <strong>Taxis</strong> : Il y aura une flotte de taxis disponibles à l'aéroport et dans les zones centrales de la ville. 
+                                    </li>
+                                    <li>
+                                        <strong>VTC</strong> : Il est également possible de commander des taxis à l'avance via des applications mobiles telles que <a href="https://yango.com/fr_se/passenger/" target="_blank">Yango</a> , <a href="https://www.heetch.com/fr/passager" target="_blank">Heetch</a>  ou <a href="https://yassir.com/sn/client/" target="_blank">Yassir</a> .    
+                                    </li>
+                                
+                                </ul>
+                            </div>
+                            <a href="https://www.google.com/maps/dir//Radisson+Blu+Hotel,+Dakar+Sea+Plaza,+Rte+de+la+Corniche+O,+Dakar+16868/@14.69502,-17.4762599,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0xec1729ca1bf2a41:0x7c056ce772b26119!2m2!1d-17.473685!2d14.69502?entry=ttu" target="_blank" class="default-btn">Itinéraire <i class='bx bx-plus' ></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Our Conference Location Area -->
+
+ 
+<script src="{{domain_url}}/assets/js/vendor/jquery-2.2.4.min.js"></script>
+
+      <script type="text/javascript">
+        $(document).on('change','.up', function(){
+          var names = [];
+          var length = $(this).get(0).files.length;
+          for (var i = 0; i < $(this).get(0).files.length; ++i) {
+              names.push($(this).get(0).files[i].name);
+          }
+
+           //$("input[name=file]").val(names);
+
+          if(length>2){
+            var fileName = names.join(', ');
+            $(this).closest('.form-group').find('.form-control').attr("value",length+" files selected");
+          }
+          else{
+            $(this).closest('.form-group').find('.form-control').attr("value",names);
+          }
+
+       });
+
+
+
+
+
+       $(document).ready(function() {
+        $("#resume").on('keyup', function() {
+          var words = 0;
+
+          if ((this.value.match(/\S+/g)) != null) {
+            words = this.value.match(/\S+/g).length;
+          }
+
+          if (words > 500) {
+            // Split the string on first 200 words and rejoin on spaces
+            var trimmed = $(this).val().split(/\s+/, 500).join(" ");
+            // Add a space at the end to make sure more typing creates new words
+            $(this).val(trimmed + " ");
+          }
+          else {
+            $('#display_count').text(words);
+            $('#word_left').text(500-words);
+            $(".word_left").removeClass('help-block error');
+            $("#resume-error").html('');
+          }
+
+          if (words == 500) {
+            $(".word_left").addClass('help-block error');
+
+            $("#resume-error").html("Votre article ne respecte pas les normes indiquées. <br>Nous vous prions de le rectifier avant renvoi. Merci<br>Le comité scientifique");
+          }
+
+
+
+
+
+        });
+      });
+      </script>
+{% endblock %}

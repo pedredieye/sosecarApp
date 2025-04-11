@@ -1,0 +1,145 @@
+{% extends 'templates/layout.twig' %}
+{% block page_title %}Abstract n°{{data.abstract.id}}{% endblock %}
+{% block active_abstract %}active{% endblock %}
+{% block all_abstract_active %}active{% endblock %}
+{% block collapse_in_abstract %}in{% endblock %}
+{% block page_title_breadcrumb %}Abstract n°{{data.abstract.id}}{% endblock %}
+{% block content %}
+
+<section class="forms-validation">
+  <div class="page-header">
+    <h1>      <i class="md md-description"></i>      Abstract n°{{data.abstract.id}}    </h1>
+  </div>
+  <div class="row  m-b-40">
+    <div class="col-md-3 col-md-push-9 ">
+      <h5 class="d-none">Aide</h5>
+      <p class="d-none">  </p>
+    </div>
+    <div class="col-md-8 col-md-pull-3">
+
+      <div class="bs-component" >
+        <div class="alert alert-dismissible alert-success d-none" id="alert-form">
+          <button type="button" class="close" data-dismiss="alert">×</button>
+          <h4>Success!</h4> <strong>Well done!</strong> You successfully read <a href="#" class="alert-link">this important alert message</a>.
+        </div>
+      </div>
+
+      <div class="well white" id="forms-validation-container">
+        <div>
+          <form class="form-floating form-review" id="form_validation_abstract" name="form_validation_abstract">
+            <fieldset>
+
+              <div class="form-group">
+                  <label class="control-label" for="email">Titre</label>
+                  <input type="text" id="title" name="title" class="form-control rounded-0" required="" value="{{data.abstract.title}}" disabled data-error="">
+                  <div class="help-block with-errors"></div>
+              </div>
+
+              <div class="form-group">
+                  <label class="control-label" for="email">Auteurs</label>
+                  <input type="text" id="authors" name="authors" class="form-control rounded-0" required="" value="{{data.abstract.authors}}" disabled data-error="">
+                  <div class="help-block with-errors"></div>
+              </div>
+
+              <div class="form-group">
+                  <label class="control-label" for="email">Adresse</label>
+                  <input type="text" id="address" name="address" class="form-control rounded-0" required="" value="{{data.abstract.address}}" disabled data-error="">
+                  <div class="help-block with-errors"></div>
+              </div>
+
+              <div class="form-group">
+                  <label class="control-label" for="email">Résumé</label>
+                  <textarea id="resume" name="resume" class="form-control rounded-0"  rows="30" disabled>{{data.abstract.resume}}</textarea>
+                  <div class="help-block with-errors"></div>
+              </div>
+
+              <div class="form-group">
+              {% if data.abstract.file %}
+                  <a href="{{domain_url}}/../uploads/abstracts/{{data.abstract.file}}" class="" target="_blank"><i class="md md-link"></i>Voir le fichier du résumé <i class="md md-keyboard-arrow-right"></i> </a>
+                {% endif %}
+              </div>
+
+
+              <div class="form-group">
+                <div class="help-block with-errors"> Envoyé par </div>
+              </div>
+
+              <div class="form-group">
+                  <label class="control-label" for="email">Nom</label>
+                  <input type="hidden" id="sender_title" name="sender_title" value="{{data.abstract.sender_title}}">
+                  <input type="text" id="sender_name" name="sender_name" class="form-control rounded-0" required="" value="{{data.abstract.sender_title}}&nbsp;{{data.abstract.sender_name}}" disabled data-error="">
+                  <div class="help-block with-errors"></div>
+              </div>
+
+
+              <div class="form-group">
+                  <label class="control-label" for="email">Pays</label>
+                  <input type="text" id="sender_address" name="sender_address" class="form-control rounded-0" required="" value="{{data.abstract.sender_address}}" disabled data-error="">
+                  <div class="help-block with-errors"></div>
+              </div>
+
+
+              <div class="form-group">
+                  <label class="control-label" for="email">Email</label>
+                  <input type="text" id="sender_email" name="sender_email" class="form-control rounded-0" required="" value="{{data.abstract.sender_email}}" disabled data-error="">
+                  <div class="help-block with-errors"></div>
+              </div>
+
+
+              {#
+              <div class="form-group">
+                <div class="help-block with-errors"> Veuillez renseigner le numéro du reçu de paiement de {{data.participant.title.title}} {{data.participant.first_name}} {{data.participant.last_name}}</div>
+              </div>
+              #}
+
+
+              <div class="form-group">
+                {% if data.abstract.status == 0 or data.abstract.status == -1 %}
+                    <button type="button"  id="btn-abstract-validate" data-abstract-id = "{{data.abstract.id}}" data-user-id = "{{usr.id}}" class="btn btn-info"><i class="md md-publish"></i>&nbsp;Valider et publier</button>
+                    <button type="button"  id="btn-abstract-reject-init" class="btn btn-danger" data-toggle="modal" data-target="#rejectModal"><i class="md md-close"></i>&nbsp;Rejeter</button>
+                  {% elseif data.abstract.status == 1  %}
+                    <button type="button"  id="btn-abstract-disable" data-abstract-id = "{{data.abstract.id}}" data-user-id = "{{usr.id}}" class="btn btn-info"><i class="md md-archive"></i> &nbsp;Désactiver</button>
+                  {% elseif data.abstract.status == 2  %}
+                  <button type="button"  id="btn-abstract-publish"   data-abstract-id = "{{data.abstract.id}}" data-user-id = "{{usr.id}}" class="btn btn-info"><i class="md md-publish"></i>&nbsp;Publier</button>
+                  <button type="button"  id="btn-abstract-reject-init" class="btn btn-danger" data-toggle="modal" data-target="#rejectModal"><i class="md md-close"></i>&nbsp;Rejeter</button>
+                {% endif %}
+              </div>
+
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Modal -->
+<div class="modal fade" id="rejectModal" tabindex="-1" role="dialog" aria-labelledby="rejectModalTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="rejectModalTitle">Rejeter l'abstract n°</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group form-review-2">
+            <label class="control-label" for="email">Motif de rejet</label>
+            <textarea id="motif_rejet" name="motif_rejet" class="form-control rounded-0"></textarea>
+            <div class="help-block with-errors"></div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+        <button type="button" class="btn btn-primary" data-abstract-id = "{{data.abstract.id}}" data-user-id = "{{usr.id}}"  id="btn-abstract-reject">Rejeter</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+</script>
+
+{% endblock %}

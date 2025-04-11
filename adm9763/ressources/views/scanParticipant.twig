@@ -1,0 +1,103 @@
+{% extends 'templates/layout.twig' %}
+{% block page_title %}Nouveau scan{% endblock %}
+{% block active_participant %}active{% endblock %}
+{% block collapse_in %}in{% endblock %}
+{% block page_title_breadcrumb %}Valider une entrée{% endblock %}
+{% block content %}
+
+
+<section class="forms-validation">
+  <div class="page-header">
+    <h1>      <i class="md md-apps"></i>      Nouveau scan   </h1>
+    <p class="lead d-none">The <a href="http://1000hz.github.io/bootstrap-validator/" target="_blank">Validator plugin</a> offers automatic form validation configurable via mostly HTML5 standard attributes. It also provides an unobtrusive user experience, because nobody likes a naggy form.</p>
+  </div>
+  <div class="row  m-b-40">
+    <div class="col-md-3 col-md-push-9 ">
+      <h5 class="d-none">Aide</h5>
+      <p class="d-none"> Push the submit button to check all the validations at once. Resetting will handle resetting the validation messages. </p>
+    </div>
+    <div class="col-md-8 col-md-pull-3">
+
+      <div class="bs-component" >
+        <div class="alert alert-dismissible alert-success d-none" id="alert-form">
+          <button type="button" class="close" data-dismiss="alert">×</button>
+          <h4>Success!</h4> <strong>Well done!</strong> You successfully read <a href="#" class="alert-link">this important alert message</a>.
+        </div>
+      </div>
+
+      <div class="well white" id="forms-validation-container">
+        <div>
+          <form class="form-floating" id="form_validation_participant" name="form_validation_participant">
+            <fieldset>
+              <legend><i class="md md-account-circle"></i>   {{data.participant.first_name}} {{data.participant.last_name}}</legend>
+             
+              <p style="margin-bottom: 30px">
+                <br>
+                <i class="md md-email"></i> Email : {{data.participant.email}} <br>
+                <i class="md md-phone-android"></i> Téléphone : {{data.participant.phone}} <br>
+                <i class="md md-person-outline"></i> Titre : {{data.participant.title.title}} <br>
+                <i class="md md-wallet-travel"></i> Fonction : {{data.participant.job.job_title}} <br>
+                <i class="md md-map"></i> Pays de provenance : {{data.participant.country.name}}
+              </p>
+
+                {% if data.participant.payment_status == "completed" or data.participant.payment_method == "offline" %}
+
+                   <div class="form-group">
+                    <label class="control-label normal" style="font-size:14px">Session</label>
+                    <select class="form-control rounded-0 to-select2" name="session" id="session" required="" data-error="Information manquante.">
+                    <option value="">Choisir une session</option>
+                    {% for session in data.sessions %}
+                      <option value="{{session.id}}">{{session.start | date('d/m/Y')}} à partir de {{session.start | date('H:i')}} - {{session.title}} <br> </option>
+                    {% endfor %}
+                    </select>
+                    <div class="help-block with-errors"></div>
+                  </div>
+
+                {% endif %}
+
+             
+
+
+
+                {% if data.participant.payment_status == "completed" or data.participant.payment_method == "offline" %}
+                  <div class="form-group">
+                    <button type="button"  id="btn-validate-scan" onclick="validateScan($(this));" data-participant-ticket = "{{data.participant.ticket_number}}" data-user-id = "{{usr.id}}"  data-participant-id = "{{data.participant.id}}"  class="btn btn-primary">Valider le scan</button>
+                    <button type="button"  id="btn-cancel-scan" class="btn btn-default">Annuler</button>
+                  </div>
+                  {% else %}
+                  <div class="form-group" style="display:block;">
+                    <p class="control-label normal" style="margin-top:30px; padding-bottom:30px; font-size:17px;color:red">{{data.participant.title.title}} {{data.participant.first_name}} {{data.participant.last_name}} n'a pas encore finalisé son inscription. Le scan ne peut pas être effectué.</p>
+                  </div>
+                    
+                {% endif %}
+
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+{% endblock %}
+
+
+{% block extendjsfooter %}
+    <style media="screen">
+      .select2-container--default .select2-selection--single .select2-selection__rendered, .select2-results__option{
+        font-size: 12px;
+      }
+
+      .select2-container .select2-dropdown{
+        background-color: rgba(223, 230, 233,1.0);
+      }
+    </style>
+
+    <script type="text/javascript">
+    $(document).ready(function () {
+      updateDataScan();
+      console.log('Loaded');
+    })
+    </script>
+{% endblock %}

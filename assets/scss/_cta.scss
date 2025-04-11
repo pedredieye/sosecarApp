@@ -1,0 +1,175 @@
+//quote-area
+.quote-wrapper {
+    & .section-title {
+        & h3 {
+            & .round-line {
+                &::before {
+                    left: -20px;
+                    top: -36px;
+                    background: url(../img/shape/b6.svg) no-repeat;
+                    width: 279px;
+                    height: 138px;
+                }
+            } 
+        }
+    }
+}
+
+.section-title {
+    & .get-contact {
+        color: $theme-color;
+        font-size: 18px;
+        font-family: $circular;
+        text-decoration: underline;
+        &:hover {
+            color: #d41111;
+        }
+    }
+}
+
+
+//quote-mask-image
+
+.quote-img-wrapper {
+    & .quote-mask-image {
+        width: 1000px;
+        min-height: 890px;
+        position: absolute;
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        right: 0;
+        top: 35px;
+        z-index: 1;
+        @media #{$laptop} {
+            width: 695px;
+            min-height: 618px;
+            background-size: contain;
+            top: 130px;
+        }
+        @media #{$lg} {
+            width: 508px;
+            min-height: 635px;
+            top: 125px;
+        }
+        @media #{$md} {
+            display: none;
+        }
+        @media #{$xs} {
+            display: none;
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            background: url(../img/mask-shape/hm3.png);
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            min-height: 100%;
+            width: 100%;
+            right: 0;
+            top: 0;
+            z-index: 1;
+
+            @media #{$laptop} {
+                background-size: contain;
+            }
+            @media #{$lg} {
+                display: none;
+            }
+
+            @media #{$md} {
+                display: none;
+            }
+
+            @media #{$xs} {
+                display: none;
+            }
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            background: rgba(0, 0, 0, 0.2);
+            height: 100%;
+            width: 100%;
+            left: 0;
+            top: 0;
+            z-index: -1;
+        }
+    }
+}
+
+//sub-bg
+.sub-bg {
+    border-radius: 25px;
+    background: #fbf5ff;
+    box-shadow: 0px 40px 80px rgba(35, 25, 60, 0.08);
+}
+.sub-bg-h3 {
+    border-radius: 10px;
+    background: $white;
+    box-shadow: 0px 40px 100px rgba(8, 15, 21, 0.05);
+    margin-top: -78px;
+    position: relative;
+    z-index: 2;
+    @media #{$md} {
+        margin-top: 100px;
+    }
+    @media #{$xs} {
+        margin-top: 100px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+}
+
+//quote-wrapper 
+.quote-wrapper {
+    & .section-title-3 {
+        & h5 {
+            color: #848484;
+            font-size: 20px;
+            font-family: $circularbook;
+            font-weight: 400;
+        }
+
+        & .number {
+            color: $black;
+            font-size: 32px;
+        }
+    }
+}
+
+.subscribe-letter-area {
+    position: relative;
+    z-index: 1;
+   & .line-shape {
+       position: absolute;
+       z-index: -1;
+       left: 13%;
+       bottom: 35px;
+       @media #{$laptop} {
+           left: 0;
+       }
+   }
+}
+
+.subscribe-wrapper {
+    @media #{$xs} {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+   & .section-title {
+        & h3 {
+            & .round-line {
+                &::before {
+                    left: -20px;
+                    top: -25px;
+                    background: url(../img/shape/b9.svg) no-repeat;
+                    width: 187px;
+                    height: 126px;
+                }
+            }
+        }
+    } 
+}
+

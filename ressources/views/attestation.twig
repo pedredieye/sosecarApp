@@ -1,0 +1,155 @@
+{% extends 'templates/layoutpage.twig' %}
+{% block page_title %}Mon certification de participation | SOSECAR{% endblock %}
+{% block main_page_title %}Mon certification de participation{% endblock %}
+
+{% block page_content %}
+
+
+{% if get.id =="id" or 3==3 %}
+
+ <!-- Start Login Area -->
+        <div class="my-account-area pt-100 pb-100">
+            <div class="container">
+                <form class="my-account-content" id="sos-attestation" name="sos-attestation"action="#">
+                    <h2>Téléchargez votre certificat de participation</h2>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <input class="form-control" type="text" id="name" name="name" placeholder="Votre nom et prénom(s) *">
+							<span class="label_cert">Le nom fourni sera utilisé pour générer votre certificat de participation.</span>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 mt-5">
+                            <div class="form-group">
+                                <input class="form-control" type="email" id="email" name="email" placeholder="Votre email *">
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col-lg-12">
+                            <button type="submit" class="default-btn btn-style-fore">Valider</button>
+                        </div>
+
+						<div class="col-lg-12 clearfix mt-3">
+								<div class="alert sa-alert-form alert-primary d-none" role="alert" id="gen-certif-notif">
+									...
+								</div>
+							</div>
+                    </div>
+					{#
+                    <div class="border-or">
+                        <span>Or Login With</span>
+                    </div>
+                    <div class="my-account-list">
+                        <ul>
+                            <li>
+                                <a href="https://www.facebook.com/" target="_blank"> 
+                                    <i class='bx bxl-facebook'></i>
+                                </a>
+                            </li>   
+                            <li>
+                                <a href="https://twitter.com/" target="_blank">
+                                    <i class='bx bxl-twitter' ></i>
+                                </a>
+                            </li>    
+                            <li>
+                                <a href="https://www.linkedin.com/" target="_blank">
+                                    <i class='bx bxl-linkedin' ></i>
+                                </a>  
+                            </li> 
+                            <li>
+                                <a href="https://www.google.com/" target="_blank">
+                                    <i class='bx bxl-google' ></i>
+                                </a>  
+                            </li> 
+                        </ul>
+                    </div>
+					#}
+
+                                <p><a href="{{path_for('home')}}">Retourner à l'accueil</a> </p>
+
+                </form>
+            </div>
+        </div>
+
+
+{% else %}
+	
+
+	<!-- Register Section -->
+	<section class="register-section">
+		<div class="auto-container">
+
+			<!-- Form Box -->
+			<div class="form-box form-attestation-box">
+				<div class="box-inner">
+
+					<!--Login Form-->
+                    <div class="styled-form login-form">
+                        <form action="#" id="sos-attestation" name="sos-attestation" class="py-5 px-2 bg-white rounded rounded-lg register-form">
+
+						<div class="form-group">
+							<span class="adon-icon"><span class="fa fa-user"></span></span>
+							<input type="text" id="name" name="name" placeholder="Votre nom et prénom(s) *">
+						</div>
+							<span class="label_cert">Le nom fourni sera utilisé pour générer votre certificat de participation.</span>
+
+						<div class="form-group">
+							<span class="adon-icon"><span class="fa fa-envelope"></span></span>
+							<input type="email" id="email" name="email" placeholder="Votre email *">
+						</div>
+
+						{#
+							
+							<div class="row">
+								<div class="col-xl12 col-lg-12 col-md-12 mb-5">
+									<div class="text-input">
+										<label class="input-title">Prénom(s) et nom</label>
+										<input type="text" id="name" name="name" class="form-control" placeholder="">
+									</div>
+								</div>
+								<div class="col-xl12 col-lg-12 col-md-12">
+									<div class="text-input">
+										<label class="input-title">Email</label>
+										<input type="email" id="email" name="email" class="form-control" placeholder="">
+									</div>
+								</div>
+							</div>
+
+						#}
+
+
+
+						<div class="row  mt-5">
+							<div class="col-md-12 text-center">
+								<button type="submit" name="button" class="btn btn-primary mr-2 mb-2">Valider</button>
+							</div>
+
+							<div class="col-md-12 text-center mt-3">
+								<div class="alert sa-alert-form alert-primary d-none" role="alert" id="gen-certif-notif">
+									...
+								</div>
+							</div>
+						</div>
+
+						<div class="col-md-12 text-center mt-2">
+							<a href="{{path_for('home')}}">
+								Retourner à l'accueil</a>
+						</div>
+
+
+					</form>
+                    </div>
+
+				</div>
+			</div>
+
+		</div>
+	</section>
+	<!-- End Register Section -->
+
+
+{% endif %}
+
+
+{% endblock %}

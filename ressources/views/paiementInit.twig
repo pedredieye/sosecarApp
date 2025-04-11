@@ -1,0 +1,27 @@
+{% extends 'templates/layoutpage.twig' %}
+{% block page_title %}Paiement | SOSECAR{% endblock %}
+{% block main_page_title %}Paiement{% endblock %}
+
+{% block page_content %}
+
+ <!-- Start Coming Soon -->
+        <div class="coming-soon-area ptb-100">
+            <div class="container">
+                <div class="coming-soon-content">
+                    <div class="inoc-notif {{data.class}}"><span>{{data.icon | raw}}</span> </div>
+                   
+                    <h2>{{data.page_title | raw}}</h2>
+                    <p>{{data.message | raw}}</p> 
+
+                    <div class="box-button">
+                        <a href="{{path_for('home')}}" class="default-btn btn-style-one">Accueil<i class="bx bx-plus"></i></a>
+                        {% if data.text_link %}
+                            <a href="{{data.link}}" class="default-btn btn-style-one">{{data.text_link}}<i class="bx bx-plus"></i></a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div> 
+        <!-- End Coming Soon --> 
+
+{% endblock %}

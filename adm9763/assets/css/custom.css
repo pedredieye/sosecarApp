@@ -1,0 +1,278 @@
+main .main-container .main-content{
+  padding-bottom: 20px;
+}
+
+.card, .well{
+  box-shadow: rgb(146 153 184 / 53%) 0px 1px 4px;
+  border-radius: 0.75rem;
+  margin-bottom: 10px;
+}
+
+.card.small{
+  font-size: 12px;
+}
+
+.cl-amount{
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 600;
+  float: right;
+}
+.cl-status{
+  border-radius: 4px;
+  padding: 1px 5px;
+  display: inline-block;
+  margin-bottom: 4px;
+  margin-right: 5px;
+  max-width:fit-content;
+}
+
+.cl-completed{
+  background-color: #218c74;
+  color: #ffffff;
+}
+.cl-started{
+  background-color: #84817a;
+  color: #ffffff;
+}
+.cl-cancelled{
+  background-color: #ff3f34;
+  color: #ffffff;
+}
+.cl-failled{
+  background-color: #84817a;
+  color: #ffffff;
+}
+
+
+.activity-badge{
+  border-radius: 4px;
+  padding: 1px 5px;
+  display: inline-block;
+  margin-bottom: 4px;
+  margin-right: 5px;
+  max-width:fit-content;
+  display: block;
+  border: 1px solid #84817a;
+}
+
+.activity-1{
+  border-color: #079992;
+}
+
+.activity-2{
+  border-color: #84817a;
+}
+
+.activity-3{
+  border-color: #ff5e57;
+}
+
+.activity-4{
+  border-color: #079992;
+}
+
+.table-full tbody > tr > td{
+  vertical-align: top;
+}
+
+.pc-column{
+  background-color: rgba(250, 211, 144, 0.4);
+}
+
+.c-column{
+  background-color: rgba(130, 204, 221, 0.4);
+}
+
+.o-column{
+  background-color: rgba(241, 242, 246, 0.9);
+}
+
+.action-box{
+  display: flex;
+  display: block;
+  justify-content: center;
+}
+
+.action-box-row{
+  display: flex;
+  flex-direction: column;
+}
+
+.bo-btn-action{
+  border: 1px solid;
+  border-radius: 3px;
+  padding: 1px 3px;
+  width: 100%;
+  max-width: 100px;
+  /*height: 40px;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 400;
+  font-size: 14px !important;
+  line-height: 1.8;
+  margin-top: 5px;
+}
+
+.action-box .bo-btn-action:last-of-type{
+  margin-left: 5px;
+}
+
+.bo-btn-action i{
+  font-size: 14px;
+  margin-right: 5px;
+}
+
+.primary{
+  color: #079992 !important;
+  background-color: transparent;
+  border-color: #079992;
+}
+
+.primary:hover{
+  color: #079992 !important;
+  background-color: #ffff;
+}
+
+
+.secondary{
+  color: #ff4757 !important;
+  background-color: transparent;
+  border-color: #ff4757;
+}
+
+.secondary:hover{
+  color: #ff4757 !important;
+  background-color: #ffff;
+}
+
+.td-money{
+  font-size: 16px;
+  font-weight: 600;
+}
+
+
+
+
+.radio-with-price{
+  display: flex;
+  flex-direction: column;
+  padding: 5px 30px ;
+  margin-bottom: 20px;
+}
+
+.radio-with-price .pretty{
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+.table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th{
+  border-top-color: rgba(116, 125, 140,1.0);
+}
+
+.table-full thead tr > th{
+  border-bottom-color: rgba(116, 125, 140,1.0);
+}
+
+
+.form-review input, .form-review textarea, .form-review-2 input, .form-review-2 textarea{
+  border: none !important;
+  border: 1px solid #ccc !important;
+  border-radius: 0.5rem !important;
+  padding: 25px 10px !important;
+  font-size: 1.5rem !important;
+}
+
+.form-review input[disabled], .form-review textarea[disabled]{
+}
+
+
+
+.form-review label{
+  background-color: #ffffff !important;
+  padding: 0 15px !important;
+  margin-left: 15px !important;
+  font-size: 1.3rem !important;
+  position: absolute !important;
+  top: 10px !important;
+}
+
+
+.form-review-2 label{
+    background-color: #ffffff !important;
+    padding: 0 15px !important;
+    margin-left: 15px !important;
+    font-size: 1.3rem !important;
+    position: absolute !important;
+    top: -12px !important;
+}
+
+.mt{
+  margin-top: 60px !important;
+}
+
+.mb{
+  margin-bottom: 30px !important;
+}
+
+.spa_tag{
+  padding: 3px 6px;
+  border-radius: 5px;
+  color: #ffffff;
+}
+
+.spa_inv{
+  background-color: #833471;
+}
+
+.spa_payed{
+  background-color: #1B1464;
+}
+
+
+.spa_status{
+  padding: 4px 6px;
+  border-radius: 5px;
+  color: #ffffff;
+}
+
+.spa_status_waiting{
+  background-color: #84817a;
+}
+
+.spa_status_payed{
+  background-color: #218c74;
+}
+
+
+.control-label.big{
+  font-size: 16px !important;
+}
+
+
+.payed-by-secretaire,  .payed-by-participant{
+  padding: 3px 6px;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+
+.payed-by-secretaire{
+  background-color: #1e3799;
+  color: #dddddd;
+}
+
+.payed-by-participant{
+  background-color: #e58e26;
+  color: #dddddd;
+}
+
+
+
+.blur{
+  /*
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+  */
+}

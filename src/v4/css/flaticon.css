@@ -1,0 +1,89 @@
+@font-face {
+    font-family: "flaticon";
+    src: url("/assets/fonts/flaticon.ttf?3a1b70b0f3a3bb1fec84a4e0537ee15c") format("truetype"),
+url("/assets/fonts/flaticon.woff?3a1b70b0f3a3bb1fec84a4e0537ee15c") format("woff"),
+url("/assets/fonts/flaticon.woff2?3a1b70b0f3a3bb1fec84a4e0537ee15c") format("woff2"),
+url("/assets/fonts/flaticon.eot?3a1b70b0f3a3bb1fec84a4e0537ee15c#iefix") format("embedded-opentype"),
+url("/assets/fonts/flaticon.svg?3a1b70b0f3a3bb1fec84a4e0537ee15c#flaticon") format("svg");
+}
+
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+    font-family: flaticon !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.flaticon-show:before {
+    content: "\f101";
+}
+.flaticon-check:before {
+    content: "\f102";
+}
+.flaticon-inverted-commas:before {
+    content: "\f103";
+}
+.flaticon-promoted:before {
+    content: "\f104";
+}
+.flaticon-inspiration:before {
+    content: "\f105";
+}
+.flaticon-date:before {
+    content: "\f106";
+}
+.flaticon-award:before {
+    content: "\f107";
+}
+.flaticon-linkedin:before {
+    content: "\f108";
+}
+.flaticon-twitter:before {
+    content: "\f109";
+}
+.flaticon-up-arrows:before {
+    content: "\f10a";
+}
+.flaticon-home:before {
+    content: "\f10b";
+}
+.flaticon-megaphone:before {
+    content: "\f10c";
+}
+.flaticon-facebook-app-symbol:before {
+    content: "\f10d";
+}
+.flaticon-check-1:before {
+    content: "\f10e";
+}
+.flaticon-ownership:before {
+    content: "\f10f";
+}
+.flaticon-map-location:before {
+    content: "\f110";
+}
+.flaticon-clock:before {
+    content: "\f111";
+}
+.flaticon-sponsor:before {
+    content: "\f112";
+}
+.flaticon-networking:before {
+    content: "\f113";
+}
+.flaticon-instagram:before {
+    content: "\f114";
+}
+.flaticon-employee:before {
+    content: "\f115";
+}
+.flaticon-clock-1:before {
+    content: "\f116";
+}
+.flaticon-social:before {
+    content: "\f117";
+}

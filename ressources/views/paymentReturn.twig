@@ -1,0 +1,52 @@
+{% extends 'templates/layoutpage.twig' %}
+{% block page_title %}Paiement | SOSECAR{% endblock %}
+{% block main_page_title %}Paiement{% endblock %}
+
+{% block page_content %}
+
+    <!-- Start Coming Soon -->
+        <div class="coming-soon-area ptb-100">
+            <div class="container">
+                <div class="coming-soon-content">
+                    <div class="inoc-notif {{data.class}}"><span>{{data.icon | raw}}</span> </div>
+                   
+                    <h2>{{data.page_title | raw}}</h2>
+                    <p>{{data.message | raw}}</p> 
+
+                    <div class="box-button">
+                        <a href="{{path_for('home')}}" class="default-btn btn-style-one">Accueil<i class="bx bx-plus"></i></a>
+                        {% if data.text_link %}
+                            <a href="{{data.link}}" class="default-btn btn-style-one">{{data.text_link}}<i class="bx bx-plus"></i></a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div> 
+    <!-- End Coming Soon --> 
+
+
+{#
+
+<section class="error-section notification-section">
+    <div class="anim-icons full-width">
+        <span class="icon icon-circle-blue wow fadeIn"></span>
+        <span class="icon icon-dots wow fadeInleft"></span>
+        <span class="icon icon-line-1 wow zoomIn"></span>
+        <span class="icon icon-circle-1 wow zoomIn"></span>
+    </div>
+
+    <div class="auto-container">
+        <div class="{{data.class}}"><span>{{data.icon | raw}}</span> </div>
+        <h4>{{data.page_title | raw}}</h4>
+        <div class="text text-notif">{{data.message | raw}}</div>
+        <a href="{{path_for('home')}}" class="theme-btn btn-style-three no-shadow"><i class="fi fi-rr-house-chimney"></i> <span class="btn-title"> Accueil</span></a>
+        {% if data.text_link %}
+        <a href="{{data.link}}" class="theme-btn btn-style-two btn-style-retry  no-shadow"><i class="fi fi-rr-refresh"></i> <span class="btn-title">{{data.text_link}}</span></a>
+        {% endif %}
+    </div>
+</section>
+#}
+
+
+
+{% endblock %}

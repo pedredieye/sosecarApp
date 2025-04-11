@@ -1,0 +1,176 @@
+{% extends 'templates/layoutpage.twig' %}
+{% block page_title %}Connexion | SOSECAR{% endblock %}
+{% block main_page_title %}Connexion{% endblock %}
+
+{% block page_content %}
+
+  <!-- Start Login Area -->
+        <div class="my-account-area pt-100 pb-100">
+            <div class="container">
+                <form class="my-account-content" id="sos-login" name="sos-login" action="#">
+                    <h2>Connexion</h2>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <input class="form-control" type="email" id="email" name="email" placeholder="Adresse email*">
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <input class="form-control" type="password" id="password" name="password" placeholder="Mot de passe">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-sm-6 col-md-6">
+                            <div class="form-group">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="remember-me">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        Se souvenir de moi
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-sm-6 col-md-6">
+                            <div class="text-account">
+                                <p><a href="{{path_for('p_init_params')}}">M'envoyer mes paramètres de connexion</a> </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <button type="submit" class="default-btn btn-style-fore">Se connecter</button>
+                        </div>
+
+						<div class="col-lg-12 clearfix mt-3">
+								<div class="alert sa-alert-form alert-primary d-none" role="alert" id="alert-login">
+									...
+								</div>
+							</div>
+                    </div>
+					{#
+                    <div class="border-or">
+                        <span>Or Login With</span>
+                    </div>
+                    <div class="my-account-list">
+                        <ul>
+                            <li>
+                                <a href="https://www.facebook.com/" target="_blank"> 
+                                    <i class='bx bxl-facebook'></i>
+                                </a>
+                            </li>   
+                            <li>
+                                <a href="https://twitter.com/" target="_blank">
+                                    <i class='bx bxl-twitter' ></i>
+                                </a>
+                            </li>    
+                            <li>
+                                <a href="https://www.linkedin.com/" target="_blank">
+                                    <i class='bx bxl-linkedin' ></i>
+                                </a>  
+                            </li> 
+                            <li>
+                                <a href="https://www.google.com/" target="_blank">
+                                    <i class='bx bxl-google' ></i>
+                                </a>  
+                            </li> 
+                        </ul>
+                    </div>
+					#}
+
+                    <p>Vous n'avez pas de compte ? <a href="{{path_for('tickets')}}">Inscrivez-vous</a></p>
+
+
+                </form>
+            </div>
+        </div>
+        <!-- End Login Area -->
+	<!-- End Register Section -->
+
+{#
+
+	<div class="site-section bg-image2 overlay pl-lg-90" id="sosecar-login" style="">
+		<div class="container">
+			<div class="row justify-content-start">
+				<div class="col-lg-5 col-xs-10 mb-4 register-form-left  border-0 bordered">
+
+					<form action="#" id="sos-login" name="sos-login" class="p-5 bg-white rounded rounded-lg register-form">
+					
+					<div class="row">
+					<div class="col-xl12 col-lg-12 col-md-12">
+						<div class="text-input">
+						<label class="input-title">Email</label>
+										<input type="email" id="email" name="email" class="form-control">
+						</div>
+					</div>
+					<div class="col-xl-12 col-lg-12 col-md-12">
+						<div class="text-input">
+						<label class="input-title">Mot de passe</label>
+										<input type="password" id="password" name="password" class="form-control">
+						</div>
+					</div>
+					</div>
+
+
+
+						{% if "obamaa" == "obama" %}
+						<div class="row form-group">
+							<div class="col-md-12 mb-3 mb-md-0">
+								<label class="text-black" style="width:100%;" for="email">Email</label>
+								<input type="email" id="email" name="email" class="form-control rounded-0">
+							</div>
+						</div>
+							<div class="row form-group">
+								<div class="col-md-12 mb-3 mb-md-0">
+									<label class="text-black" for="password">Mot de passe</label>
+									<input type="password" id="password" name="password" class="form-control rounded-0">
+								</div>
+							</div>
+						{% endif %}
+
+						<div class="row  mt-5">
+							<div class="col-md-12 text-center">
+								<button type="submit" name="button" class="btn btn-primary mr-2 mb-2">Valider</button>
+							</div>
+
+							<div class="col-md-12 text-center mt-3">
+								<div class="alert sa-alert-form alert-primary d-none" role="alert" id="alert-login">
+									...
+								</div>
+							</div>
+						</div>
+
+						<div class="col-md-12 text-center mt-2">
+							<a href="{{path_for('p_init_params')}}">
+								M'envoyer mes paramètres de connexion</a>
+						</div>
+
+						<div class="col-md-12 text-center mt-2">
+							<a href="{{path_for('home')}}">
+								Retourner à l'accueil</a>
+						</div>
+
+
+					</form>
+				</div>
+				<div class="col-lg-7 col-xs-2 mb-4 col-xs-hidden">
+			<div class="fact-main-wrapper pos-rel">
+				<img src="{{domain_url}}/assets/img/shape/shape_04.svg" alt="" class="shapes shape1">
+				<img src="{{domain_url}}/assets/img/shape/shape_05.svg" alt="" class="shapes shape2">
+				<img src="{{domain_url}}/assets/img/shape/shape_06.svg" alt="" class="shapes shape3">
+				<img src="{{domain_url}}/assets/img/shape/shape_07.svg" alt="" class="shapes shape4">
+				<img src="{{domain_url}}/assets/img/shape/shape_08.svg" alt="" class="shapes shape5">
+				<img src="{{domain_url}}/assets/img/shape/shape_09.svg" alt="" class="shapes shape6">
+				<img src="{{domain_url}}/assets/img/shape/round1.svg"   alt="" class="shapes shape7 shape-rounded-container">
+				<ul class="fact-list-img">
+				<img src="{{domain_url}}/src/images/logo_SOSECAR.png" />
+				</ul>
+			</div>
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+
+#}
+
+
+{% endblock %}

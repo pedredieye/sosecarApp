@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="41px" height="13px" viewBox="0 0 41 13" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <g id="Button" transform="translate(1 1)">
+    <path d="M0 0.5L39 0.5" transform="translate(0 4.5)" id="Path-45" fill="none" fill-rule="evenodd" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" />
+    <path d="M0 0L6 5.33333L0 10.6667" transform="translate(33 0)" id="Path-46" fill="none" fill-rule="evenodd" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" />
+  </g>
+</svg>

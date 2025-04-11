@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="16px" height="15px" viewBox="0 0 16 15" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <g id="Icon" transform="translate(0.75 0.75)">
+    <path d="M5.5 11C8.53757 11 11 8.53757 11 5.5C11 2.46243 8.53757 0 5.5 0C2.46243 0 0 2.46243 0 5.5C0 8.53757 2.46243 11 5.5 11Z" id="Oval" fill="none" fill-rule="evenodd" stroke="#000000" stroke-width="1.5" />
+    <path d="M0 0L4.51309 3.8277" transform="translate(9.170959 9.128143)" id="Path-10" fill="none" fill-rule="evenodd" stroke="#000000" stroke-width="1.5" stroke-linecap="round" />
+  </g>
+</svg>

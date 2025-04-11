@@ -1,0 +1,939 @@
+{% extends 'templates/layout.twig' %}
+{% block page_title %}Statistiques{% endblock %}
+{% block page_title_breadcrumb %}Statistiques{% endblock %}
+{% block content %}
+
+
+<div class="dashboard grey lighten-3">
+  <div class="row no-gutter">
+  {% if usr.id == 24 or "oui" == "oui" %}
+    <div class="col-sm-12 col-md-12 col-lg-12" style="background:#F9F9F9;">
+
+      <div class="p-20 clearfix">
+        <div class="pull-right d-none"> <a href="pages-material-bird.html" target="_blank" class="btn btn-round-sm btn-link" data-toggle="tooltip" title="Play material bird"><i class="md md-games"></i></a>
+          <div class="btn btn-round-sm btn-link" data-toggle="tooltip" title="Upload media"><i class="md md-crop-original"></i></div>
+          <div class="btn btn-round-sm btn-link" data-toggle="tooltip" title="Write new document"><i class="md md-insert-drive-file"></i></div>
+          <div class="btn btn-round-sm btn-link" data-toggle="tooltip" title="Add new user"><i class="md md-person-add"></i></div>
+        </div>
+        <h4 class="grey-text"><i class="md md-dashboard"></i><span class="hidden-xs">Statistiques</span></h4>
+      </div>
+      
+      {% if true == false %}
+      <div class="p-20 no-p-t">
+        <h5 class="grey-text text-uppercase"><i class="md md-account-child"></i> Toutes les inscriptions (pré-congrès et congrès)</h5>
+        <div class="row gutter-14 kpi-dashboard">
+
+          <div class="col-md-4">
+            <div class="card small">
+              <div class="theme-lighten-1 p-10">
+                <div class="pull-right d-none">
+                  <div> <i class="md md-trending-up  text-rgb-5"></i> 9% </div>
+                </div>
+                <h4 class="no-margin white-text text-center w600">Toutes les inscriptions <em>({{data.stats.all}})</em></h4>
+                
+              </div>
+              <div class="card-content p-10">
+                <div class="row">
+                  <div class="col-md-4 text-center" style="border-right: 1px #F0F0F0 solid;">
+                    <h3 class="no-margin w300 blur">{{data.stats.nb_registed_precongres}}</h3>
+                    <p class="grey-text w600">Au pré-congrès</p>
+                  </div>
+                  <div class="col-md-4 text-center">
+                    <h3 class="no-margin w300 blur">{{data.stats.nb_registed_congres}} </h3>
+                    <p class="grey-text w600">Au congrès</p>
+                  </div>
+                  <div class="col-md-4 text-center">
+                    <h3 class="no-margin w300 blur">{{data.stats.nb_registed_both}} </h3>
+                    <p class="grey-text w600">Aux deux</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-md-4">
+            <div class="card small">
+              <div class="theme-lighten-1 p-10">
+                <div class="pull-right d-none">
+                  <div> <i class="md md-trending-up  text-rgb-5"></i> 9% </div>
+                </div>
+                <h4 class="no-margin white-text text-center w600">Formules choisies au congrès <em style="font-size:14px;">(toutes les inscriptions)</em></h4>
+                
+              </div>
+              <div class="card-content p-10">
+                <div class="row">
+                    <div class="col-md-4 text-center" style="border-right: 1px #F0F0F0 solid;">
+                        <h3 class="no-margin w300 blur">{{data.stats.formule1}}</h3>
+                        <p class="grey-text w600">150 000 FCFA</p>
+                    </div>
+                    <div class="col-md-4 text-center" style="border-right: 1px #F0F0F0 solid;">
+                        <h3 class="no-margin w300 blur">{{data.stats.formule2}}</h3>
+                        <p class="grey-text w600">75 000 FCFA</p>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <h3 class="no-margin w300 blur">{{data.stats.formule3}} </h3>
+                        <p class="grey-text w600">50 000 FCFA</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-2">
+            <div class="card small">
+              <div class="theme-lighten-1 p-10">
+                <div class="pull-right d-none">
+                  <div> <i class="md md-trending-up text-rgb-5"></i> 3% </div>
+                </div>
+                <h4 class="no-margin white-text text-center w600">Inscriptions validées </h4>
+                
+              </div>
+              <div class="card-content p-10">
+                <div class="row">
+                  <div class="col-md-12 text-center" style="border-right: 1px #F0F0F0 solid;">
+                    <h3 class="no-margin w300 blur">{{data.stats.nb_participants_payed}}</h3>
+                    <p class="grey-text w600">Comptes activés</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="col-md-2">
+            <div class="card small">
+              <div class="theme-lighten-1 p-10">
+                <div class="pull-right d-none">
+                  <div> <i class="md md-trending-up  text-rgb-5"></i> 9% </div>
+                </div>
+                <h4 class="no-margin white-text text-center w600">Type d'accès</h4>
+                
+              </div>
+              <div class="card-content p-10">
+                <div class="row">
+                  <div class="col-md-6 text-center" style="border-right: 1px #F0F0F0 solid;">
+                    <h3 class="no-margin w300 blur">{{data.stats.payed}}</h3>
+                    <p class="grey-text w600">Payant</p>
+                  </div>
+                  <div class="col-md-6 text-center ">
+                    <h3 class="no-margin w300 blur">{{data.stats.free}} </h3>
+                    <p class="grey-text w600">Gratuit</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          
+
+          
+        </div>
+
+
+
+
+
+
+
+        
+       
+
+      </div>
+      {% endif %}
+
+      <div class="p-20 no-p-t">
+        <h5 class="grey-text text-uppercase"><i class="md md-account-child"></i> Inscriptions au congrès</h5>
+
+
+        <div class="row gutter-14 kpi-dashboard">
+          <div class="col-md-3">
+            <div class="card small">
+              <div class="green lighten-1 p-10">
+                <div class="pull-right d-none">
+                  <div> <i class="md md-trending-up  text-rgb-5"></i> 9% </div>
+                </div>
+                <h4 class="no-margin white-text text-center w600">En attente de paiement <em>({{data.stats.congress_waiting}})</em></h4>
+                
+              </div>
+              <div class="card-content p-10">
+                <div class="row">
+                    <div class="col-md-4 text-center" style="border-right: 1px #F0F0F0 solid;">
+                        <h3 class="no-margin w30 blur0">{{data.stats.congress_formule1_waiting_payment}}</h3>
+                        <p class="grey-text w600">150 000 FCFA</p>
+                    </div>
+                    <div class="col-md-4 text-center" style="border-right: 1px #F0F0F0 solid;">
+                        <h3 class="no-margin w300 blur">{{data.stats.congress_formule2_waiting_payment}}</h3>
+                        <p class="grey-text w600">75 000 FCFA</p>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <h3 class="no-margin w300 blur">{{data.stats.congress_formule3_waiting_payment}} </h3>
+                        <p class="grey-text w600">50 000 FCFA</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-md-3">
+            <div class="card small">
+              <div class="green lighten-1 p-10">
+                <div class="pull-right d-none">
+                  <div> <i class="md md-trending-up  text-rgb-5"></i> 9% </div>
+                </div>
+                <h4 class="no-margin white-text text-center w600">Inscriptions Offertes <em>({{data.stats.free}})</em></h4>
+                
+              </div>
+              <div class="card-content p-10">
+                <div class="row">
+                    <div class="col-md-4 text-center" style="border-right: 1px #F0F0F0 solid;">
+                        <h3 class="no-margin w300 blur">{{data.stats.formule1_free}}</h3>
+                        <p class="grey-text w600">150 000 FCFA</p>
+                    </div>
+                    <div class="col-md-4 text-center" style="border-right: 1px #F0F0F0 solid;">
+                        <h3 class="no-margin w300 blur">{{data.stats.formule2_free}}</h3>
+                        <p class="grey-text w600">75 000 FCFA</p>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <h3 class="no-margin w300 blur">{{data.stats.formule3_free}} </h3>
+                        <p class="grey-text w600">50 000 FCFA</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="card small">
+              <div class=" green lighten-2 p-10">
+                <div class="pull-right d-none">
+                  <div> <i class="md md-trending-up  text-rgb-5"></i> 9% </div>
+                </div>
+                <h4 class="no-margin white-text text-center w600">Inscriptions Payées <em>({{data.stats.congress_payed}})</em></h4>
+                
+              </div>
+              <div class="card-content p-10">
+                <div class="row">
+                    <div class="col-md-4 text-center" style="border-right: 1px #F0F0F0 solid;">
+                        <h3 class="no-margin w300 blur">{{data.stats.formule1_payed}}</h3>
+                        <p class="grey-text w600">150 000 FCFA</p>
+                    </div>
+                    <div class="col-md-4 text-center" style="border-right: 1px #F0F0F0 solid;">
+                        <h3 class="no-margin w300 blur">{{data.stats.formule2_payed}}</h3>
+                        <p class="grey-text w600">75 000 FCFA</p>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <h3 class="no-margin w300 blur">{{data.stats.formule3_payed}} </h3>
+                        <p class="grey-text w600">50 000 FCFA</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="card small">
+              <div class="green lighten-1 p-10">
+                <div class="pull-right d-none">
+                  <div> <i class="md md-trending-up  text-rgb-5"></i> 9% </div>
+                </div>
+                <h4 class="no-margin white-text text-center w600">Modes de paiement</h4>
+                
+              </div>
+              <div class="card-content p-10">
+                <div class="row">
+                  <div class="col-md-6 text-center" style="border-right: 1px #F0F0F0 solid;">
+                    <h3 class="no-margin w300 blur">{{data.stats.congress_payed_by_participant}}</h3>
+                    <p class="grey-text w600">En ligne</p>
+                  </div>
+                  <div class="col-md-6 text-center">
+                    <h3 class="no-margin w300 blur">{{data.stats.congress_offline_payment}} </h3>
+                    <p class="grey-text w600">Hors ligne</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="row gutter-14 kpi-dashboard">
+          <div class="col-md-6">
+            <div class="card small">
+              <div class="green lighten-1 p-10">
+                <div class="pull-right d-none">
+                  <div> <i class="md md-trending-up  text-rgb-5"></i> 9% </div>
+                </div>
+                <h4 class="no-margin white-text text-center w600">Inscriptions payées en ligne <em>({{data.stats.congress_payed_by_participant}})</em></h4>
+                
+              </div>
+              <div class="card-content p-10">
+                <div class="row">
+                    <div class="col-md-4 text-center" style="border-right: 1px #F0F0F0 solid;">
+                        <h3 class="no-margin w300 blur">{{data.stats.formule1_payed_online}}</h3>
+                        <p class="grey-text w600">150 000 FCFA</p>
+                    </div>
+                    <div class="col-md-4 text-center" style="border-right: 1px #F0F0F0 solid;">
+                        <h3 class="no-margin w300 blur">{{data.stats.formule2_payed_online}}</h3>
+                        <p class="grey-text w600">75 000 FCFA</p>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <h3 class="no-margin w300 blur">{{data.stats.formule3_payed_online}} </h3>
+                        <p class="grey-text w600">50 000 FCFA</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="card small">
+              <div class=" green lighten-2 p-10">
+                <div class="pull-right d-none">
+                  <div> <i class="md md-trending-up  text-rgb-5"></i> 9% </div>
+                </div>
+                <h4 class="no-margin white-text text-center w600">Inscriptions payées hors-ligne <em>({{data.stats.congress_offline_payment}})</em></h4>
+                
+              </div>
+              <div class="card-content p-10">
+                <div class="row">
+                    <div class="col-md-4 text-center" style="border-right: 1px #F0F0F0 solid;">
+                        <h3 class="no-margin w300 blur">{{data.stats.formule1_payed_offline}}</h3>
+                        <p class="grey-text w600">150 000 FCFA</p>
+                    </div>
+                    <div class="col-md-4 text-center" style="border-right: 1px #F0F0F0 solid;">
+                        <h3 class="no-margin w300 blur">{{data.stats.formule2_payed_offline}}</h3>
+                        <p class="grey-text w600">75 000 FCFA</p>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <h3 class="no-margin w300 blur">{{data.stats.formule3_payed_offline}} </h3>
+                        <p class="grey-text w600">50 000 FCFA</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        
+        </div>
+      </div>
+
+      {% if true == false %}
+      <div class="p-20 no-p-t">
+              <h5 class="grey-text text-uppercase"><i class="md md-account-child "> </i> Inscriptions au prè-congrès</h5>
+             <div class="row gutter-14 kpi-dashboard">
+          <div class="col-md-6">
+            <div class="card small">
+              <div class="blue lighten-1 p-10">
+                <div class="pull-right d-none">
+                  <div> <i class="md md-trending-up  text-rgb-5"></i> 9% </div>
+                </div>
+                <h4 class="no-margin white-text text-center w600">En attente de paiement <em>({{data.stats.precongress_waiting}})</em></h4>
+                
+              </div>
+              <div class="card-content p-10">
+                <div class="row">
+                    <div class="col-md-4 text-center" style="border-right: 1px #F0F0F0 solid;">
+                        <h3 class="no-margin w300 blur">{{data.stats.precongress_formule1_waiting_payment}}</h3>
+                        <p class="grey-text w600">150 000 FCFA</p>
+                    </div>
+                    <div class="col-md-4 text-center" style="border-right: 1px #F0F0F0 solid;">
+                        <h3 class="no-margin w300 blur">{{data.stats.precongress_formule2_waiting_payment}}</h3>
+                        <p class="grey-text w600">60 000 FCFA</p>
+                    </div>
+                    <div class="col-md-4 text-center" style="border-right: 1px #F0F0F0 solid;">
+                        <h3 class="no-margin w300 blur">{{data.stats.precongress_formules_waiting_payment}}</h3>
+                        <p class="grey-text w600">210 000 FCFA</p>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {#
+          <div class="col-md-3">
+            <div class="card small">
+              <div class="green lighten-1 p-10">
+                <div class="pull-right d-none">
+                  <div> <i class="md md-trending-up  text-rgb-5"></i> 9% </div>
+                </div>
+                <h4 class="no-margin white-text text-center w600">Inscriptions Offertes <em>({{data.stats.free}})</em></h4>
+                
+              </div>
+              <div class="card-content p-10">
+                <div class="row">
+                    <div class="col-md-4 text-center" style="border-right: 1px #F0F0F0 solid;">
+                        <h3 class="no-margin w300">{{data.stats.formule1_free}}</h3>
+                        <p class="grey-text w600">150 000 FCFA</p>
+                    </div>
+                    <div class="col-md-4 text-center" style="border-right: 1px #F0F0F0 solid;">
+                        <h3 class="no-margin w300">{{data.stats.formule2_free}}</h3>
+                        <p class="grey-text w600">75 000 FCFA</p>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <h3 class="no-margin w300">{{data.stats.formule3_free}} </h3>
+                        <p class="grey-text w600">50 000 FCFA</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          #}
+
+          <div class="col-md-3">
+            <div class="card small">
+              <div class=" blue lighten-2 p-10">
+                <div class="pull-right d-none">
+                  <div> <i class="md md-trending-up  text-rgb-5"></i> 9% </div>
+                </div>
+                <h4 class="no-margin white-text text-center w600">Inscriptions Payées <em>({{data.stats.precongress_payed}})</em></h4>
+                
+              </div>
+              <div class="card-content p-10">
+                <div class="row">
+                    <div class="col-md-4 text-center" style="border-right: 1px #F0F0F0 solid;">
+                        <h3 class="no-margin w300 blur">{{data.stats.precongress_formule1_payed}}</h3>
+                        <p class="grey-text w600">150 000 FCFA</p>
+                    </div>
+                    <div class="col-md-4 text-center" style="border-right: 1px #F0F0F0 solid;">
+                        <h3 class="no-margin w300 blur">{{data.stats.precongress_formule2_payed}}</h3>
+                        <p class="grey-text w600">60 000 FCFA</p>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <h3 class="no-margin w300 blur">{{data.stats.precongress_formules_payed}} </h3>
+                        <p class="grey-text w600">210 000 FCFA</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="card small">
+              <div class="blue lighten-1 p-10">
+                <div class="pull-right d-none">
+                  <div> <i class="md md-trending-up  text-rgb-5"></i> 9% </div>
+                </div>
+                <h4 class="no-margin white-text text-center w600">Modes de paiement</h4>
+                
+              </div>
+              <div class="card-content p-10">
+                <div class="row">
+                  <div class="col-md-6 text-center" style="border-right: 1px #F0F0F0 solid;">
+                    <h3 class="no-margin w300 blur">{{data.stats.precongress_payed_by_participant}}</h3>
+                    <p class="grey-text w600">En ligne</p>
+                  </div>
+                  <div class="col-md-6 text-center">
+                    <h3 class="no-margin w300 blur">{{data.stats.precongress_offline_payment}} </h3>
+                    <p class="grey-text w600">Hors ligne</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="row gutter-14 kpi-dashboard">
+          <div class="col-md-6">
+            <div class="card small">
+              <div class="blue lighten-1 p-10">
+                <div class="pull-right d-none">
+                  <div> <i class="md md-trending-up  text-rgb-5"></i> 9% </div>
+                </div>
+                <h4 class="no-margin white-text text-center w600">Inscriptions payées en ligne <em>({{data.stats.precongress_payed_by_participant}})</em></h4>
+                
+              </div>
+              <div class="card-content p-10">
+                <div class="row">
+                    <div class="col-md-4 text-center" style="border-right: 1px #F0F0F0 solid;">
+                        <h3 class="no-margin w300 blur">{{data.stats.precongress_formule1_payed_online}}</h3>
+                        <p class="grey-text w600">150 000 FCFA</p>
+                    </div>
+                    <div class="col-md-4 text-center" style="border-right: 1px #F0F0F0 solid;">
+                        <h3 class="no-margin w300 blur">{{data.stats.precongress_formule2_payed_online}}</h3>
+                        <p class="grey-text w600">60 000 FCFA</p>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <h3 class="no-margin w300 blur">{{data.stats.precongress_formules_payed_online}} </h3>
+                        <p class="grey-text w600">210 000 FCFA</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="card small">
+              <div class=" blue lighten-2 p-10">
+                <div class="pull-right d-none">
+                  <div> <i class="md md-trending-up  text-rgb-5"></i> 9% </div>
+                </div>
+                <h4 class="no-margin white-text text-center w600">Inscriptions payées hors-ligne <em>({{data.stats.precongress_offline_payment}})</em></h4>
+                
+              </div>
+              <div class="card-content p-10">
+                <div class="row">
+                    <div class="col-md-4 text-center" style="border-right: 1px #F0F0F0 solid;">
+                        <h3 class="no-margin w300 blur">{{data.stats.precongress_formule1_payed_offline}}</h3>
+                        <p class="grey-text w600">150 000 FCFA</p>
+                    </div>
+                    <div class="col-md-4 text-center" style="border-right: 1px #F0F0F0 solid;">
+                        <h3 class="no-margin w300 blur">{{data.stats.precongress_formule2_payed_offline}}</h3>
+                        <p class="grey-text w600">60 000 FCFA</p>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <h3 class="no-margin w300 blur">{{data.stats.precongress_formules_payed_offline}} </h3>
+                        <p class="grey-text w600">210 000 FCFA</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        
+        </div>
+      </div>
+      {% endif %}
+
+      <div class="p-20 no-p-t">
+        <h5 class="grey-text"><i class="md md-account-child"></i> Inscriptions</h5>
+        <div class="row gutter-14 kpi-dashboard">
+
+
+          <div class="col-md-3">
+            <div class="card small">
+              <div class="green lighten-1 p-10">
+                <div class="pull-right d-none">
+                  <div> <i class="md md-trending-up text-rgb-5"></i> 3% </div>
+                </div>
+                <h4 class="no-margin white-text w600">Inscriptions via le site</h4>
+                <div class="f11" style="opacity:0.8"> <i class="md md-star-outline"></i> Dernière inscription {{data.stats.last_subscription_web | date('d/m/Y à H:i:s')}} </div>
+                <div class="p-10 p-t-30">
+                  <div id="chart-line-1-0"></div>
+                </div>
+              </div>
+              <div class="card-content p-10">
+                <div class="row">
+                  <div class="col-md-6 text-center" style="border-right: 1px #F0F0F0 solid;">
+                    <h3 class="no-margin w300 blur">{{data.stats.all_from_website}}</h3>
+                    <p class="grey-text w600">Au total</p>
+                  </div>
+                  <div class="col-md-6 text-center">
+                    <h3 class="no-margin w300 blur">{{data.stats.days|last.subscriptions_from_website}}</h3>
+                    <p class="grey-text w600">Aujourd'hui</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="card small">
+              <div class="green lighten-1 p-10">
+                <div class="pull-right d-none">
+                  <div> <i class="md md-trending-up  text-rgb-5"></i> 9% </div>
+                </div>
+                <h4 class="no-margin white-text w600">Inscriptions via admin</h4>
+                <div class="f11" style="opacity:0.8"> <i class="md md-star-outline"></i> Dernière inscription {{data.stats.last_subscription_admin | date('d/m/Y à H:i:s')}} </div>
+                <div class="p-10 p-t-30">
+                  <div id="chart-line-3-0"></div>
+                </div>
+              </div>
+              <div class="card-content p-10">
+                <div class="row">
+                  <div class="col-md-6 text-center" style="border-right: 1px #F0F0F0 solid;">
+                    <h3 class="no-margin w300 blur">{{data.stats.all_from_admin}}</h3>
+                    <p class="grey-text w600">Au total</p>
+                  </div>
+                  <div class="col-md-6 text-center ">
+                    <h3 class="no-margin w300 blur">{{data.stats.days|last.subscriptions_by_admin}} </h3>
+                    <p class="grey-text w600">Aujourd'hui</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="card small">
+              <div class="theme-lighten-1 p-10">
+                <div class="pull-right d-none">
+                  <div> <i class="md md-trending-up  text-rgb-5"></i> 9% </div>
+                </div>
+                <h4 class="no-margin white-text w600">Toute les inscriptions</h4>
+                <div class="f11" style="opacity:0.8"> <i class="md md-star-outline"></i> Dernière inscription {{data.stats.last_subscription | date('d/m/Y à H:i:s')}} </div>
+                <div class="p-10 p-t-30">
+                  <div id="chart-line-3-0"></div>
+                </div>
+              </div>
+              <div class="card-content p-10">
+                <div class="row">
+                  <div class="col-md-6 text-center" style="border-right: 1px #F0F0F0 solid;">
+                    <h3 class="no-margin w300 blur">{{data.stats.all}}</h3>
+                    <p class="grey-text w600">Au total</p>
+                  </div>
+                  <div class="col-md-6 text-center">
+                    <h3 class="no-margin w300 blur">{{data.stats.days|last.all_subscriptions}} </h3>
+                    <p class="grey-text w600">Aujourd'hui</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="card small">
+              <div class="green lighten-1 p-10">
+                <div class="pull-right d-none">
+                  <div> <i class="md md-trending-up  text-rgb-5"></i> 9% </div>
+                </div>
+                <h4 class="no-margin white-text w600">Inscriptions validées</h4>
+                <div class="f11" style="opacity:0.8"> <i class="md md-star-outline"></i>  Dernière inscription {{data.stats.last_validation | date('d/m/Y à H:i:s')}}  </div>
+                <div class="p-10 p-t-30">
+                  <div id="chart-line-3-0"></div>
+                </div>
+              </div>
+              <div class="card-content p-10">
+                <div class="row">
+                  <div class="col-md-12 text-center" style="border-right: 1px #F0F0F0 solid;">
+                    <h3 class="no-margin w300 blur">{{data.stats.validated}}</h3>
+                    <p class="grey-text w600">Au total</p>
+                  </div>
+                  <div class="col-md-6 text-center d-none">
+                    <h3 class="no-margin w300">34 </h3>
+                    <p class="grey-text w600">Today total</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h5 class="grey-text"><i class="md md-view-module"></i> Scans</h5>
+
+        <div class="row gutter-14 kpi-dashboard">
+
+          <div class="col-md-8 d-none">
+            <div class="card small">
+              <div class="card line-chart small">
+                <div class="card-header">
+                  <div class="card-title">Line charts</div>
+                </div>
+                <div class="card-content">
+                  <div id="line-chart"></div>
+                </div>
+              </div>
+              <div class="card-content p-10">
+                <div class="row">
+                  <div class="col-md-6 text-center" style="border-right: 1px #F0F0F0 solid;">
+                    <h3 class="no-margin w300">2584</h3>
+                    <p class="grey-text w600">Monthly total</p>
+                  </div>
+                  <div class="col-md-6 text-center">
+                    <h3 class="no-margin w300">89</h3>
+                    <p class="grey-text w600">Today total</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-md-8 d-none">
+            <div class="card small">
+              <div class="theme-secondary-lighten-1 p-10">
+                <div class="pull-right">
+                  <div> <i class="md md-trending-up  text-rgb-5"></i> 6% </div>
+                </div>
+                <h4 class="no-margin white-text w600">Inscriptions via admin</h4>
+                <div class="f11" style="opacity:0.8"> <i class="md md-star-outline"></i> Latest 10 May, 10:00 </div>
+                <div class="p-10 p-t-30">
+                  <div id="line-chartd"></div>
+                </div>
+              </div>
+              <div class="card-content p-10">
+                <div class="row">
+                  <div class="col-md-6 text-center" style="border-right: 1px #F0F0F0 solid;">
+                    <h3 class="no-margin w300">2584</h3>
+                    <p class="grey-text w600">Monthly total</p>
+                  </div>
+                  <div class="col-md-6 text-center">
+                    <h3 class="no-margin w300">89</h3>
+                    <p class="grey-text w600">Today total</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="row gutter-14 kpi-dashboard">
+
+            <div class="col-md-8">
+              <div class="row">
+
+                  <div class="col-md-6">
+                    <div class="card small">
+                      <div class="green lighten-1 p-10">
+                        <div class="pull-right d-none">
+                          <div> <i class="md md-trending-up  text-rgb-5"></i> 9% </div>
+                        </div>
+                        <h4 class="no-margin white-text w600">Scans effectués</h4>
+                        <div class="f11" style="opacity:0.8"> <i class="md md-star-outline"></i> Dernier scan {{data.stats.last_scan | date('d/m/Y à H:i:s')}} </div>
+                        <div class="p-10 p-t-30">
+                          <div id="chart-line-3-0"></div>
+                        </div>
+                      </div>
+                      <div class="card-content p-10">
+                        <div class="row">
+                          <div class="col-md-4 text-center" style="border-right: 1px #F0F0F0 solid;">
+                            <h3 class="no-margin w300 blur">{{data.stats.total_scan}}</h3>
+                            <p class="grey-text w600">Au total</p>
+                          </div>
+                          <div class="col-md-4 text-center" style="border-right: 1px #F0F0F0 solid;">
+                            <h3 class="no-margin w300 blur">{{data.stats.total_scan_yesterday}}</h3>
+                            <p class="grey-text w600">Hier</p>
+                          </div>
+                          <div class="col-md-4 text-center">
+                            <h3 class="no-margin w300 blur">{{data.stats.total_scan_today}} </h3>
+                            <p class="grey-text w600">Aujourd'hui</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <div class="card small">
+                      <div class="green lighten-1 p-10">
+                        <div class="pull-right d-none">
+                          <div> <i class="md md-trending-up  text-rgb-5"></i> 9% </div>
+                        </div>
+                        <h4 class="no-margin white-text w600">Scans par salle</h4>
+                        <div class="f11" style="opacity:0.8"> <i class="md md-star-outline"></i> Dernier scan {{data.stats.last_scan | date('d/m/Y à H:i:s')}} </div>
+                        <div class="p-10 p-t-30">
+                          <div id="chart-line-3-0"></div>
+                        </div>
+                      </div>
+                      <div class="card-content p-10">
+                        <div class="row">
+                          <div class="col-md-6 text-center" style="border-right: 1px #F0F0F0 solid;">
+                            <h3 class="no-margin w300 blur">{{data.stats.salles_stats['pleniere']}}</h3>
+                            <p class="grey-text w600">Plénière ({{data.stats.pourcentage_pleniere}} %)</p>
+                          </div>
+                          <div class="col-md-6 text-center">
+                            <h3 class="no-margin w300 blur">{{data.stats.salles_stats['atelier']}} </h3>
+                            <p class="grey-text w600">Atelier ({{data.stats.pourcentage_atelier}} %)</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-12">
+                    <div class="card small">
+                      <div class="theme-secondary-lighten-1 p-10">
+
+                        <h4 class="no-margin white-text w600">Scans par session</h4>
+
+                      </div>
+                      <div class="card-content p-10">
+                        <div class="row">
+                          <div class="col-md-12" style="border-right: 1px #F0F0F0 solid;">
+                            <div class="datatables">
+                            <table id="example" class="table table-full table-full-small" cellspacing="0" width="100%">
+                              <thead>
+                                <tr>
+                                  <th>Session</th>
+                                  <th>Date</th>
+                                  <th>Heure</th>
+                                  <th>Scans</th>
+                                </tr>
+                              </thead>
+                              <tfoot>
+                                <tr>
+                                  <th>Session</th>
+                                  <th>Date</th>
+                                  <th>Heure</th>
+                                  <th>Scans</th>
+                                </tr>
+                              </tfoot>
+                              <tbody>
+                              {% for session in data.stats.sessions_stats %}
+                                <tr>
+                                  <td class=" blur">{{session.title}}</td>
+                                  <td class=" blur">{{session.date}}</td>
+                                  <td class=" blur">{{session.heure}}</td>
+                                  <td class=" blur">{{session.scans}}</td>
+                                </tr>
+                              {% endfor %}
+                              </tbody>
+                            </table>
+                          </div>
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="row gutter-14 kpi-dashboard">
+
+                <div class="col-md-12">
+                  <div class="card small">
+                    <div class="blue lighten-1 p-10">
+                      <div class="pull-right d-none">
+                        <div> <i class="md md-trending-up  text-rgb-5"></i> 9% </div>
+                      </div>
+                      <h4 class="no-margin white-text w600">Certificats téléchargés</h4>
+                      <div class="f11" style="opacity:0.8"> <i class="md md-star-outline"></i> Dernier téléchargement {{data.stats.last_certificate_download | date('d/m/Y à H:i:s')}} </div>
+                      <div class="p-10 p-t-30">
+                        <div id="chart-line-3-00"></div>
+                      </div>
+                    </div>
+                    <div class="card-content p-10">
+                      <div class="row">
+                        <div class="col-md-4 text-center" style="border-right: 1px #F0F0F0 solid;">
+                          <h3 class="no-margin w300 blur">{{data.stats.total_certificate_download}}</h3>
+                          <p class="grey-text w600">Au total</p>
+                        </div>
+                        <div class="col-md-4 text-center" style="border-right: 1px #F0F0F0 solid;">
+                          <h3 class="no-margin w300 blur">{{data.stats.total_certificate_download_yesterday}}</h3>
+                          <p class="grey-text w600">Hier</p>
+                        </div>
+                        <div class="col-md-4 text-center">
+                          <h3 class="no-margin w300 blur">{{data.stats.total_certificate_download_today}} </h3>
+                          <p class="grey-text w600">Aujourd'hui</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="col-md-12">
+
+                  <div class="card small">
+                <div class="theme-secondary-lighten-1 p-10">
+
+                  <h4 class="no-margin white-text w600">Scans par hôtesse</h4>
+
+                </div>
+                <div class="card-content p-10">
+                  <div class="row">
+                    <div class="col-md-12" style="border-right: 1px #F0F0F0 solid;">
+                      <div class="datatables">
+                      <table id="example" class="table table-full table-full-small" cellspacing="0" width="100%">
+                        <thead>
+                          <tr>
+                            <th>Nom</th>
+                            <th>Scans</th>
+                          </tr>
+                        </thead>
+                        <tfoot>
+                          <tr>
+                            <th>Nom</th>
+                            <th>Scans</th>
+                          </tr>
+                        </tfoot>
+                        <tbody>
+                        {% for user in data.stats.users_stats %}
+                          <tr>
+                            <td class=" blur">{{user.name}}</td>
+                            <td class=" blur">{{user.scans}}</td>
+                          </tr>
+                        {% endfor %}
+                        </tbody>
+                      </table>
+                    </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+                </div>
+              </div>
+            </div>
+
+        </div>
+
+        <div class="row gutter-14 kpi-dashboard">
+
+          <div class="col-md-8 d-none">
+            <div class="card small">
+              <div class="card line-chart small">
+                <div class="card-header">
+                  <div class="card-title">Line charts</div>
+                </div>
+                <div class="card-content">
+                  <div id="line-chart"></div>
+                </div>
+              </div>
+              <div class="card-content p-10">
+                <div class="row">
+                  <div class="col-md-6 text-center" style="border-right: 1px #F0F0F0 solid;">
+                    <h3 class="no-margin w300">2584</h3>
+                    <p class="grey-text w600">Monthly total</p>
+                  </div>
+                  <div class="col-md-6 text-center">
+                    <h3 class="no-margin w300">89</h3>
+                    <p class="grey-text w600">Today total</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="grey-text small p-t-20">Materialism by Theme-Guys - v1.1.4</div>
+      </div>
+
+
+     
+
+    </div>
+    {% else %}
+    <div class="col-sm-12 col-md-12 col-lg-12">
+      Les statistiques seront disponibles ultérieurement.
+      </div>
+    {% endif %}
+
+
+  </div>
+</div>
+
+{% block js_for_chats %}
+  <script type="text/javascript">
+    chartDat = {{ data.stats.arr_from_website|json_encode() }};
+    console.log(chartDat);
+  </script>
+{% endblock %}
+
+{% block extendjsfooter %}
+    <script type="text/javascript">
+    //chartData3 = randomData(20, 40, 60);
+    chartData9 = {{ data.stats.arr_from_website|json_encode() }};
+    console.log(chartData9);
+
+
+
+
+
+
+    </script>
+
+{% endblock %}
+
+
+
+{% endblock %}

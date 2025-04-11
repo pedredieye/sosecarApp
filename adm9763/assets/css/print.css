@@ -1,0 +1,35 @@
+
+.part-title{
+  font-size: 14px !important;
+  line-height: 17px !important;
+  height: 55px;
+   display: -webkit-box;
+   -webkit-line-clamp: 2; /* number of lines to show */
+   -webkit-box-orient: vertical;
+   overflow: hidden;
+}
+
+.part-qr-code{
+  width: 100%;
+}
+.list-qr {
+  padding: 0;
+  margin: 0;
+}
+ .list-qr .one-qr{
+   /*min-height: 377px;*/
+ }
+.one-qr{
+  max-width: 25%;
+  width: 25%;
+  display: inline;
+  float: left;
+  position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+
+  height: 23vh !important;
+  margin-bottom: 1vh !important;
+  margin-top: 1vh !important;
+}

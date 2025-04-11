@@ -1,0 +1,59 @@
+{% extends 'templates/layout.twig' %}
+{% block page_title %}Liste des attestations générées
+{% endblock %}
+{% block active_attestation %}active
+{% endblock %}
+{% block all_attestation_active %}active
+{% endblock %}
+{% block collapse_in_attestation %}in
+{% endblock %}
+{% block page_title_breadcrumb %}Liste des secrétaires
+{% endblock %}
+{% block content %}
+
+	<section class="tables-data">
+		<div class="page-header">
+			<h1>
+				<i class="md md-list"></i>
+				Liste de des attestations
+			</h1>
+			<p class="lead">Cette liste affiche la liste des attestations.</p>
+		</div>
+		<div class="card">
+			<div>
+				<!-- onclick="window.location.href=('{{path_for('one_user', { 'id':user.id })}}')"  -->
+				<div class="datatables">
+					<table id="example" class="table table-full table-full-small" cellspacing="0" width="100%">
+						<thead>
+							<tr>
+								<th>Prénom(s) et nom</th>
+								<th>Email</th>
+								<th></th>
+							</tr>
+						</thead>
+						<tfoot>
+							<tr>
+								<th>Prénom(s) et nom</th>
+								<th>Email</th>
+								<th></th>
+							</tr>
+						</tfoot>
+						<tbody>
+							{% for user in data.attestations %}
+								<tr>
+									<td class="ml-2">{{user.name}}</td>
+									<td>{{user.email}}</td>
+									<td>
+										
+									</td>
+								</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</section>
+
+{% endblock %}
+

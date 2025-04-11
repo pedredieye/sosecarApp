@@ -1,0 +1,138 @@
+{% extends 'templates/layout.twig' %}
+{% block page_title %}Valider une participation aux ateliers du pré-congrès{% endblock %}
+{% block active_participant %}active{% endblock %}
+{% block collapse_in %}in{% endblock %}
+{% block page_title_breadcrumb %}Liste des participants en attente de validation{% endblock %}
+{% block content %}
+
+
+<section class="forms-validation">
+  <div class="page-header">
+    <h1>      <i class="md md-group"></i>  Valider une participation aux ateliers du pré-congrès  </h1>
+    <p class="lead d-none">The <a href="http://1000hz.github.io/bootstrap-validator/" target="_blank">Validator plugin</a> offers automatic form validation configurable via mostly HTML5 standard attributes. It also provides an unobtrusive user experience, because nobody likes a naggy form.</p>
+  </div>
+  <div class="row  m-b-40">
+    <div class="col-md-3 col-md-push-9 ">
+      <h5 class="d-none">Aide</h5>
+      <p class="d-none"> Push the submit button to check all the validations at once. Resetting will handle resetting the validation messages. </p>
+    </div>
+    <div class="col-md-8 col-md-pull-3">
+
+      <div class="bs-component" >
+        <div class="alert alert-dismissible alert-success d-none" id="alert-form">
+          <button type="button" class="close" data-dismiss="alert">×</button>
+          <h4>Success!</h4> <strong>Well done!</strong> You successfully read <a href="#" class="alert-link">this important alert message</a>.
+        </div>
+      </div>
+
+      <div class="well white" id="forms-validation-container">
+        <div>
+          <form class="form-floating" id="form_validation_pre_participant" name="form_validation_pre_participant">
+            <fieldset>
+              <legend>Valider la participation de : {{data.participant.first_name}} {{data.participant.last_name}}</legend>
+
+              <div class="form-group">
+                  <label class="control-label" for="email">N° du reçu (obligatoire)</label>
+                  <input type="text" id="recu" name="recu" class="form-control rounded-0" required="" data-error="N° de reçu manquant">
+                  <div class="help-block with-errors"></div>
+              </div>
+
+              <div class="form-group">
+                <div class="help-block with-errors"> Veuillez renseigner le numéro du reçu de paiement de {{data.participant.title.title}} {{data.participant.first_name}} {{data.participant.last_name}}</div>
+              </div>
+
+              <div class="form-group mt">
+                    <label class="control-label- normal big" for="activite1">Ateliers choisis</label>
+                    <div class="radio-box radio-with-price">
+                        <div class="pretty p-default p-curve">
+                            <input type="checkbox" name="activite1" id="activite1" value="1" {% if '1' in data.participant.formule_pc %}checked{% endif %} />
+                            <div class="state p-primary-o">
+                                <label><div class="radio-box-with-price">ECG POUR L'OMNIPRATICIEN - <span class="radio-price">60 000 FCFA</span></div> </label>
+                            </div>
+                        </div>
+                            <div class="pretty p-default p-curve">
+                            <input type="checkbox" name="activite2" id="activite2" value="2"  {% if '2' in data.participant.formule_pc %}checked{% endif %}/>
+                            <div class="state p-primary-o">
+                                <label><div class="radio-box-with-price">ATELIERS D'ECHOGRAPHIE VASCULAIRE - <span class="radio-price">150 000 FCFA</span></div> </label>
+                            </div>
+                        </div>
+                    </div>
+                  <div class="help-block with-errors"></div>
+              </div>
+
+
+              <div class="form-group mt">
+                <label class="control-label normal big">Enregistrer comme invité(e) ?</label>
+                <div class="switch">
+                  <label class="filled"> Non
+                    <input type="checkbox"  id="if_invited" name="if_invited"> <span class="lever"></span> Oui </label>
+                </div>
+              </div>
+
+
+                <div class="form-group mt">
+                    <label class="control-label normal big" for="labo">Cette inscription provient d'un laboratoire ?</label>
+                    <br>
+                    <select class="form-control rounded-0 to-select-nice" id="labo" name="labo" required="" data-error="Information manquante.">
+                          <option value="0" >Aucun</option>
+                        {% for labo in data.labos %}
+                          <option value="{{labo.id}}" >{{labo.name}}</option>
+                        {% endfor %}
+                    </select>
+                    <div class="help-block with-errors"></div>
+                    <br>
+                </div>
+                
+
+              {% if get.id  == "okk" %}
+              <div class="form-group mt">
+                  <label class="control-label normal big">Mode de paiement </label>
+                  <div class="pretty p-default p-curve">
+                      <input type="radio" disabled name="payment_method" class="payment_method_bt" value="cash" checked />
+                      <div class="state p-primary-o">
+                          <label>Paiement Cash</label>
+                      </div>
+                  </div>
+
+                  <div class="pretty p-default p-curve">
+                      <input type="radio" disabled name="payment_method" class="payment_method_bt" value="online" />
+                      <div class="state p-primary-o">
+                          <label>Paiement en ligne</label>
+                      </div>
+                  </div>
+                </div>
+
+                
+                <div class="form-group mt-0 pt-0 d-none">
+                  <div class="help-block with-errors">Vous serez redirigé vers Paydunya pour effectuer le paiement</div>
+                </div>
+
+              {% endif %}
+              
+
+
+
+
+
+              <div class="form-group">
+                <button type="submit"  
+                  id="btn-validate-pre-part" 
+                  data-participant-ticket = "{{data.participant.ticket_number_pc}}" 
+                  data-user-id = "{{usr.id}}"  data-participant-id = "{{data.participant.id}}"  
+                  class="btn btn-primary" 
+                  >Valider</button>
+                <button type="reset" class="btn btn-default" disabled>Réinitialiser</button><br>
+
+                <div class="d-none">Une mise à jour est en cours, veuillez revenir dans un instant s'il vous plaît.</div>
+                
+              </div>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+{% endblock %}

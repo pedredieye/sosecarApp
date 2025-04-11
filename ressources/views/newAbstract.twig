@@ -1,0 +1,285 @@
+{% extends 'templates/layoutpage.twig' %}
+{% block page_title %}Envoyer un abstract{% endblock %}
+{% block main_page_title %}Envoyer un abstract{% endblock %}
+{% block page_content %}
+
+    {% if true  %}
+     <!-- Start Coming Soon -->
+        <div class="coming-soon-area ptb-100">
+            <div class="container">
+                <div class="coming-soon-content">
+                    <div class="inoc-notif {{data.class}}"><span>{{data.icon | raw}}</span> </div>
+                   
+                    <h2>Soumission clôturée</h2>
+                    <p>La soumission des abtracts a été clôturée.{{data.message | raw}}</p> 
+
+                    <div class="box-button">
+                        <a href="{{path_for('home')}}" class="default-btn btn-style-one">Retourner à l'accueil<i class="bx bx-plus"></i></a>
+                            <a href="{{path_for('tickets')}}" class="default-btn btn-style-one">Acheter mon billet<i class="bx bx-plus"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    <!-- End Coming Soon -->
+    {% else %}
+
+        <!-- Start Contact Us Area -->
+        <div class="contact-area pt-100 pb-100">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-5" data-cue="slideInRight" data-duration="1500">
+                    
+                        <div class="single-contact-card bbx no-pm">
+                            <div class="section-title left-title">
+                                <span class="top-title">6ème Cardiotech Sénégal</span>
+                                <h2>Dépôt d'abstracts</h2>
+                                <p class="n-alert">Date limite des soumissions : 15 novembre 2024 à 23h59</p>
+                            </div>
+
+                            <div class="contact-box">
+                                <h3>Présentation</h3>
+                                <p>Dactylographier le texte à l’intérieur du cadre</p>
+                            </div>
+                            <div class="contact-box">
+                                <h3>Police</h3>
+                                <p>Times New Roman, Taille 12, interligne simple</p>
+                            </div>
+                            <div class="contact-box">
+                                <h3>Résumé</h3>
+                                <p>500 mots maximum avec 3 à 4 mots-clés</p>
+                            </div>
+
+                            <div class="contact-box">
+                                <h3>Auteurs</h3>
+                                <p>Indiquer dans l’ordre, le nom et le prénom du 1er auteur, suivi de l’initiale du prénom et du nom des co-auteurs</p>
+                            </div>
+                            
+                            <div class="contact-box">
+                                <h3>Adresse</h3>
+                                <p>Indiquer Service, Hôpital, Ville, Pays.</p>
+                            </div>
+
+                            <div class="contact-box">
+                                <h3>TITRE</h3>
+                                <p>En lettres capitales</p>
+                            </div>
+                            {#
+                            <p>Vous pouvez aussi envoyer votre article (normes sus-citées) à l’adresse suivante : <strong>sosecar.sn@gmail.com</strong> </p>
+                            <p>Les résumés transmis par mail sur ce modèle seront acceptés.</p>
+                            #}
+                            
+                            
+                        </div>
+                    </div>
+                    <div class="col-lg-7" data-cue="slideInRight" data-duration="1500">
+                        <div class="contact-form-content">
+                            
+                            <form id="sos-add-abstract" name="sos-add-abstract" class="w-l form-abstract" enctype="multipart/form-data"> 
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12">
+                                        <div class="form-group">
+                                            <label class="input-title show" for="abs_title">Titre</label>
+                                            <input type="text" id="abs_title" name="abs_title"  class="form-control" placeholder="" required data-error="">
+                                            <span class="input-help">En lettres capitales</span>
+                                            <div class="help-block with-errors"></div> 
+                                        </div>
+                                    </div>
+        
+                                    <div class="col-lg-12 col-md-12">  
+                                        <div class="form-group">
+                                          <label class="input-title show" for="authors">Auteurs</label>
+                                            <input type="text" id="authors" name="authors" placeholder="" required data-error="" class="form-control">
+                                           <span class="input-help">Indiquer dans l’ordre, le nom et le prénom du 1<sup>er</sup> auteur, suivi de l’initiale du prénom et du nom des co-auteurs</span>
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div> 
+                    
+                                    <div class="col-lg-12 col-md-12">
+                                        <div class="form-group">
+                                            <label class="input-title show" for="address">Adresse</label>
+                                            <input type="text" id="address" name="address"  class="form-control" placeholder="" required data-error="">
+                                            <span span class="input-help">Indiquer Service, Hôpital, Ville, Pays.</span>
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-lg-12">
+                                        <div class="form-group"> 
+                                            <label class="input-title show" for="address">Résumé</label>
+                                            <textarea class="form-control" id="resume" name="resume" placeholder="500 mots maximum avec 3 à 4 mots-clés" cols="5" rows="5" required data-error=""></textarea>
+                                            <span class="input-help word_left"><span id="word_left">500</span> mots restants</span>
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-12">
+                                        <div class="form-group"> 
+                                            <label class="input-title show" for="resume">Fichier du résumé</label>
+                                            <div class="input-group no-border">
+                                                <input type="text" class="form-control file-name" value="Aucun fichier choisi" readonly>
+                                                <div class="input-group-btn full">
+                                                    <span class="fileUpload btn btn-success">
+                                                    <span class="upl" id="btn-upload">Ajouter un fichier</span>
+                                                    <input type="file" class="upload up" id="up" name="up"  accept=".pdf,.doc,.docx,.xml,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"  onchange="console.log('File set')" />
+                                                    </span><!-- btn-orange -->
+                                                </div><!-- btn -->
+                                            </div><!-- group -->
+                                            <span class="input-help">Les fichiers acceptés sont en .pdf, .doc</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-12 col-md-12">
+                                        <div class="form-group">
+                                            <label class="input-title show" for="sender_title">Envoyé par</label>
+                                            <div class="radio-box mb-4">
+                                              <div class="pretty p-default p-curve">
+                                                  <input type="radio" name="sender_title" value="Pr" checked/>
+                                                  <div class="state p-primary-o">
+                                                      <label>Pr.</label>
+                                                  </div>
+                                              </div>
+
+                                              <div class="pretty p-default p-curve">
+                                                  <input type="radio" name="sender_title" value="Dr" />
+                                                  <div class="state p-primary-o">
+                                                      <label>Dr.</label>
+                                                  </div>
+                                              </div>
+
+                                              <div class="pretty p-default p-curve">
+                                                  <input type="radio" name="sender_title" value="Mr" />
+                                                  <div class="state p-primary-o">
+                                                      <label>Mr.</label>
+                                                  </div>
+                                              </div>
+
+                                              <div class="pretty p-default p-curve">
+                                                  <input type="radio" name="sender_title" value="Mme" />
+                                                  <div class="state p-primary-o">
+                                                      <label>Mme.</label>
+                                                  </div>
+                                              </div>
+
+                                            </div>
+                                            
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-12 col-md-12">
+                                        <div class="form-group">
+                                            <label class="input-title show" for="name_sender">Nom</label>
+                                            <input type="text" id="name_sender" name="name_sender"  class="form-control" placeholder="Renseigner votre nom" required data-error="">
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-lg-12 col-md-12">
+                                        <div class="form-group">
+                                            <label class="input-title show" for="address_sender">Pays</label>
+                                            <input type="text" id="address_sender" name="address_sender"  class="form-control" placeholder="Pays" required data-error="">
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-12 col-md-12">
+                                        <div class="form-group">
+                                            <label class="input-title show" for="address_email_sender">Adresse email</label>
+                                            <input type="text" id="address_email_sender" name="address_email_sender"  class="form-control" placeholder="Votre adresse email" required data-error="">
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-12 col-md-12">
+                                        <button type="submit" class="default-btn">    
+                                           Valider<i class="bx bx-plus"></i>
+                                        </button>
+                                        <div id="msgSubmit" class="h3 text-center hidden"></div>
+                                        <div class="clearfix"></div>
+                                    </div>
+
+                                    <div class="row">
+                                      <div class="col-md-12 text-center mt-3">
+                                        <div class="alert sa-alert-form alert-primary d-none" role="alert" id="alert-abstract">
+                                          ...
+                                        </div>
+                                      </div>
+                                    </div>
+
+                                </div> 
+                            </form>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <!-- End Contact Us Area -->
+         
+    {% endif %}
+
+
+<script src="{{domain_url}}/assets/js/vendor/jquery-2.2.4.min.js"></script>
+
+      <script type="text/javascript">
+        $(document).on('change','.up', function(){
+          var names = [];
+          var length = $(this).get(0).files.length;
+          for (var i = 0; i < $(this).get(0).files.length; ++i) {
+              names.push($(this).get(0).files[i].name);
+          }
+
+           //$("input[name=file]").val(names);
+
+          if(length>2){
+            var fileName = names.join(', ');
+            $(this).closest('.form-group').find('.form-control').attr("value",length+" files selected");
+          }
+          else{
+            $(this).closest('.form-group').find('.form-control').attr("value",names);
+          }
+
+       });
+
+
+
+
+
+       $(document).ready(function() {
+        $("#resume").on('keyup', function() {
+          var words = 0;
+
+          if ((this.value.match(/\S+/g)) != null) {
+            words = this.value.match(/\S+/g).length;
+          }
+
+          if (words > 500) {
+            // Split the string on first 200 words and rejoin on spaces
+            var trimmed = $(this).val().split(/\s+/, 500).join(" ");
+            // Add a space at the end to make sure more typing creates new words
+            $(this).val(trimmed + " ");
+          }
+          else {
+            $('#display_count').text(words);
+            $('#word_left').text(500-words);
+            $(".word_left").removeClass('help-block error');
+            $("#resume-error").html('');
+          }
+
+          if (words == 500) {
+            $(".word_left").addClass('help-block error');
+
+            $("#resume-error").html("Votre article ne respecte pas les normes indiquées. <br>Nous vous prions de le rectifier avant renvoi. Merci<br>Le comité scientifique");
+          }
+
+
+
+
+
+        });
+      });
+      </script>
+{% endblock %}

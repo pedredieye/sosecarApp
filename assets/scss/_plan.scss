@@ -1,0 +1,195 @@
+//plan-coverage-area
+
+.plan-list {
+    & li {
+        font-size: 20px;
+        margin-bottom: 15px;
+        @media #{$lg} {
+           overflow: hidden;
+           width: 50%;
+           float: left;
+        }
+        &:last-child {
+            &::before {
+                display: inline-block;
+                background: url(../img/icon/tick.svg) no-repeat !important;
+            }
+        }
+    }
+}
+
+
+//plan-area
+.nav-tabs {
+    border-bottom: 0;
+    border: 0;
+    display: inline-block;
+    border: 2px solid $theme-color;
+    border-radius: 30px;
+    margin: 0 auto;
+    @media #{$xs} {
+        border: 0;
+    }
+    & .nav-link {
+        border: 0;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        color: $theme-color;
+        font-size: 16px;
+        font-family: $circularbook;
+        font-weight: 400;
+        text-transform: uppercase;
+        display: inline-block;
+        line-height: 1;
+        padding: 22px 38px;
+        &:first-child {
+            border-top-left-radius: 28px;
+            border-bottom-left-radius: 28px;
+            @media #{$xs} {
+                border-top-left-radius: 40px;
+                border-bottom-left-radius: 40px;
+            }
+        }
+        &:last-child {
+            border-top-right-radius: 28px;
+            border-bottom-right-radius: 28px;
+            @media #{$xs} {
+                border-top-right-radius: 40px;
+                border-bottom-right-radius: 40px;
+            }
+        }
+        &.active {
+            color: $white;
+            background-color: $theme-color;
+            border-color: transparent;
+            border: 0;
+        }
+        @media #{$xs} {
+            width: 100%;
+            margin-bottom: 15px;
+            border-radius: 40px;
+            text-align: center;
+        }
+    }
+}
+
+
+.plan {
+    border: 1px solid #EBEBEB;
+    padding: 50px 40px 15px 40px;
+    position: relative;
+    z-index: 1;
+    @media #{$xs} {
+        padding: 50px 15px 15px 15px;
+    }
+    & .plan-tag {
+        color: $white;
+        font-size: 15px;
+        line-height: 1;
+        background: $black;
+        padding: 14px 18px;
+        display: inline-block;
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        opacity: 0;
+        visibility: hidden;
+    }
+    &__header {
+        border-bottom: 1px solid #EBEBEB;
+       & .sub-title {
+            color: #202020;
+            font-size: 18px;
+            text-transform: uppercase;
+        }
+        & h1 {
+            color: $black;
+            font-size: 60px;
+            font-weight: 500;
+            & sup {
+                font-size: 25px;
+                top: -10px;
+            }
+        }
+        & h5 {
+            color: rgba(0, 0, 0, .6);
+            font-weight: 400;
+        }
+    }
+   & .chose-text-list {
+       border-bottom: 1px solid #EBEBEB;
+        & li {
+            font-size: 18px;
+            margin-bottom: 12px;
+            padding-left: 28px;
+            &::before {
+                background: url(../img/icon/tick2.svg) no-repeat;
+            }
+            &:last-child {
+                &::before {
+                    display: inline-block;
+                }
+            }
+        }
+    } 
+    &__footer {
+        & .border-btn {
+            color: $theme-color;
+            border-radius: 0;
+            text-transform: initial;
+            padding: 15px 30px;
+            border-color: $theme-color;
+            &:hover {
+                color: $white;
+                background: $theme-color;
+            }
+        }
+        & h6 {
+            color: rgba(0, 0, 0, 0.5);
+            font-weight: 400;
+        }
+    } 
+    &:hover, &.active {
+        border-color: transparent;
+        background: $white;
+        box-shadow: 0px -40px 70px rgba(7, 26, 47, 0.07);
+        & .plan-tag {
+            opacity:1;
+            visibility: visible;
+        }
+        & .plan__footer {
+            & .border-btn {
+                color: $white;
+                background: $theme-color;
+            }
+        }
+    }
+} 
+
+.plan-2 {
+    & .plan__header {
+        & h1 {
+            font-size: 80px;
+
+            & sup {
+                font-size: 28px;
+            }
+        }
+    }
+}
+
+.plan-info-text {
+    color: #707070;
+    font-size: 20px;
+    font-family: $circularbook;
+    font-weight: 400;
+    line-height: 1.3;
+    @media #{$xs} {
+        margin-bottom: 20px;
+    }
+    & span {
+        color: $theme-color;
+        font-weight: 500;
+    }
+}

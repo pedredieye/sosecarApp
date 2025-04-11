@@ -1,0 +1,42 @@
+{% extends 'templates/layoutpage.twig' %}
+{% block page_title %}Recevoir mes paramètres de connexion | SOSECAR
+{% endblock %}
+{% block main_page_title %}Mes paramètres de connexion
+{% endblock %}
+
+{% block page_content %}
+	
+<!-- Start Login Area -->
+        <div class="my-account-area pt-100 pb-100">
+            <div class="container">
+                <form class="my-account-content" id="sos-get-params" name="sos-get-params" action="#">
+                    <h2>Récupérer mes identifiants</h2>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <input class="form-control" type="email" id="email" name="email" placeholder="Adresse email*">
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col-lg-12">
+                            <button type="submit" class="default-btn btn-style-fore">Se connecter</button>
+                        </div>
+
+						<div class="col-lg-12 clearfix mt-3">
+								<div class="alert sa-alert-form alert-primary d-none" role="alert" id="alert-params">
+									...
+								</div>
+							</div>
+                    </div>
+
+                    <p><a href="{{path_for('p_login')}}">Retour à la page de connexion</a></p>
+
+
+                </form>
+            </div>
+        </div>
+        <!-- End Login Area -->
+
+{% endblock %}
+

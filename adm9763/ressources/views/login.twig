@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="materialism">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>SOSECAR - Connexion</title>
+
+  <meta name="msapplication-TileColor" content="#9f00a7">
+  <meta name="msapplication-TileImage" content="{{domain_url}}/assets/img/favicon/mstile-144x144.png">
+  <meta name="msapplication-config" content="{{domain_url}}/assets/img/favicon/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="apple-touch-icon" sizes="57x57" href="{{domain_url}}/assets/img/favicon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="{{domain_url}}/assets/img/favicon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="{{domain_url}}/assets/img/favicon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="{{domain_url}}/assets/img/favicon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="{{domain_url}}/assets/img/favicon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="{{domain_url}}/assets/img/favicon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="{{domain_url}}/assets/img/favicon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="{{domain_url}}/assets/img/favicon/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{domain_url}}/assets/img/favicon/apple-touch-icon-180x180.png">
+
+  <link rel="icon" type="image/png" href="{{domain_url}}/assets/img/favicon/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="{{domain_url}}/assets/img/favicon/android-chrome-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="{{domain_url}}/assets/img/favicon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="{{domain_url}}/assets/img/favicon/favicon-16x16.png" sizes="16x16">
+
+  <link rel="manifest" href="{{domain_url}}/assets/img/favicon/manifest.json">
+  <link rel="shortcut icon" href="{{domain_url}}/assets/img/favicon/favicon.ico">
+
+  <!-- reusebuild:css {{domain_url}}/assets/css/vendors.min.css -->
+  <!-- endreusebuild -->
+  <!-- reusebuild:css {{domain_url}}/assets/css/styles.min.css -->
+  <link href="{{domain_url}}/assets/css/materialism.css" rel="stylesheet" />
+  <link href="{{domain_url}}/assets/css/helpers.css" rel="stylesheet" />
+  <link href="{{domain_url}}/assets/css/ripples.css" rel="stylesheet" />
+  <!-- endreusebuild -->
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body class="page-login" init-ripples>
+<div data-domain="{{ domain_url }}" data-resquest-uri="{{ request_uri }}" data-defined-domain="{{ defined_base_domain }}" id="domain" data-url-redirect="{{url_redirect}}"></div>
+  <div class="center">
+    <div class="card bordered z-depth-2"  style="margin:0% auto; max-width:400px;">
+      <div class="card-header">
+        <div class="brand-logo">
+          <div id="logo" class="d-none">
+            <div class="foot1"></div>
+            <div class="foot2"></div>
+            <div class="foot3"></div>
+            <div class="foot4"></div>
+          </div>
+          SOSECAR
+        </div>
+      </div>
+      <form class="form-floating" id="form-login" name="adm-login">
+        <div class="card-content">
+          <div class="m-b-30">
+            <div class="card-title strong pink-text">Connexion</div>
+            <p class="card-title-desc">
+
+            </p>
+            <div class="alert alert-success alert-bordered d-none" id="notification_box"> ...</div>
+          </div>
+            <div class="form-group">
+              <label for="inputPhone" class="control-label">Téléphone</label>
+              <input type="phone" id="inputPhone" name="inputPhone" class="form-control">
+            </div>
+            
+            <div class="form-group">
+              <label for="inputPassword" class="control-label">Mot de passe</label>
+              <input type="password" class="form-control" id="inputPassword" name="inputPassword">
+            </div>
+            
+            <div class="form-group">
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox"> Se souvenir de moi
+                </label>
+              </div>
+            </div>
+        </div>
+        <div class="card-action clearfix">
+          <div class="pull-right">
+            <button type="button" class="btn btn-link black-text">Mot de passe oublié ?</button>
+            <button type="submit" class="btn btn-link black-text">Connexion </button>
+          </div>
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+
+  <!-- CORE PLUGINS -->
+  <script src="{{domain_url}}/src/vendors/jquery/dist/jquery.min.js" type="text/javascript"></script>
+  <script src="{{domain_url}}/src/vendors/popper.js/dist/umd/popper.min.js" type="text/javascript"></script>
+  <script src="{{domain_url}}/src/vendors/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
+  <!-- PAGE LEVEL PLUGINS -->
+  <script src="{{domain_url}}/src/vendors/jquery-validation/dist/jquery.validate.min.js" type="text/javascript"></script>
+
+  <script charset="utf-8" src="{{domain_url}}/src/js/login.js"></script>
+  <script charset="utf-8" src="{{domain_url}}/src/js/actions.js?v= 0.{{random(1,100)}}0003"></script>
+  <script type="text/javascript">
+      $(function() {
+          $('#form-login').validate({
+              errorClass: "help-block",
+              rules: {
+                  inputPhone: {
+                      required: true
+                  },
+                  inputPassword: {
+                      required: true
+                  }
+              },
+              messages: {
+                inputPhone: "Numéro de téléphone manquant ou incorrect !",
+                inputPassword: "Mot de passe manquant !"
+              },
+              highlight: function(e) {
+                  $(e).closest(".form-group").addClass("has-error")
+              },
+              unhighlight: function(e) {
+                  $(e).closest(".form-group").removeClass("has-error")
+              },
+          });
+      });
+  </script>
+</body>
+</html>

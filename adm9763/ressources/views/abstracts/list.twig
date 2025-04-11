@@ -1,0 +1,83 @@
+{% extends 'templates/layout.twig' %}
+{% block page_title %}Liste des travaux{% endblock %}
+{% block active_abstract %}active{% endblock %}
+{% block all_abstract_active %}active{% endblock %}
+{% block collapse_in_abstract %}in{% endblock %}
+{% block page_title_breadcrumb %}Liste des travaux{% endblock %}
+{% block content %}
+
+
+    <section class="tables-data">
+      <div class="page-header">
+        <h1>      <i class="md md-list"></i> Liste de tous les travaux   </h1>
+        <p class="lead">Cette liste affiche la liste des travaux soumis.</p>
+      </div>
+      <div class="card">
+        <div>
+        <!-- onclick="window.location.href=('{{path_for('one_participant', { 'id':participant.id , 'ticketNumber':participant.ticket_number})}}')"  -->
+          <div class="datatables">
+            <table id="example" class="table table-full table-full-small" cellspacing="0" width="100%">
+              <thead>
+                <tr>
+                  <th width="">N°</th>
+                  <th width="20%">Titre</th>
+                  <th width="20%">Auteurs</th>
+                  <th width="15%">Contact</th>
+                  <th width="10%">Envoyé par</th>
+                  <th width="10%">Statut</th>
+                  <th width="10%">Options</th>
+                </tr>
+              </thead>
+              <tfoot>
+                <tr>
+                  <th>N°</th>
+                  <th>Titre</th>
+                  <th>Auteurs</th>
+                  <th>Contact</th>
+                  <th>Envoyé par</th>
+                  <th>Statut</th>
+                  <th>Options</th>
+                </tr>
+              </tfoot>
+              <tbody>
+              {% for abstract in data.abstracts %}
+                <tr>
+                  <td class="ml-2" >{{abstract.id}}</td>
+                  <td >{{abstract.title}}</td>
+                  <td >{{abstract.authors}}</td>
+                  <td >{{abstract.address}}</td>
+                  <td >{{abstract.sender_title}}&nbsp;{{abstract.sender_name}} <br>{{abstract.sender_email}}  </td>
+
+                  <td >
+                    {% if abstract.status == 0 %}En attente de validation{% endif %}
+                    {% if abstract.status == 1 %}Publié{% endif %}
+                    {% if abstract.status == 2 %}Non publié{% endif %}
+                  {% if abstract.status == -1 %}Refusé{% endif %}
+                  </td >
+
+                  <td style="text-align:center;">
+
+                    <a href="{{path_for('show_abstract',{'id':abstract.id})}}">
+                      <button type="button" class="btn btn-link btn-round" data-toggle="tooltip" data-placement="top" data-original-title="Aperçu"><i class="md md-visibility"></i></button>
+                    </a>
+
+                    {% if abstract.status == 7 %}
+                        <a href="#" onclick="validateAbstract('{{abstract.id}}')"> <button type="button" class="btn btn-link btn-round" data-toggle="tooltip" data-placement="top" data-original-title="Valider"><i class="md md-done"></i></button></a>
+                    {% endif %}
+
+                    {% if abstract.status == 7 %}
+                        <button type="button" onclick="undoValidateAbstract('{{abstract.id}}')" class="btn btn-link btn-round" data-toggle="tooltip" data-placement="top" data-original-title="Refuser"><i class="md md-highlight-remove"></i></button>
+                    {% endif %}
+
+
+                  </td>
+                </tr>
+              {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+{% endblock %}

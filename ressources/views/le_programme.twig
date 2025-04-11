@@ -1,0 +1,900 @@
+{% extends 'templates/layoutpage.twig' %}
+
+{% block page_title %}Le programme - 6ème Cardioteech Sénégal {% endblock %}
+{% block main_page_title %}Le programme {% endblock %}
+{% block content %}
+   
+		
+        <!-- Start Our Conference Schedules Area -->
+         <div class="conference-schedules-area pt-100 pb-100">
+            <div class="container">
+                <div class="section-title">
+                    <span class="top-title">6<sup>ème</sup> Cardiotech</span>
+                    <h2>Le programme</h2>
+                </div>
+                <div class="conference-schedules-tab">
+                    <ul class="nav nav-tabs">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">
+							Jour 1 
+							<span class="date">16 déc 2024</span>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">
+							Jour 2
+							<span class="date">17 déc 2024</span>
+							</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">
+							Jour 3
+							<span class="date">18 déc 2024</span>
+							</button>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content" id="myTabContent">
+                        {% if false %}
+						    <span class="d-block text-center d-none-">Le programme sera disponible très prochainement.</span>
+                        {% endif %}
+                    
+                        <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+                            <div class="conference-schedules-content content-full"  data-cue="slideInUp">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-2">
+                                        <div class="single-schedules-item">
+                                            <div class="schedules-text">
+                                                <span><i class='bx bxs-time-five' ></i>12:30 - 15:00</span>
+                                                <div class="client-item pl-0">
+                                                </div>
+                                            </div>
+                                        </div> 
+                                    </div>
+                                    <div class="col-lg-10">
+                                        <div class="schedules-design-content">
+                                            <span></span>
+                                            <h3>Accueil et Inscription des participants</h3>
+                                            <p></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {#
+                            <div class="bande-full big break">
+                                <div class="row">
+                                    <div class="col-lg-2">
+                                        <div class="schedules-text">
+                                            <span><i class='bx bxs-time-five' ></i>14:45 - 15h00</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-10">
+                                        <div class="schedules-design-content">
+                                            <h3><i class='bx bxs-coffee-alt' ></i> Cérémonie d'ouverture</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            #}
+
+                            <div class="conference-schedules-content content-full"  data-cue="slideInUp">
+                                <div class="row row-content">
+                                    <div class="col-lg-2">
+                                        <div class="single-schedules-item">
+                                            <div class="schedules-text">
+                                                <span><i class='bx bxs-time-five' ></i>15:00 - 16:40</span>
+                                                <div class="client-item pl-0">
+                                                </div>
+                                            </div>
+                                        </div> 
+                                    </div>
+                                    <div class="col-lg-5">
+                                        <div class="schedules-design-content">
+                                            <span><i class='bx bxs-map' ></i> SALLE 1</span>
+                                            <h3><i class='bx bx-slideshow' ></i> L’expertise échocardiographique des valvulopathies ... enfin démystifiée</h3>
+                                            <span class="moderateur"><i class='bx bxs-microphone' ></i> Modérateurs : Serigne Abdou BA, Amadou Gabriel CISS, Abdoul KANE, Erwan DONAL</span>
+                                            <p><i class='bx bxs-chevron-right' ></i>Evaluation pré-opératoire de la valve mitrale (20 min) <span>Elhadj Mbacké SARR, Sénégal</span> </p>
+                                            <p><i class='bx bxs-chevron-right' ></i>Evaluation de la valve tricuspide (20 min) <span>Erwan DONAL, France</span></p>
+                                            <p><i class='bx bxs-chevron-right' ></i>L’imagerie multimodale dans dans les valvulopathies (20 min) <span>Varha ISSELMOU, Mauritanie</span></p>
+                                            <p><i class='bx bxs-chevron-right' ></i>L’imagerie interventionnelle valvulaire : une "nouvelle" spécialité (20 min)<span>Erwan DONAL, France</span></p>
+                                            <p><i class='bx bxs-chevron-right' ></i>Discussion (20 min)</p>
+                                        </div>
+                                    </div>
+                                     <div class="col-lg-5">
+                                        <div class="schedules-design-content">
+                                            <span><i class='bx bxs-map' ></i> SALLE 2</span>
+                                            <h3><i class='bx bx-slideshow' ></i> Session infirmière</h3>
+                                            <span class="moderateur"><i class='bx bxs-microphone' ></i> Modérateurs : Joseph S. MINGOU, Rokhaya MBENGUE, Mamadou SALL</span>
+                                            <p><i class='bx bxs-chevron-right' ></i>Rôle de l’infirmier en coronarographie et angioplastie ( 20 min)<span>Babacar DIONE, Sénégal</span> </p>
+                                            <p><i class='bx bxs-chevron-right' ></i>Rôle de l’infirmier en rythmologie interventionnelle (20 min) <span>Pape BADIANE, Sénégal</span></p>
+                                            <p><i class='bx bxs-chevron-right' ></i>Rôle de l’infirmier en salle d’échocardiographie : Échocardiographie trans oesophagienne (20 min) <span>Mame Asta DIOP, Sénégal</span></p>
+                                            <p><i class='bx bxs-chevron-right' ></i>Discussion (30 min)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+
+                            <div class="bande-full break">
+                                <div class="row">
+                                    <div class="col-lg-2">
+                                        <div class="schedules-text">
+                                            <span><i class='bx bxs-time-five' ></i>16:40 - 17:10</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-10">
+                                        <div class="schedules-design-content">
+                                            <h3><i class='bx bxs-store' ></i> Visite des stands</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="conference-schedules-content content-full"  data-cue="slideInUp">
+                                <div class="row row-content">
+                                    <div class="col-lg-2">
+                                        <div class="single-schedules-item">
+                                            <div class="schedules-text">
+                                                <span><i class='bx bxs-time-five' ></i>17:10 - 18:10</span>
+                                                <div class="client-item pl-0">
+                                                </div>
+                                            </div>
+                                        </div> 
+                                    </div>
+                                    <div class="col-lg-5">
+                                        <div class="schedules-design-content">
+                                            <span><i class='bx bxs-map' ></i> SALLE 1</span>
+                                            <h3><i class='bx bx-slideshow' ></i> L'imagerie dans les cardiomyopathies</h3>
+                                            <span class="moderateur"><i class='bx bxs-microphone' ></i> Modérateurs : Alassane MBAYE, El hadj Yaya BALDE, Désiré Alain AFFANGLA, Ousmane DIEYE</span>
+                                            <p><i class='bx bxs-chevron-right' ></i>L’imagerie multimodale dans le diagnostic étiologique des cardiomyopathies (15 min) <span>Anna THIAM TALL, Burkina Faso</span> </p>
+                                            <p><i class='bx bxs-chevron-right' ></i>Stratification du risque de mort subite : intérêt de l'imagerie multimodale (15 min) <span>Serigne Mor BEYE, Sénégal</span></p>
+                                            <p><i class='bx bxs-chevron-right' ></i>Diagnostic de l’insuffisance cardiaque à fraction d’éjection préservée à l’imagerie cardiaque : état de l’art (15 min) <span>Mouhamadou Bamba NDIAYE, Sénégal</span></p>
+                                            <p><i class='bx bxs-chevron-right' ></i>Discussion (15 min)</p>
+                                        </div>
+                                    </div>
+                                     <div class="col-lg-5">
+                                        <div class="schedules-design-content">
+                                            <span><i class='bx bxs-map' ></i> SALLE 2</span>
+                                            <h3><i class='bx bx-slideshow' ></i> Cardiologie interventionnelle</h3>
+                                            <span class="moderateur"><i class='bx bxs-microphone' ></i> Modérateurs : Abdellah DAIB, Salem ABDESSALEM, Massamba THIAM</span>
+                                            <p><i class='bx bxs-chevron-right' ></i>Echocardiographie de stress et son optimisation par les nouveaux outils (15min)<span>Abdellah DAIB, Algérie</span> </p>
+                                            <p><i class='bx bxs-chevron-right' ></i>Place de l’IRM de stress dans l’évaluation du coronarien chronique en 2024. (15 min) <span>Mouhamed Cherif MBOUP, Sénégal</span></p>
+                                            <p><i class='bx bxs-chevron-right' ></i>Place de l’imagerie dans le bilan pré-TAVI (15 min)<span>Varha ISSELMOU, Mauritanie</span></p>
+                                            <p><i class='bx bxs-chevron-right' ></i>Discussion (15 min)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {#
+                            <div class="bande-full symposium">
+                                <div class="row">
+                                    <div class="col-lg-2">
+                                        <div class="schedules-text">
+                                            <span><i class='bx bxs-time-five' ></i>18:15 - 18:30</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-10">
+                                        <div class="schedules-design-content">
+                                            <h3>Symposium (MENARINI)</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            #}
+
+                            
+
+                            <div class="bande-full big break">
+                                <div class="row">
+                                    <div class="col-lg-2">
+                                        <div class="schedules-text">
+                                            <span><i class='bx bxs-time-five' ></i>18:15 - 19h15</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-10">
+                                        <div class="schedules-design-content">
+                                            <h3><i class='bx bxs-coffee-alt' ></i> Cérémonie d'ouverture</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                               
+                            {#
+                            <div class="bande eod"><span>Fin de la journée</span></div>
+                            #}
+
+                            <div class="bande-full big break">
+                                <div class="row">
+                                    <div class="col-lg-2">
+                                        <div class="schedules-text">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-10">
+                                        <div class="schedules-design-content">
+                                            <h3><i class='bx bxs-coffee-alt' ></i> Cocktail dinatoire</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+
+
+                            <div class="conference-schedules-content content-head"  data-cue="slideInUp">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-2">
+                                        
+                                    </div>
+                                   
+                                    <div class="col-lg-5">
+                                        <div class="schedules-design-salle">
+                                            <span>Salle 1</span>
+                                           
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-5">
+                                        <div class="schedules-design-salle">
+                                            <span>Salle 2</span>
+                                           
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="conference-schedules-content content-full"  data-cue="slideInUp">
+                                
+                                <div class="row row-content">
+                                    <div class="col-lg-2">
+                                        <div class="single-schedules-item">
+                                            <div class="schedules-text">
+                                                <span><i class='bx bxs-time-five' ></i>09:00 - 10:45</span>
+                                                <div class="client-item pl-0">
+                                                </div>
+                                            </div>
+                                        </div> 
+                                    </div>
+                                    <div class="col-lg-5">
+                                        <div class="schedules-design-content">
+                                            <span><i class='bx bxs-map' ></i> Salle 1</span>
+                                            <h3><i class='bx bx-slideshow' ></i> L’amylose cardiaque de la clinique au diagnostic</h3>
+                                            <span class="moderateur"><i class='bx bxs-microphone' ></i> Modérateurs :  MoustaphaSARR, Adama KANE, Souhaibou NDONGO, Mariam LY</span>
+                                            <p><i class='bx bxs-chevron-right' ></i> L’amylose cardiaque à l’échocardiographie (20 min)<span>Fatou AW LEYE, Sénégal</span></p>
+                                            <p><i class='bx bxs-chevron-right' ></i> L'imagerie par résonnance magnétique dans le diagnostic de l'amylose cardiaque (20min)<span>Géraud AKPO, Sénégal</span></p>
+                                            <p><i class='bx bxs-chevron-right' ></i> Apport de la médecine nucléaire dans le diagnostic de l'amylose cardiaque (15 min)<span>Salif DJIGO, Sénégal</span></p>
+                                            <p><i class='bx bxs-chevron-right' ></i> L’amylose cardiaque du diagnostic au traitement (20 min)<span>Souhaïbou NDONGO, Sénégal</span></p>
+                                            <p><i class='bx bxs-chevron-right' ></i> Discussion (30 min)</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-5">
+                                        <div class="schedules-design-content">
+                                            <span><i class='bx bxs-map' ></i> Salle 2</span>
+                                            <h3><i class='bx bx-microphone' ></i>  How to Session</h3>
+                                            <span class="moderateur"><i class='bx bxs-microphone' ></i> Modérateurs : Abdallah MAHDHAOUI, Erwan DONAL, Elhadji Mbacké SARR, Abdellah DAIB</span>
+                                            <p><i class='bx bxs-chevron-right' ></i> L’évaluation du rétrécissement aortique (20 min) <span>Sidy Lamine SY, Sénégal</span></p>
+                                            <p><i class='bx bxs-chevron-right' ></i> La constriction péricardique à l’échocardiographie (20 min)<span>Abdoul KANE, Sénégal</span></p>
+                                            <p><i class='bx bxs-chevron-right' ></i> Etude morphologique et fonctionnelle de l’oreillette gauche (20 min)<span>Erwan DONAL, France</span></p>
+                                            <p><i class='bx bxs-chevron-right' ></i> L'échocardiographie dans les états de choc (20 min)<span>Ngoné Diaba GAYE, Sénégal</span></p>
+                                            <p><i class='bx bxs-chevron-right' ></i> Discussion (20 min)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+                            <div class="bande-full break">
+                                <div class="row">
+                                    <div class="col-lg-2">
+                                        <div class="schedules-text">
+                                            <span><i class='bx bxs-time-five' ></i>10:45 - 11:15</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-10">
+                                        <div class="schedules-design-content">
+                                            <h3><i class='bx bxs-coffee-alt' ></i> Pause café</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bande-full symposium">
+                                <div class="row">
+                                    <div class="col-lg-2">
+                                        <div class="schedules-text">
+                                            <span><i class='bx bxs-time-five' ></i>11:15 - 12:15</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-10">
+                                        <div class="schedules-design-content">
+                                            <h3>Symposium (TERIAK)</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bande-full break">
+                                <div class="row">
+                                    <div class="col-lg-2">
+                                        <div class="schedules-text">
+                                            <span><i class='bx bxs-time-five' ></i>12:15 - 14:30</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-10">
+                                        <div class="schedules-design-content">
+                                            <h3><i class='bx bxs-coffee-alt' ></i> Déjeuner</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+                            <div class="conference-schedules-content content-full"  data-cue="slideInUp">
+                                
+                                <div class="row row-content">
+                                    <div class="col-lg-2">
+                                        <div class="single-schedules-item">
+                                            <div class="schedules-text">
+                                                <span><i class='bx bxs-time-five' ></i>14:30 - 16:00</span>
+                                                <div class="client-item pl-0">
+                                                </div>
+                                            </div>
+                                        </div> 
+                                    </div>
+                                    <div class="col-lg-5">
+                                        <div class="schedules-design-content">
+                                            <span><i class='bx bxs-map' ></i> Salle 1</span>
+                                            <h3>L’imagerie cardiaque dans la maladie coronaire</h3>
+                                            <span class="moderateur"><i class='bx bxs-microphone' ></i> Modérateurs : Maboury DIAO, Géraud AKPO, Bocar NDONG, M. Chérif MBOUP</span>
+                                            <p><i class='bx bxs-chevron-right' ></i> Le scanner coronaire (20 min) <span>Hassim Bachir Diop, Sénégal</span></p>
+                                            <p><i class='bx bxs-chevron-right' ></i> La médecine nucléaire (15 min) <span>Bocar NDONG, Sénégal</span></p>
+                                            <p><i class='bx bxs-chevron-right' ></i> Les MINOCA/INOCA … (15 min) <span>Salem ABDELSALEM, Tunisie</span></p>
+                                            <p><i class='bx bxs-chevron-right' ></i> Viabilité myocardique : Quelle  imagerie choisir ? (20 min) <span>Marguerite Téning DIOUF, Sénégal</span></p>
+                                            <p><i class='bx bxs-chevron-right' ></i> Discussion (20 min)</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-5">
+                                        <div class="schedules-design-content">
+                                            <span><i class='bx bxs-map' ></i> Salle 2</span>
+                                            <h3> SESSION CONJOINTE SOSECAR / SOSEMES : SYNDROME D’APNEE OBSTRUCTIVE DU SOMMEIL (SAOS)</h3>
+                                            <span class="moderateur"><i class='bx bxs-microphone' ></i> Modérateurs : Lala Bouna SECK, Mouminatou SEYE, Abdourahmane NIANG</span>
+                                            <p><i class='bx bxs-chevron-right' ></i> Diagnostic du SAS par la polygraphie ventilatoire : Aspects théoriques (30 min) - Cas cliniques (3 de 10 min) <span></span></p>
+                                            <p><i class='bx bxs-chevron-right' ></i> Imagerie cardiovasculaire et SAS (15 min) <span>Jean Pierre BAROIN, France</span></p>
+                                            <p><i class='bx bxs-chevron-right' ></i> Discussion (15 min)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+                            <div class="bande-full break">
+                                <div class="row">
+                                    <div class="col-lg-2">
+                                        <div class="schedules-text">
+                                            <span><i class='bx bxs-time-five' ></i>16:00 - 16:30</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-10">
+                                        <div class="schedules-design-content">
+                                            <h3><i class='bx bxs-store' ></i> Visite des stands</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="bande-full symposium">
+                                <div class="row">
+                                    <div class="col-lg-2">
+                                        <div class="schedules-text">
+                                            <span><i class='bx bxs-time-five' ></i>16:30 - 17:30</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-10">
+                                        <div class="schedules-design-content">
+                                            <h3>Symposium (MENARINI)</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="conference-schedules-content content-full"  data-cue="slideInUp">
+                                
+                                <div class="row row-content">
+                                    <div class="col-lg-2">
+                                        <div class="single-schedules-item">
+                                            <div class="schedules-text">
+                                                <span><i class='bx bxs-time-five' ></i>17:45 - 19:15</span>
+                                                <div class="client-item pl-0">
+                                                </div>
+                                            </div>
+                                        </div> 
+                                    </div>
+                                    <div class="col-lg-5">
+                                        <div class="schedules-design-content">
+                                            <span><i class='bx bxs-map' ></i> Salle 1</span>
+                                            <h3>L’imagerie multimodale : pont entre les spécialités</h3>
+                                            <span class="moderateur"><i class='bx bxs-microphone' ></i> Modérateurs : Jihad JAFFAR, Arame DIAGNE DIALLO, Simon Antoine SARR, Cheikh I. NIANG</span>
+                                            <p><i class='bx bxs-chevron-right' ></i> Imagerie de la dysfonction ventriculaire gauche dans le suivi du patient sous chimiothérapie (15 min) <span>Sophie BA KA, Sénégal</span></p>
+                                            <p><i class='bx bxs-chevron-right' ></i> Quand et comment dépister une malformation cardiaque chez le fœtus? (15 min)<span>Mame Diarra NDIAYE GUEYE, Sénégal</span></p>
+                                            <p><i class='bx bxs-chevron-right' ></i> Atteintes cardiaques au cours des maladies de système : apport de l’imagerie multimodale (15 min)  <span>Marguerite Téning DIOUF, Sénégal</span></p>
+                                            <p><i class='bx bxs-chevron-right' ></i> Le cœur d’athlète (15 min) <span>Abdallah MAHDAOUI, Tunisie</span></p>
+                                            <p><i class='bx bxs-chevron-right' ></i> Discussion (30 min)</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-5">
+                                        
+                                    </div>
+                                </div>
+                                
+                            </div>
+                         
+
+                        </div>
+
+
+                        <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+
+                            <div class="conference-schedules-content content-head"  data-cue="slideInUp">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-2">
+                                        
+                                    </div>
+                                    
+                                    <div class="col-lg-5">
+                                        <div class="schedules-design-salle">
+                                            <span>Salle 1</span>
+                                        
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-5">
+                                        <div class="schedules-design-salle">
+                                            <span>Salle 2</span>
+                                        
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="conference-schedules-content content-full"  data-cue="slideInUp">
+                                
+                                <div class="row row-content">
+                                    <div class="col-lg-2">
+                                        <div class="single-schedules-item">
+                                            <div class="schedules-text">
+                                                <span><i class='bx bxs-time-five' ></i>09:00 - 10:30</span>
+                                                <div class="client-item pl-0">
+                                                </div>
+                                            </div>
+                                        </div> 
+                                    </div>  
+                                    <div class="col-lg-5">
+                                        <div class="schedules-design-content">
+                                            <span><i class='bx bxs-map' ></i> Salle 1</span>
+                                            <h3><i class='bx bx-slideshow' ></i> RYTHMOLOGIE : AUTOUR DE LA FIBRILLATION ATRIALE</h3>
+                                            <span class="moderateur"><i class='bx bxs-microphone' ></i> Modérateurs :  Serigne Abdou BA, Abdelhamid MOUSTAGHFIR, Sirakhé CAMARA</span>
+                                            <p><i class='bx bxs-chevron-right' ></i> Actualités de la FA (20 min) <span>Simon Antoine SARR, Sénégal</span></p>
+                                            <p><i class='bx bxs-chevron-right' ></i> Nouvelles techniques dans l’ablation de la FA et son applicabilité en Afrique : électroporation (20 min) <span>Pascal DEFAYE, France</span></p>
+                                            <p><i class='bx bxs-chevron-right' ></i> Stratégie de contrôle du rythme dans la FA (récidivante) en dehors de l’ablation (20 min) <span>Claude KOUAKAM-TAKOUGANG, France</span></p>
+                                            <p><i class='bx bxs-chevron-right' ></i> Présentation du registre RIBAT-AFRICA (15 min) <span>Abdelhamid MOUSTAGHFIR, Maroc</span></p>
+                                            <p><i class='bx bxs-chevron-right' ></i> Discussion (15 min)</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-5">
+                                        <div class="schedules-design-content">
+                                            <span><i class='bx bxs-map' ></i> Salle 2</span>
+                                            <h3> CARDIOLOGIE PEDIATRIQUE : LES COMMUNICATIONS INTERAURICULAIRES</h3>
+                                            <span class="moderateur"><i class='bx bxs-microphone' ></i> Modérateurs : Ibrahima Bara DIOP, Idrissa BASSE, Dior DIAGNE SOW, Ndeye Awa SARR</span>
+                                            <p><i class='bx bxs-chevron-right' ></i> <strong>Fermeture percutanée de CIA : apport de l’imagerie de l’évaluation pré-interventionnelle au contrôle post procédure</strong> <br>
+                                            Critères diagnostic d’une CIA : les bonnes indications de fermeture percutanée et les indications de chirurgie (15 min) <span>Elisabeth TINE, Sénégal</span></p>
+                                            <p><i class='bx bxs-chevron-right' ></i> Place de l’imagerie dans l’évaluation pré opératoire d’une CIA (15 min) <span>Ababacar MBENGUE / Ndeye Isseu AMAR, Sénégal</span></p>
+                                            <p><i class='bx bxs-chevron-right' ></i> Monitorage ETO step by step de fermeture de CIA avec l’échographiste et le cardiologue interventionnel (20 min) <span>Sidy Lamine SY / Mohamed LEYE, Sénégal</span></p>
+                                            <p><i class='bx bxs-chevron-right' ></i> Evaluation post fermeture de CIA en échocardiographie (15 min) <span>Malick BODIAN, Sénégal</span></p>
+                                            <p><i class='bx bxs-chevron-right' ></i> Discussion (25 min)</p>
+                                        </div>
+                                       
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+                            <div class="bande-full break">
+                                <div class="row">
+                                    <div class="col-lg-2">
+                                        <div class="schedules-text">
+                                            <span><i class='bx bxs-time-five' ></i>10:30 - 11:00</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-10">
+                                        <div class="schedules-design-content">
+                                            <h3><i class='bx bxs-coffee-alt' ></i> Pause café</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bande-full symposium">
+                                <div class="row">
+                                    <div class="col-lg-2">
+                                        <div class="schedules-text">
+                                            <span><i class='bx bxs-time-five' ></i>11:00 - 12:00</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-10">
+                                        <div class="schedules-design-content">
+                                            <h3>Symposium (SERVIER)</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                             
+
+                            <div class="conference-schedules-content content-full"  data-cue="slideInUp">
+                                                            
+                                <div class="row row-content">
+                                    <div class="col-lg-2">
+                                        <div class="single-schedules-item">
+                                            <div class="schedules-text">
+                                                <span><i class='bx bxs-time-five' ></i>12:00 - 13:15</span>
+                                                <div class="client-item pl-0">
+                                                </div>
+                                            </div>
+                                        </div> 
+                                    </div>
+                                    <div class="col-lg-10">
+                                        <div class="schedules-design-content">
+                                            <h3>Cas cliniques</h3>
+                                            <span class="moderateur"><i class='bx bxs-microphone' ></i> Modérateurs : Aynina GUEYE, Souleymane THIAM, Saphie GUEYE, Baye Demba GUENE</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row row-content">
+                                    <div class="col-lg-2">
+                                        <div class="single-schedules-item">
+                                            <div class="schedules-text">
+                                                <span></span>
+                                                <div class="client-item pl-0">
+                                                </div>
+                                            </div>
+                                        </div> 
+                                    </div>  
+                                    <div class="col-lg-10">
+                                        <div class="schedules-design-content">
+                                            <p><i class='bx bxs-chevron-right' ></i> CARDIOMYOPATHIE HYPERTROPHIQUE BIVENTRICULAIRE : quelle étiologie ? (15 min) <span>Hanifa Ismael IBOUROI, Sénégal</span></p>
+                                            <p><i class='bx bxs-chevron-right' ></i> UN PROBLEME DE SITUS QUI PEUT ALLER LOIN quand l’imagerie révèle un syndrome de kartagener chez un adulte (15 min)<span>Ndeye Rokhaya DIOP, Sénégal</span></p>
+                                            <p><i class='bx bxs-chevron-right' ></i> LA FIBROSE ENDOMYOCARDIQUE une cause rare de cardiomyopathie sous nos tropiques (15 min) <span>Papa Guirane NDIAYE, Sénégal</span></p>
+                                            <p><i class='bx bxs-chevron-right' ></i> BEYOND THE ABDOMEN revealing left atrial myxoma through abdominal pain (15 min) <span>Ezzahra Fatima ELASSOUFI, Tunisie</span></p>
+                                            <p><i class='bx bxs-chevron-right' ></i> Discussion (15 min)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+                            <div class="bande-full break">
+                                <div class="row">
+                                    <div class="col-lg-2">
+                                        <div class="schedules-text">
+                                            <span><i class='bx bxs-time-five' ></i>13:15 - 15:00</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-10">
+                                        <div class="schedules-design-content">
+                                            <h3><i class='bx bxs-coffee-alt' ></i> Déjeuner</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="conference-schedules-content content-full"  data-cue="slideInUp">
+                                                            
+                                <div class="row row-content">
+                                    <div class="col-lg-2">
+                                        <div class="single-schedules-item">
+                                            <div class="schedules-text">
+                                                <span><i class='bx bxs-time-five' ></i>15:00 - 16:15</span>
+                                                <div class="client-item pl-0">
+                                                </div>
+                                            </div>
+                                        </div> 
+                                    </div>
+                                    <div class="col-lg-10">
+                                        <div class="schedules-design-content">
+                                            <h3>Session 2 : Cas cliniques</h3>
+                                            <span class="moderateur"><i class='bx bxs-microphone' ></i> Modérateurs : Simon Joel MANGA, Oumou Dème KEBE BAH, Jean Baptiste Sy MATHIEU, Moustapha FALL</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row row-content">
+                                    <div class="col-lg-2">
+                                        <div class="single-schedules-item">
+                                            <div class="schedules-text">
+                                                <span></span>
+                                                <div class="client-item pl-0">
+                                                </div>
+                                            </div>
+                                        </div> 
+                                    </div>  
+                                    <div class="col-lg-10">
+                                        <div class="schedules-design-content">
+                                            <p><i class='bx bxs-chevron-right' ></i> TROUVONS LE SUBSTRAT (15 min) <span>Papa Momar GUISSE, Sénégal</span></p>
+                                            <p><i class='bx bxs-chevron-right' ></i> UNE SURPRISE DE TAILLE ! avec le 2D il faut ouvrir l’œil (15 min)<span>Hanifa Ismael IBOUROI, Sénégal</span></p>
+                                            <p><i class='bx bxs-chevron-right' ></i> ANEVRYSME DE LA VALVE MITRALE ANTERIEURE compliquant une endocardite infectieuse mitro-aortique sur bicuspide aortique (15 min) <span>Papa Adama FAYE, Sénégal</span></p>
+                                            <p><i class='bx bxs-chevron-right' ></i> DE LA THROMBOCYTOSE A LA MALADIE CORONAIRE (15 min) <span>Oumar WANE, Sénégal</span></p>
+                                            <p><i class='bx bxs-chevron-right' ></i> Discussion (15 min)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+                            
+                            <div class="bande-full big break">
+                                <div class="row">
+                                    <div class="col-lg-2">
+                                        <div class="schedules-text">
+                                            <span><i class='bx bxs-time-five' ></i>16:15 - 17h00</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-10">
+                                        <div class="schedules-design-content">
+                                            <h3><i class='bx bxs-coffee-alt' ></i> Cérémonie de clôture</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {#
+                                <div class="conference-schedules-content content-full"  data-cue="slideInUp">
+                                                                
+                                    <div class="row row-content">
+                                        <div class="col-lg-2">
+                                            <div class="single-schedules-item">
+                                                <div class="schedules-text">
+                                                    <span><i class='bx bxs-time-five' ></i>10:30 - 12:00</span>
+                                                    <div class="client-item pl-0">
+                                                    </div>
+                                                </div>
+                                            </div> 
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="schedules-design-content">
+                                                <span><i class='bx bxs-map' ></i> Salle Plénière</span>
+                                                <h3>La réinsertion professionnelle et la vie du patient cardiopathe</h3>
+                                                <span class="moderateur"><i class='bx bxs-microphone' ></i> Modérateurs : Catherine Monpere (France), Kadia Ba (Sénégal), Babacar FALL (Sénégal)</span>
+                                                <p><i class='bx bxs-chevron-right' ></i> La réinsertion professionnelle : que dit la loi ? Comment la conduire en pratique ? (15min) <span>Mor Ndiaye (Sénégal)</span></p>
+                                                <p><i class='bx bxs-chevron-right' ></i> Le cardiopathe doit voyager (15 min) <span>Massamba Diop (Sénégal)</span></p>
+                                                <p><i class='bx bxs-chevron-right' ></i> La vie sexuelle du cardiopathe (15 min) <span>Jeanne Diaw (Sénégal)</span></p>
+                                                <p><i class='bx bxs-chevron-right' ></i> Le soutien psychologique, un chainon essentiel en réadaptation cardiaque (15 min) <span>Aïda Sylla (Sénégal)</span></p>
+                                                <p><i class='bx bxs-chevron-right' ></i> Discussion (30 min)</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <div class="schedules-design-content">
+                                                <span><i class='bx bxs-map' ></i> Salle 1</span>
+                                                <h3> Session de cardiologie pédiatrique et congénitale</h3>
+                                                <span class="moderateur"><i class='bx bxs-microphone' ></i> Modérateurs : Ibrahima Bara Diop (Sénégal), Evelyne Ake Traboulsi (Côte D’Ivoire ), Mohamed M. C. B. O. Leye (Sénégal)</span>
+                                                <p><i class='bx bxs-chevron-right' ></i> Insuffisance cardiaque aiguë de l’enfant : diagnostic et prise en charge (15 min) <span>Idrissa BASSE (Sénégal)</span></p>
+                                                <p><i class='bx bxs-chevron-right' ></i> Comment j’évalue la fonction systolique en échographie chez l’enfant ? (15 min) <span>Arame Diagne Diallo (Sénégal)</span></p>
+                                                <p><i class='bx bxs-chevron-right' ></i> Comment faire le suivi d’un enfant sous chimiothérapie ? (15 min) <span>Philippe Adjagba (Bénin)</span></p>
+                                                <p><i class='bx bxs-chevron-right' ></i> Place et bénéfice de la réadaptation après chirurgie cardiaque en pédiatrie (15 min) <span>Issam Kammache (France)</span></p>
+                                                <p><i class='bx bxs-chevron-right' ></i> Discussion (30 min)</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <div class="schedules-design-content">
+                                                <span><i class='bx bxs-map' ></i> Salle 2</span>
+                                                <h3> Groupe imagerie cardiaque</h3>
+                                                <span class="moderateur"><i class='bx bxs-microphone' ></i> Modérateurs : Mouhamadou Bamba Ndiaye (Sénégal), René Baragou (Togo), El Hadj Mbacké Sarr (Sénégal)</span>
+                                                <p><i class='bx bxs-chevron-right' ></i> Intérêt de l’ échocardiographie dans les tumeurs cardiaques (15 min) <span>Anna Thiam Fall (Burkina Faso)</span></p>
+                                                <p><i class='bx bxs-chevron-right' ></i> Imagerie multimodale des tumeurs cardiaques ( 20min) <span>Serigne Mor Beye (Sénégal)</span></p>
+                                                <p><i class='bx bxs-chevron-right' ></i> Cas clinique de chirurgie (15 min) <span>Gabriel Ciss (Sénégal)</span></p>
+                                                <p><i class='bx bxs-chevron-right' ></i> Cas clinique radiologie (10 min) <span>Khadidiatou Ndiaye Diouf (Sénégal)</span></p>
+                                                <p><i class='bx bxs-chevron-right' ></i> Discussion (30 min)</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+
+
+                                <div class="bande-full symposium">
+                                    <div class="row">
+                                        <div class="col-lg-2">
+                                            <div class="schedules-text">
+                                                <span><i class='bx bxs-time-five' ></i>12:00 - 13:00</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-10">
+                                            <div class="schedules-design-content">
+                                                <h3>Symposium Vitatron</h3>
+                                                <span class="moderateur"><i class='bx bxs-microphone' ></i> Raul Garillo (Argentine)</span>
+                                                <p>Cardiac pacing and mortality : what’s the vision today?</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="bande-full break">
+                                    <div class="row">
+                                        <div class="col-lg-2">
+                                            <div class="schedules-text">
+                                                <span><i class='bx bxs-time-five' ></i>13:00 - 14:30</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-10">
+                                            <div class="schedules-design-content">
+                                                <h3><i class='bx bxs-coffee-alt' ></i> Déjeuner</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="conference-schedules-content content-full"  data-cue="slideInUp">
+                                                                
+                                    <div class="row row-content">
+                                        <div class="col-lg-2">
+                                            <div class="single-schedules-item">
+                                                <div class="schedules-text">
+                                                    <span><i class='bx bxs-time-five' ></i>14:30 - 15:30</span>
+                                                    <div class="client-item pl-0">
+                                                    </div>
+                                                </div>
+                                            </div> 
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="schedules-design-content">
+                                                <span><i class='bx bxs-map' ></i> Salle Plénière</span>
+                                                <h3>Fermeture du foramen ovale perméable (FOP) en 2023</h3>
+                                                <span class="moderateur"><i class='bx bxs-microphone' ></i> Modérateurs : Mohamed Chérif Mboup (Sénégal), Malick Bodian (Sénégal), Moustapha Ndiaye (Sénégal)</span>
+                                                <p><i class='bx bxs-chevron-right' ></i> Fermeture de FOP : preuves, indications en 2023 (15 min) <span>Ndiaga Matar Gaye (Sénégal)</span></p>
+                                                <p><i class='bx bxs-chevron-right' ></i> Comment rechercher un FOP en imagerie multimodale (15 min) <span>Mame Madjiguene Ka (Sénégal)</span></p>
+                                                <p><i class='bx bxs-chevron-right' ></i> Fermeture de FOP : planification, guidage et évaluation (15 min) <span>Marouane Boukhris (France)</span></p>
+                                                <p><i class='bx bxs-chevron-right' ></i> Discussion (15 min)</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <div class="schedules-design-content">
+                                                <span><i class='bx bxs-map' ></i> Salle 1</span>
+                                                <h3> Communications orales 5</h3>
+                                                <span class="moderateur"><i class='bx bxs-microphone' ></i> Modérateurs : Bouna Diack (Sénégal), Nobila Valentin Yameogo (Burkina Faso), Mamadou Bassirou Bah (Sénégal)</span>
+                                                <span class="full-content"> <strong>Cardiologie interventionnelle</strong>  <br>CO28 - CO33</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <div class="schedules-design-content">
+                                                <span><i class='bx bxs-map' ></i> Salle 2</span>
+                                                <h3> Communications orales 6</h3>
+                                                <span class="moderateur"><i class='bx bxs-microphone' ></i> Modérateurs : Simon Antoine Sarr (Sénégal), Soulemane Pessinaba (Togo), Alioune Tabane (Sénégal)</span>
+                                                <span class="full-content"> <strong>Rythmologie</strong>  <br>C034 - CO39</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+
+                                <div class="conference-schedules-content content-full"  data-cue="slideInUp">
+                                                                
+                                    <div class="row row-content">
+                                        <div class="col-lg-2">
+                                            <div class="single-schedules-item">
+                                                <div class="schedules-text">
+                                                    <span><i class='bx bxs-time-five' ></i>15:30 - 16:30</span>
+                                                    <div class="client-item pl-0">
+                                                    </div>
+                                                </div>
+                                            </div> 
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="schedules-design-content">
+                                                <span><i class='bx bxs-map' ></i> Salle Plénière</span>
+                                                <h3>Meet the expert : Raul Garillo (Argentine), Sana Ouali (Tunisie)</h3>
+                                                <span class="moderateur"><i class='bx bxs-microphone' ></i> Modérateurs : Alassane Mbaye (Sénégal), Claude Kouakam (France), Jean Bekouti (France)</span>
+                                                <p> What to know about pacemaker for the beginners ?</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="schedules-design-content">
+                                                <span><i class='bx bxs-map' ></i> Salle 1</span>
+                                                <h3> Communications orales 7</h3>
+                                                <span class="moderateur"><i class='bx bxs-microphone' ></i> Modérateurs : Papa Salmane Ba (Sénégal), Helena Diamé (Sénégal), Philippe Adjagba (Bénin)</span>
+                                                <span class="full-content"> <strong>Cardiopédiatrie et chirurgie</strong>  <br>C40 - C45</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+
+                                <div class="bande-full break">
+                                    <div class="row">
+                                        <div class="col-lg-2">
+                                            <div class="schedules-text">
+                                                <span><i class='bx bxs-time-five' ></i>16:30 - 17:00</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-10">
+                                            <div class="schedules-design-content">
+                                                <h3><i class='bx bxs-coffee-alt' ></i> Pause café</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="conference-schedules-content content-full"  data-cue="slideInUp">
+                                                                
+                                    <div class="row row-content">
+                                        <div class="col-lg-2">
+                                            <div class="single-schedules-item">
+                                                <div class="schedules-text">
+                                                    <span><i class='bx bxs-time-five' ></i>17:30 - 18:30</span>
+                                                    <div class="client-item pl-0">
+                                                    </div>
+                                                </div>
+                                            </div> 
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="schedules-design-content">
+                                                <span><i class='bx bxs-map' ></i> Salle Plénière</span>
+                                                <h3>Cas cliniques ASCAOC <br>(Assosiation des Sociétés de Cardiologie de l’Afrique de l’Ouest et du Centre)</h3>
+                                                <span class="moderateur"><i class='bx bxs-microphone' ></i> Modérateurs : Abdoul Kane (Sénégal), Stephane Meo Ikama (Congo), François Carré (France), Gabriel Ciss (Sénégal)</span>
+                                                <p> 1 - Défaillance cardiaque d’origine toxique aux anthracyclines : à propos d’un cas <span>Christian Ngongang (Cameroun)</span></p>
+                                                <p> 2 - Trajet aberrant lors d’implantation de stimulateur cardiaque double chambre par abord sous-clavier gauche. à propos de deux cas. <span>Kadia Ba (Sénégal)</span></p>
+                                                <p> 3 - Volumineux anévrysme du tronc basilaire de découverte fortuite chez un patient ayant présenté un accident vasculaire cérébral ischémique <span>Nacanabo W. M (Sénégal)</span></p>
+                                                <p> 4 - Amylose Cardiaque à propos d’un cas <span>Fatou Aw Leye (Sénégal)</span></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="schedules-design-content">
+                                                <span><i class='bx bxs-map' ></i> Salle 1</span>
+                                                <h3> Session paramédicale</h3>
+                                                <span class="moderateur"><i class='bx bxs-microphone' ></i> Modérateurs : Cheikh Ibrahima Niang (Sénégal), Hassim Bachir Diop (Sénégal), Binta Gueye (Sénégal)</span>
+                                                <p><i class='bx bxs-chevron-right' ></i> Place de l’infirmier dans la réadaptation cardiaque (15 min) <span>Aminata Mbaye - HOGIP (Sénégal)</span></p>
+                                                <p><i class='bx bxs-chevron-right' ></i> Rôle de l’infirmier dans un service de cardio-oncologie (15 min) <span>Ibrahima Badji - HDJ (Sénégal)</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+
+
+                                <div class="bande-full big break">
+                                    <div class="row">
+                                        <div class="col-lg-2">
+                                            <div class="schedules-text">
+                                                <span><i class='bx bxs-time-five' ></i>18:30 - 19:00</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-10">
+                                            <div class="schedules-design-content">
+                                                <h3><i class='bx bxs-coffee-alt' ></i> Cérémonie de clôture</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            #}
+                        </div>
+
+                    </div>
+                </div>
+                {% if true  %}
+                <div class="cta-section">
+                    <a href="/uploads/programmes/Programme_CARDIOTECH_2024.pdf" target="_blank" class="btn-download">Télécharger le programme</a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+        <!-- End Our Conference Schedules Area -->
+
+
+
+{% endblock %}

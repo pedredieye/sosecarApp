@@ -1,0 +1,93 @@
+{% extends 'templates/layout.twig' %}
+{% block page_title %}Liste des inscriptions validées{% endblock %}
+{% block active_participant %}active{% endblock %}
+{% block all_participant_valide %}active{% endblock %}
+{% block collapse_in %}in{% endblock %}
+{% block page_title_breadcrumb %}Liste des inscriptions validées{% endblock %}
+{% block content %}
+
+    <section class="tables-data">
+      <div class="page-header">
+        <h1>      <i class="md md-list"></i> Liste des inscriptions validées  </h1>
+        <p class="lead">Cette liste affiche les inscriptions validées.</p>
+      </div>
+
+      <div class="bs-component" >
+        <div class="alert alert-dismissible alert-success d-none" id="alert-form">
+          <button type="button" class="close" data-dismiss="alert">×</button>
+          <h4>Success!</h4> <strong>Well done!</strong> You successfully read <a href="#" class="alert-link">this important alert message</a>.
+        </div>
+      </div>
+
+      <div class="card">
+        <div>
+          <div class="datatables">
+            <table id="example" class="table table-full table-full-small" cellspacing="0" width="100%">
+              <thead>
+                <tr>
+                  <th>Prénom(s) et Nom</th>
+                  <th>Contact</th>
+                  <th>Pays</th>
+                  <th>Ticket</th>
+                  <th class="">QrCode</th>
+                  {% if usr.role_id <= 2 %}
+                    <th>Statut</th>
+                    <th>Email de confirmation</th>
+                    <th>Ajouté par</th>
+                    {% if "obama" == "trump" %}
+                      <th>Options</th>
+                    {% endif %}
+                  {% endif %}
+                </tr>
+              </thead>
+              <tbody>
+              {% for participant in data.participants %}
+                <tr>
+                  <td class="ml-2" >{{participant.first_name}} <br> {{participant.last_name}} </td>
+                  <td >{{participant.email}} <br>{{participant.phone}} </td>
+                  <td >{{participant.country.name}}</td>
+                  <td >{{participant.ticket_number}}</td>
+                  <td class=""> <a href="{{domain_url}}/{{qrcode_repertory}}{{participant.qrcode[0].qr_code_link | raw}}" target="_blank">Afficher</a> </td>
+                  {% if usr.role_id <= 2 %}
+                    <td>
+                      {{participant.etat.status}}
+                    </td>
+                    <td style="text-align:center">
+                      {% if participant.flag_mail_validation == 1 %}
+                        <div class="green darken-4 p-1 text-center">Mail envoyé</div>
+                      {% else %}
+                        <div class="red darken-4 p-1 text-center">Echec de l'envoi  </div>
+                        <button type="button" class="btn btn-link btn-resend-email" data-participant-id="{{participant.id}}" data-toggle="tooltip" data-placement="top" data-original-title="Renvoyer le mail" style="display:flex; align-items:center; justify-content:space-around; padding:3px 5px; width:100%; font-size:10px;">
+                          Renvoyer <i class="md md-send" style="font-size: 18px;"></i>
+                        </button>
+                        <button type="button" onclick="window.location.href='{{path_for('edit_participant', {'id':participant.id})}}'" class="btn btn-link" data-toggle="tooltip" data-placement="top" data-original-title="Modifier l'inscription" style="display:flex; align-items:center; justify-content:space-around; padding:3px 5px; width:100%; font-size:10px;">
+                          Modifier <i style="font-size: 18px;" class="md md-mode-edit"></i>
+                        </button>
+                      {% endif %}
+                    </td>
+                    <td> {% if participant.addedby | length > 1 %} {{participant.addedby.first_name}} {{participant.addedby.last_name}} {% else %} Depuis le site {% endif %}</td>
+                  {% endif %}
+                  {% if usr.role_id <= 2 %}
+                      {% if "obama" == "trump" %}
+                        <td style="text-align:center;">
+                          {% if usr.role_id <= 2 %}
+                            <button type="button" onclick="window.location.href='{{path_for('edit_participant', {'id':participant.id})}}'" class="btn btn-link btn-round" data-toggle="tooltip" data-placement="top" data-original-title="Edit row"><i class="md md-mode-edit"></i></button>
+                          {% endif %}
+
+                          {% if usr.role_id <= 2  and "obama" == "trump" %}
+                            <button type="button" class="btn btn-link btn-round" data-toggle="tooltip" data-placement="top" data-original-title="Edit row"><i class="md md-mode-edit"></i></button>
+                            <button type="button" class="btn btn-link btn-round" data-toggle="tooltip" data-placement="top" data-original-title="Delete row"><i class="md md-delete"></i></button>
+                          {% endif %}
+                        </td>
+                      {% endif %}
+                  {% endif %}
+                </tr>
+              {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+{% endblock %}

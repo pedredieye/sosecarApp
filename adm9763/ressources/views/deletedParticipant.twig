@@ -1,0 +1,83 @@
+{% extends 'templates/layout.twig' %}
+{% block page_title %}Liste des inscriptions supprimées{% endblock %}
+{% block deleted_participant %}active{% endblock %}
+{% block all_participant_valide %}active{% endblock %}
+{% block collapse_in %}in{% endblock %}
+{% block page_title_breadcrumb %}Liste des inscriptions supprimées{% endblock %}
+{% block content %}
+
+
+    <section class="tables-data">
+      <div class="page-header">
+        <h1>      <i class="md md-list"></i> Liste des inscriptions supprimées  </h1>
+        <p class="lead">Cette liste affiche la liste des inscriptions supprimées.</p>
+      </div>
+      <div class="card">
+        <div>
+          <div class="datatables">
+            <table id="example" class="table table-full table-full-small" cellspacing="0" width="100%">
+              <thead>
+                <tr>
+                  <th>Prénom(s)</th>
+                  <th>Nom</th>
+                  <th>Contact</th>
+                  <th>Pays</th>
+                  <th>Ticket</th>
+                  <th class="">QrCode</th>
+                  {% if usr.role_id <= 2 %}
+                    <th>Statut</th>
+                    <th>Ajouté par</th>
+                    <th>Options</th>
+                  {% endif %}
+                </tr>
+              </thead>
+              <tfoot>
+                <tr>
+                  <th>Prénom(s)</th>
+                  <th>Nom</th>
+                  <th>Contact</th>
+                  <th>Pays</th>
+                  <th>Ticket</th>
+                  <th class="">QrCode</th>
+                  {% if usr.role_id <= 2 %}
+                    <th>Statut</th>
+                    <th>Ajouté par</th>
+                    <th>Options</th>
+                  {% endif %}
+                </tr>
+              </tfoot>
+              <tbody>
+              {% for participant in data.participants %}
+                <tr>
+                  <td class="ml-2" >{{participant.first_name}}</td>
+                  <td >{{participant.last_name}}</td>
+                  <td >{{participant.email}} <br>{{participant.phone}} </td>
+                  <td >{{participant.country.name}}</td>
+                  <td >{{participant.ticket_number}}</td>
+                  <td class=""> <a href="{{domain_url}}/{{qrcode_repertory}}{{participant.qrcode[0].qr_code_link | raw}}" target="_blank">Afficher</a> </td>
+                  {% if usr.role_id <= 2 %}
+                  <td>{{participant.etat.status}}</td>
+                <td> {% if participant.addedby | length > 1 %} {{participant.addedby.first_name}} {{participant.addedby.last_name}} {% else %} Depuis le site {% endif %}</td>
+                  {% endif %}
+                  {% if usr.role_id <= 2 %}
+                    <td style="text-align:center;">
+                      {% if usr.role_id <= 2 %}
+                        <button type="button" id="btn-undo-delete-part" data-participant-id = "{{participant.id}}"  class="btn btn-link btn-round" data-toggle="tooltip" data-placement="top" data-original-title="Annuler la suppression"><i class="md-highlight-remove"></i></button>
+                      {% endif %}
+
+                      {% if usr.role_id <= 2  and "obama" == "trump" %}
+                        <button type="button" class="btn btn-link btn-round" data-toggle="tooltip" data-placement="top" data-original-title="Edit row"><i class="md md-mode-edit"></i></button>
+                        <button type="button" class="btn btn-link btn-round" data-toggle="tooltip" data-placement="top" data-original-title="Delete row"><i class="md md-delete"></i></button>
+                      {% endif %}
+                    </td>
+                  {% endif %}
+                </tr>
+              {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+{% endblock %}
